@@ -2,229 +2,356 @@ import type { CareerTrack } from '../../../shared/types.js';
 
 export const laravelPhpAgencyDevTrack: Omit<CareerTrack, 'id'> = {
   slug: 'laravel-php-agency-dev',
-  title_en: 'Laravel, PHP and Agency Full-Stack Web Development',
-  title_bn: 'লারাভেল, পিএইচপি ও এজেন্সি ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট',
-  summary_en: 'Full-stack commercial web application engineering using modern PHP 8+, Laravel 11, Blade templates, Livewire, MySQL, and customized WordPress themes for local business agencies and global freelancing.',
-  summary_bn: 'আধুনিক পিএইচপি ৮+, লারাভেল ১১ (Laravel 11), লাইভওয়্যার, মাইএসকিউএল ও ওয়ার্ডপ্রেস দিয়ে দেশীয় সফটওয়্যার এজেন্সি ও বৈশ্বিক মার্কেটপ্লেসে দ্রুত কাজের উপযোগী ফুল-স্ট্যাক ট্র্যাক।',
-  pivotAdvice_en: 'Laravel offers the most accessible path into paid employment across hundreds of software agencies in Dhaka and regional divisional cities. If you want rapid tangible results and high job placement volume, Laravel is unbeatable.',
-  pivotAdvice_bn: 'ঢাকা সহ বাংলাদেশের প্রায় প্রতিটি শহরের সফটওয়্যার ফার্মগুলোতে লারাভেল ও পিএইচপি ডেভেলপারের বিপুল চাহিদা রয়েছে। দ্রুত বাস্তব ওয়েবসাইট বানিয়ে দেশীয় কোম্পানিতে ইন্টার্নশিপ বা চাকরি শুরু করার জন্য এটি একটি নির্ভরযোগ্য ও প্রমাণিত পথ।',
+  title_en: 'Laravel 11/12, Modern PHP 8.4 & Full-Stack Agency Engineering (2026 Edition)',
+  title_bn: 'লারাভেল ১১/১২, আধুনিক পিএইচপি ৮.৪ ও এজেন্সি ফুল-স্ট্যাক ইঞ্জিনিয়ারিং (২০২৬ এডিশন)',
+  summary_en: 'Calibrated for late 2026. Full-stack commercial application engineering using PHP 8.4, Laravel 11/12 streamlined architecture, Livewire 3 / Inertia.js React, Filament Admin v3, MySQL / PostgreSQL, Redis queues, and bKash/SSLCommerz integrations.',
+  summary_bn: '২০২৬ সালের আধুনিক পিএইচপি ও লারাভেল ফুল-স্ট্যাক ক্যারিয়ার ট্র্যাক। পিএইচপি ৮.৪, লারাভেল ১১/১২ এর নতুন আর্কিটেকচার, লাইভওয়্যার ৩, ফিলামেন্ট এডমিন প্যানেল ৩, রেডিস ব্যাকগ্রাউন্ড কিউ এবং বিকাশ-নগদ পেমেন্ট ইন্টিগ্রেশন।',
+  pivotAdvice_en: 'Laravel offers the highest hiring volume and fastest path into paid software engineering across hundreds of digital agencies and SaaS houses in Dhaka, Chittagong, and Sylhet. In 2026, developers who combine Laravel with modern Livewire 3 and Filament Admin deliver client projects 5x faster than pure JavaScript stacks.',
+  pivotAdvice_bn: 'ঢাকা, চট্টগ্রাম সহ দেশের বিভিন্ন সফটওয়্যার ফার্ম ও ডিজিটাল এজেন্সিতে লারাভেলের প্রচুর নিয়মিত কর্মসংস্থান রয়েছে। ২০২৬ সালে যারা লারাভেলের সাথে লাইভওয়্যার ৩ ও ফিলামেন্ট এডমিন প্যানেল ব্যবহার করে দ্রুত বাণিজ্যিক ওয়েবসাইট বানাতে পারে, সফটওয়্যার এজেন্সিগুলো তাদের সরাসরি ফ্রেশার হিসেবেও অগ্রাধিকার দিয়ে নিয়োগ দেয়।',
   minPcRequired: 'low',
   dayToDay_en: [
-    'Building database-driven web applications with Laravel MVC architecture, Eloquent ORM, and Blade templates.',
-    'Designing MySQL relational schemas, database migrations, and seeders.',
-    'Creating dynamic reactive user interfaces with Laravel Livewire and Alpine.js without complex React setups.',
-    'Integrating local SMS gateways, bKash merchant checkout, and automated PDF invoice generation.',
-    'Deploying Laravel and WordPress sites to cPanel shared hosting and Ubuntu VPS cloud servers.'
+    'Building database-driven SaaS applications using Laravel 11/12 streamlined routing, controllers, and FormRequests.',
+    'Modeling relational schemas with Eloquent ORM, handling eager loading, polymorphic relationships, and migrations.',
+    'Creating dynamic reactive user interfaces with Livewire 3 and Alpine.js without wrestling with heavy React boilerplate.',
+    'Constructing enterprise admin dashboards in hours using Filament Admin v3 with built-in filters and actions.',
+    'Integrating payment gateways (bKash Tokenized, SSLCommerz, Stripe) and queuing invoice jobs in Redis.'
   ],
   dayToDay_bn: [
-    'লারাভেল ফ্রেমওয়ার্ক ও মাইএসকিউএল দিয়ে ই-কমার্স, স্কুল ম্যানেজমেন্ট ও ডায়াগনস্টিক সেন্টারের পূর্ণাঙ্গ ওয়েবসাইট বানানো।',
-    'এলকুয়েন্ট ওআরএম (Eloquent ORM) দিয়ে ডেটাবেস কুয়েরি ও রিলেশনশিপ হ্যান্ডেল করা।',
-    'লাইভওয়্যার (Livewire) ও আলপাইন.জেএস দিয়ে পেজ রিলোড ছাড়া ডায়নামিক ফিল্টার ও ফর্ম তৈরি করা।',
-    'লোকাল এসএমএস গেটওয়ে, বিকাশ পেমেন্ট ও ইনভয়েস ডাউনলোড ফিচার ইন্টিগ্রেট করা।',
-    'সিপ্যানেল (cPanel) বা উবুন্টু ভিপিএস ক্লাউডে ওয়েবসাইট লাইভ ডিপ্লয় করা ও এসএসএল সার্টিফিকেট সেট করা।'
+    'লারাভেল ১১/১২ ফ্রেমওয়ার্ক দিয়ে ই-কমার্স, স্কুল ম্যানেজমেন্ট ও ডায়াগনস্টিক সেন্টারের স্বয়ংক্রিয় সফটওয়্যার বানানো।',
+    'এলকুয়েন্ট ওআরএম (Eloquent ORM) দিয়ে ডেটাবেস রিলেশনশিপ ও ইগার লোডিংয়ের মাধ্যমে দ্রুতগতির কুয়েরি চালানো।',
+    'লাইভওয়্যার ৩ ও আলপাইন.জেএস দিয়ে পেজ রিলোড ছাড়া সিঙ্গেল পেজ অ্যাপের মতো দ্রুতগতির ফর্ম ও ফিল্টার তৈরি।',
+    'ফিলামেন্ট ৩ (Filament) এডমিন প্যানেল দিয়ে চমৎকার ড্যাশবোর্ড ও এক্সেল এক্সপোর্ট সিস্টেম অল্প সময়ে রেডি করা।',
+    'বিকাশ, নগদ, এসএসএলকমার্জ ও স্ট্রাইপ পেমেন্ট গেটওয়ে যুক্ত করা এবং রেডিস কিউ দিয়ে ব্যাকগ্রাউন্ডে ইমেইল পাঠানো।'
   ],
   mustHaveSkills: [
     {
-      id: 'php8-oop-fundamentals',
-      name: 'Modern PHP 8+ and OOP Concepts',
+      id: 'php-84-oop-typing',
+      name: 'Modern PHP 8.4 & Clean OOP',
       category: 'Core Language',
       importance: 'Essential',
-      description_en: 'Strict typing, constructor promotion, arrow functions, interfaces, abstract classes, and traits in PHP.',
-      description_bn: 'পিএইচপি ৮-এর টাইপিং, অবজেক্ট ওরিয়েন্টেড ক্লাস, ইন্টারফেস ও ট্রেইট ব্যবহারের নিয়ম।'
+      description_en: 'Constructor property promotion, match expressions, strict typing (declare(strict_types=1)), and traits.',
+      description_bn: 'পিএইচপি ৮.৪-এর আধুনিক অবজেক্ট ওরিয়েন্টেড কনসেপ্ট, টাইপ সেফটি ও ম্যাচ এক্সপ্রেশন।'
     },
     {
-      id: 'laravel-eloquent-orm',
-      name: 'Laravel 11 MVC and Eloquent Database ORM',
-      category: 'Web Framework',
+      id: 'laravel-11-streamlined',
+      name: 'Laravel 11/12 Streamlined Architecture & Eloquent',
+      category: 'Backend Framework',
       importance: 'Essential',
-      description_en: 'Routing, controllers, middleware, request validation, database migrations, and Eloquent model relationships.',
-      description_bn: 'লারাভেল রাউটিং, মিডলওয়্যার, রিকোয়েস্ট ভ্যালিডেশন এবং মডেল রিলেশনশিপ (hasMany, belongsTo)।'
+      description_en: 'Consolidated bootstrap/app.php, middleware routing, FormRequest validation, and Eloquent relationships.',
+      description_bn: 'লারাভেল ১১/১২-এর নতুন স্ট্রিমলাইন্ড আর্কিটেকচার, মিডলওয়্যার ও এলকুয়েন্ট মডেল রিলেশনশিপ।'
     },
     {
-      id: 'mysql-database-design',
-      name: 'MySQL Schema Architecture and Indexing',
-      category: 'Databases',
+      id: 'livewire-filament-stack',
+      name: 'Livewire 3 & Filament Admin v3',
+      category: 'Full-Stack Rapid Dev',
       importance: 'Essential',
-      description_en: 'Foreign keys, inner/left joins, index optimization, and transaction handling in MySQL.',
-      description_bn: 'টেবিল ফরেন কি, ইন্ডেক্স অপ্টিমাইজেশন ও দ্রুত ডেটা লোড করার এসকিউএল কুয়েরি।'
+      description_en: 'Reactive single-file components, wire:navigate, Filament resource tables, form builders, and widgets.',
+      description_bn: 'লাইভওয়্যার ৩ দিয়ে রিঅ্যাক্টিভ ফ্রন্টএন্ড এবং ফিলামেন্ট ৩ দিয়ে কয়েক ঘণ্টায় প্রফেশনাল এডমিন ড্যাশবোর্ড তৈরি।'
     },
     {
-      id: 'cpanel-vps-deployment',
-      name: 'cPanel and Ubuntu VPS Server Deployment',
-      category: 'Deployment',
-      importance: 'Recommended',
-      description_en: 'Configuring domain DNS, PHP extensions, Composer on SSH, environment files, and free Let us Encrypt SSL.',
-      description_bn: 'ডোমেন-হোস্টিং কানেক্ট করা, সিপ্যানেল বা ভিপিএসে কম্পোজার দিয়ে সাইট লাইভ রান করা।'
+      id: 'redis-queues-payment-gateways',
+      name: 'Redis Queues & BD Payment Gateways',
+      category: 'Integrations & Scaling',
+      importance: 'Essential',
+      description_en: 'Redis queue workers, Horizon monitoring, bKash Checkout APIs, SSLCommerz webhooks, and Stripe.',
+      description_bn: 'রেডিস ব্যাকগ্রাউন্ড কিউ প্রসেসিং এবং বিকাশ, নগদ ও কার্ড পেমেন্ট গেটওয়ে ইন্টিগ্রেশন।'
     }
   ],
   marketData: {
     bangladesh: {
-      region: 'Dhaka (Mirpur, Panthapath, Dhanmondi, Uttara, Chittagong, Sylhet)',
-      entrySalary: { min: 20000, max: 35000, currency: 'BDT', formatted: '20,000 - 35,000 BDT' },
-      midSalary: { min: 45000, max: 85000, currency: 'BDT', formatted: '45,000 - 85,000 BDT' },
-      seniorSalary: { min: 95000, max: 190000, currency: 'BDT', formatted: '95,000 - 190,000 BDT' },
+      region: 'Dhaka (Mirpur, Panthapath, Dhanmondi, Uttara), Chittagong, Sylhet & Rajshahi',
+      entrySalary: { min: 25000, max: 45000, currency: 'BDT', formatted: '25,000 - 45,000 BDT' },
+      midSalary: { min: 55000, max: 110000, currency: 'BDT', formatted: '55,000 - 110,000 BDT' },
+      seniorSalary: { min: 120000, max: 250000, currency: 'BDT', formatted: '120,000 - 250,000 BDT' },
       hiringSectors: [
-        'Local Web Software Agencies in Dhaka, Chittagong, and Rajshahi',
-        'E-Commerce Companies and Multi-Vendor Marketplace Operations',
-        'ERP Providers for Garments, Manufacturing, and Healthcare Clinics'
+        'Commercial Software Agencies in Dhaka, Chittagong, and Regional Hubs',
+        'E-Commerce Companies, Courier Services & Wholesale Marketplaces',
+        'ERP Providers for Garments, Manufacturing, Hospitals & Real Estate'
       ],
       cvExpectations: [
-        'At least 2 live working full-stack Laravel websites deployed with real database interactions',
-        'Clean adherence to Laravel MVC architecture and separation of concerns',
-        'Understanding of Eloquent relationships and eager loading to prevent N+1 queries',
-        'Familiarity with Git branching and responsive mobile frontend layouts'
+        'At least two live deployed full-stack Laravel websites with functional database storage and login',
+        'Public GitHub repositories demonstrating clean Laravel coding standards and separation of concerns',
+        'Demonstrated understanding of Eloquent eager loading preventing N+1 database queries',
+        'Diploma in CST with clear technical ability to walk through controllers and models during viva'
       ],
-      localDemandSummary_en: 'Laravel represents the highest volume of junior web developer openings in Bangladesh. Polytechnic graduates with clean projects and deployment experience frequently secure offers.',
-      localDemandSummary_bn: 'বাংলাদেশে ফ্রেশার ও ডিপ্লোমা শিক্ষার্থীদের জন্য লারাভেলে সবচেয়ে বেশি চাকরির সুযোগ রয়েছে। দুটি লাইভ ওয়েবসাইট পোর্টফোলিওতে থাকলে ঢাকার এজেন্সিগুলোতে সহজেই চাকরি শুরু করা যায়।'
+      localDemandSummary_en: 'Laravel powers the vast majority of local business applications, inventory softwares, and client agency projects across Bangladesh. CST graduates who master Laravel 11 alongside Livewire 3 and Filament build functioning client systems with breathtaking speed, making them immediate assets for digital agencies.',
+      localDemandSummary_bn: 'দেশের বাণিজ্যিক প্রতিষ্ঠান ও এজেন্সিতে লারাভেলের প্রচুর নিয়মিত প্রজেক্ট রয়েছে। সিএসটি শিক্ষার্থীরা যারা লারাভেলের সাথে লাইভওয়্যার ৩ ও ফিলামেন্ট দিয়ে পূর্ণাঙ্গ ম্যানেজমেন্ট সফটওয়্যার বানাতে পারে, তারা সহজেই সফটওয়্যার ফার্মগুলোতে ফুল-স্ট্যাক ডেভেলপার হিসেবে স্থান করে নেয়।'
     },
     targetCountries: [
       {
         region: 'Middle East',
-        countryName_en: 'Saudi Arabia and UAE (Dubai)',
-        countryName_bn: 'সৌদি আরব ও সংযুক্ত আরব আমিরাত (দুবাই)',
+        countryName_en: 'United Arab Emirates & Saudi Arabia',
+        countryName_bn: 'সংযুক্ত আরব আমিরাত ও সৌদি আরব',
+        demandLevel: 'High',
+        demandLevel_bn: 'উচ্চ চাহিদা',
+        visaReality_en: 'Retail, logistics, and real estate portals across Dubai and Riyadh heavily hire Laravel backend developers under skilled work visas.',
+        visaReality_bn: 'দুবাই ও রিয়াদে রিয়েল এস্টেট ও ই-কমার্স সাইটগুলোতে লারাভেল ডেভেলপারদের নিয়মিত স্পনসরশিপ দেওয়া হয়।',
+        averageSalaryUsdOrLocal: '10,000 - 18,000 AED / month (approx 320,000 - 580,000 BDT)',
+        requiredExperienceYears: '2 to 4 years'
+      },
+      {
+        region: 'Europe',
+        countryName_en: 'United Kingdom & Netherlands',
+        countryName_bn: 'যুক্তরাজ্য ও নেদারল্যান্ডস',
         demandLevel: 'Moderate',
-        demandLevel_bn: 'মাঝারি',
-        visaReality_en: 'SMEs across Dubai and Riyadh hire full-stack PHP/Laravel engineers with 3+ years of commercial agency experience.',
-        visaReality_bn: '৩ বছরের বাস্তব প্রজেক্টের অভিজ্ঞতা থাকলে দুবাই ও রিয়াদের ছোট-মাঝারি প্রতিষ্ঠানে কাজের ভিসা পাওয়া যায়।',
-        averageSalaryUsdOrLocal: '$36,000 - $60,000 USD / year (approx 4,300,000 - 7,200,000 BDT)',
-        requiredExperienceYears: '3+ years'
+        demandLevel_bn: 'মাঝারি থেকে উচ্চ',
+        visaReality_en: 'Strong demand for modern PHP 8.4 and Laravel specialists in European SaaS scale-ups.',
+        visaReality_bn: 'ইউরোপের স্টার্টআপ ও এজেন্সিতে লারাভেল বিশেষজ্ঞদের জন্য ভালো বেতনের চুক্তিভিত্তিক কাজের সুযোগ রয়েছে।',
+        averageSalaryUsdOrLocal: '45,000 - 70,000 EUR / year',
+        requiredExperienceYears: '3 to 5 years'
       }
     ],
     remote: {
       entryBarrier: 'Low',
       entryBarrier_bn: 'সহজ থেকে মাঝারি',
-      monthlyRangeUsd: '$600 - $2,800 / month',
-      competitionLevel: 'Active freelance market on Upwork/Fiverr, won through fast turnaround and clean communication',
-      competitionLevel_bn: 'আপওয়ার্ক ও ফাইভারে লারাভেল বাগ ফিক্স ও নতুন ফিচারের জন্য প্রতিদিন শত শত ক্লায়েন্ট কাজ পোস্ট করে',
-      englishRequirement: 'Conversational English to understand client feature briefs and explain deliverables',
-      englishRequirement_bn: 'ক্লায়েন্টের চাহিদা বুঝতে পারা ও কাজের অগ্রগতি জানানোর মতো সাধারণ ইংরেজি দক্ষতা',
+      monthlyRangeUsd: '$1,000 - $3,500 USD',
+      competitionLevel: 'Moderate',
+      competitionLevel_bn: 'মাঝারি',
+      englishRequirement: 'Professional English to gather requirements from clients and submit code pull requests',
+      englishRequirement_bn: 'বিদেশি ক্লায়েন্টের কাজের রিকোয়ারমেন্ট বুঝে নেওয়া ও ডেলিভারি দেওয়ার মতো প্রয়োজনীয় ইংরেজি',
       realities_en: [
-        'Local agency clients value speed to market; Laravel allows you to deliver in days what takes weeks in Java',
-        'WordPress maintenance and custom plugin tweaks provide steady secondary freelance income'
+        'Upwork, Fiverr, and global agencies continuously contract Laravel specialists to maintain and extend existing client web applications.',
+        'A public GitHub portfolio featuring a live deployed multi-tenant SaaS or e-commerce shop wins remote freelance contracts rapidly.'
       ],
       realities_bn: [
-        'দেশীয় এজেন্সিগুলোর কাছে দ্রুত কাজ ডেলিভারি দেওয়া সবচেয়ে গুরুত্বপূর্ণ, যা লারাভেলে খুব সহজে সম্ভব',
-        'লারাভেলের পাশাপাশি ওয়ার্ডপ্রেসের খুঁটিনাটি কাজ জানলে বাড়তি ফ্রিল্যান্সিং আয় করা সহজ হয়'
+        'আন্তর্জাতিক মার্কেটপ্লেসে লারাভেল ও লাইভওয়্যার প্রজেক্টের নিয়মিত বিপুল কাজ পাওয়া যায়।',
+        'সিভিতে লাইভ ই-কমার্স বা স্কুল ম্যানেজমেন্ট সফটওয়্যারের লাইভ ডেমো লিংক থাকলে দূরবর্তী ক্লায়েন্টের কাজ পাওয়া সহজ হয়।'
       ]
     }
   },
   roadmapPhases: [
     {
       phaseNumber: 1,
-      phaseTitle_en: 'Phase 1: Modern PHP 8+ and MySQL Database Design',
-      phaseTitle_bn: 'প্রথম পর্ব: আধুনিক পিএইচপি ৮+ ও মাইএসকিউএল ডেটাবেস ডিজাইন',
-      phaseSubtitle_en: 'Day 1 to 25: PHP OOP classes, session authentication, and relational SQL queries.',
-      phaseSubtitle_bn: '১ থেকে ২৫ দিন: পিএইচপির অবজেক্ট ওরিয়েন্টেড কোডিং, লগইন সেশন ও মাইএসকিউএল কুয়েরি।',
+      phaseTitle_en: 'Modern PHP 8.4 Core, OOP Principles & Database Normalization',
+      phaseTitle_bn: 'আধুনিক পিএইচপি ৮.৪, ওওপি কনসেপ্ট ও ডেটাবেস নরম্যালাইজেশন',
+      phaseSubtitle_en: 'Master strict typing, classes, inheritance, traits, and relational MySQL.',
+      phaseSubtitle_bn: 'পিএইচপি টাইপ সিস্টেম, অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং ও মাইএসকিউএল ডিজাইন।',
       durationWeeks: 4,
       modules: [
         {
-          id: 'mod-php-mysql-core',
-          title_en: 'PHP OOP and PDO Prepared Statements',
-          title_bn: 'পিএইচপি অবজেক্ট ওরিয়েন্টেড কোড ও নিরাপদ পিডিও',
-          description_en: 'Classes, methods, inheritance, PDO database connections, prepared statements to prevent SQL injection, and password_hash.',
-          description_bn: 'এসকিউএল ইনজেকশন প্রতিরোধে পিডিও প্রিপেয়ার্ড স্টেটমেন্ট ও পাসওয়ার্ড হ্যাশিংয়ের বাস্তব প্র্যাকটিস।',
+          id: 'lar-p1-m1',
+          title_en: 'PHP 8.4 Language Features, Strict Typing & Composer',
+          title_bn: 'পিএইচপি ৮.৪ ফিচার্স, স্ট্রিক্ট টাইপিং ও কম্পোজার প্যাকেজ ম্যানেজার',
+          description_en: 'Enable declare(strict_types=1), master constructor property promotion, match expressions, null-safe operators (?->), and manage libraries with Composer.',
+          description_bn: 'পিএইচপির আধুনিক সিনট্যাক্স, নাল-সেফ অপারেটর এবং কম্পোজার দিয়ে থার্ড পার্টি প্যাকেজ ব্যবহারের নিয়ম।',
+          estimatedDays: 10,
+          mobileAccessible: true,
+          keyTopics: ['Constructor Property Promotion', 'Match Expressions vs Switch', 'declare(strict_types=1)', 'Composer autoload & PSR-4'],
+          practicalTask_en: 'Write an object-oriented invoice generator in pure PHP 8.4 using interfaces, traits, and Composer PDF rendering packages.',
+          practicalTask_bn: 'পিএইচপি ৮.৪ দিয়ে অবজেক্ট ওরিয়েন্টেড নিয়মে একটি ইনভয়েস ক্যালকুলেটর লাইব্রেরি তৈরি করো।'
+        },
+        {
+          id: 'lar-p1-m2',
+          title_en: 'Relational Database Schema Design & Normalization in MySQL',
+          title_bn: 'মাইএসকিউএল রিলেশনাল টেবিল ডিজাইন ও নরম্যালাইজেশন (3NF)',
+          description_en: 'Design normalized tables (Users, Orders, OrderItems, Products), foreign key cascade behaviors, and write complex JOIN queries with indexes.',
+          description_bn: '৩য় নরমাল ফর্ম (3NF) মেনে ই-কমার্স ডেটাবেস ডিজাইন এবং ফরেন কি দিয়ে টেবিলগুলোর মধ্যে সম্পর্ক তৈরি।',
           estimatedDays: 12,
           mobileAccessible: true,
-          keyTopics: ['PHP 8 typed properties', 'PDO connection and prepared statements', 'password_hash and password_verify'],
-          practicalTask_en: 'Build a raw PHP and MySQL user authentication system with secure login, signup, and session timeout.',
-          practicalTask_bn: 'পিএইচপি ও মাইএসকিউএল দিয়ে একটি নিরাপদ ইউজার লগইন ও রেজিস্ট্রেশন সিস্টেম তৈরি করো।'
+          keyTopics: ['1NF, 2NF, 3NF Normalization', 'Primary & Foreign Key Constraints', 'INNER & LEFT JOINs', 'Index Creation for Fast Search'],
+          practicalTask_en: 'Design a normalized 5-table relational database for an inventory management system and write queries to report daily total sales.',
+          practicalTask_bn: 'একটি ইনভেন্টরি ম্যানেজমেন্ট সিস্টেমের জন্য ৫টি সম্পর্কিত টেবিলের ডেটাবেস ডিজাইন করো।'
         }
       ]
     },
     {
       phaseNumber: 2,
-      phaseTitle_en: 'Phase 2: Laravel 11 MVC, Routing and Blade Templates',
-      phaseTitle_bn: 'দ্বিতীয় পর্ব: লারাভেল ১১ এমভিসি, রাউটিং ও ব্লেড টেমপ্লেট',
-      phaseSubtitle_en: 'Day 26 to 50: Artisan CLI, migrations, controllers, middleware, and Tailwind integration.',
-      phaseSubtitle_bn: '২৬ থেকে ৫০ দিন: আর্টিসান কমান্ড, ডেটাবেস মাইগ্রেশন, ব্লেড ভিউ ও টেইলউইন্ড ডিজাইন।',
+      phaseTitle_en: 'Laravel 11/12 Streamlined Architecture, Eloquent & Auth',
+      phaseTitle_bn: 'লারাভেল ১১/১২ স্ট্রিমলাইন্ড আর্কিটেকচার, এলকুয়েন্ট ও অথেনটিকেশন',
+      phaseSubtitle_en: 'Master the unified bootstrap file, FormRequests, Breeze auth, and relationships.',
+      phaseSubtitle_bn: 'লারাভেলের নতুন কনফিগারেশন, রিকোয়েস্ট ভ্যালিডেশন ও ইউজার লগইন সিস্টেম।',
       durationWeeks: 4,
       modules: [
         {
-          id: 'mod-laravel-artisan-mvc',
-          title_en: 'Laravel Routing, Middleware and Blade Layouts',
-          title_bn: 'লারাভেল রাউটিং, মিডলওয়্যার ও ভিউ লেআউট',
-          description_en: 'Resource routes, form request validation, authentication scaffolding (Laravel Breeze), and Blade component layouts.',
-          description_bn: 'রিসোর্স রাউটিং, রিকোয়েস্ট ভ্যালিডেশন, লারাভেল ব্রিজ দিয়ে ইউজার লগইন ও কম্পোনেন্ট লেআউট।',
-          estimatedDays: 14,
-          mobileAccessible: false,
-          keyTopics: ['Artisan CLI commands', 'Form Request Validation rules', 'Blade components (@props, @slot)'],
-          practicalTask_en: 'Create a multi-user blog or news portal where admins can publish articles with categories and image uploads.',
-          practicalTask_bn: 'লারাভেল দিয়ে একটি পূর্ণাঙ্গ ব্লগ বা নিউজ পোর্টাল বানাও যেখানে ছবি আপলোড ও ক্যাটাগরি ফিল্টার থাকবে।'
+          id: 'lar-p2-m1',
+          title_en: 'Laravel 11/12 Streamlined Routing, Controllers & FormRequests',
+          title_bn: 'লারাভেল ১১/১২ রাউটিং, কন্ট্রোলার ও ফর্ম রিকোয়েস্ট ভ্যালিডেশন',
+          description_en: 'Understand the new bootstrap/app.php setup (replacing legacy Kernel.php), resource controllers, route model binding, and strict FormRequest validation.',
+          description_bn: 'লারাভেল ১১-এর নতুন আর্কিটেকচার, রিসোর্স কন্ট্রোলার এবং ফর্ম রিকোয়েস্ট দিয়ে শক্তিশালী ইনপুট ভ্যালিডেশন।',
+          estimatedDays: 12,
+          mobileAccessible: true,
+          keyTopics: ['Streamlined bootstrap/app.php', 'Route Model Binding', 'FormRequest Validation Rules', 'Laravel Breeze / Starter Kits'],
+          practicalTask_en: 'Create a complete CRUD application with FormRequest validation that blocks malformed inputs and redirects with error flashes.',
+          practicalTask_bn: 'লারাভেল দিয়ে একটি নিরাপদ ফর্ম ভ্যালিডেশন সহ ক্রাড (CRUD) অ্যাপ্লিকেশন তৈরি করো।'
+        },
+        {
+          id: 'lar-p2-m2',
+          title_en: 'Eloquent ORM Relationships & Solving the N+1 Query Problem',
+          title_bn: 'এলকুয়েন্ট ওআরএম রিলেশনশিপ ও N+1 কুয়েরি সমস্যা সমাধান',
+          description_en: 'Define hasMany, belongsTo, and belongsToMany relationships. Prevent severe database slowdowns by enforcing eager loading (with()) over lazy loading.',
+          description_bn: 'মডেল রিলেশনশিপ তৈরি এবং ইগার লোডিং (with()) ব্যবহার করে ডেটাবেসের শত শত অপ্রয়োজনীয় কুয়েরি রোধ করা।',
+          estimatedDays: 12,
+          mobileAccessible: true,
+          keyTopics: ['hasMany and belongsTo', 'Many-to-Many with Pivot Tables', 'Eager Loading with() vs Lazy Loading', 'Model::preventLazyLoading()'],
+          practicalTask_en: 'Build an author-books catalog application and use Laravel Debugbar to prove that eager loading cuts query counts from 101 to just 2.',
+          practicalTask_bn: 'লারাভেল ডিবাগবার দিয়ে প্রমাণ করো যে ইগার লোডিং ব্যবহারের ফলে ১০১টি কুয়েরির বদলে মাত্র ২টি কুয়েরিতে ডাটা লোড হয়।'
         }
       ]
     },
     {
       phaseNumber: 3,
-      phaseTitle_en: 'Phase 3: Eloquent ORM, Livewire and Payment Integration',
-      phaseTitle_bn: 'তৃতীয় পর্ব: এলকুয়েন্ট রিলেশনশিপ, লাইভওয়্যার ও বিকাশ পেমেন্ট',
-      phaseSubtitle_en: 'Day 51 to 75: Advanced database joins, dynamic reactive cart, and online payments.',
-      phaseSubtitle_bn: '৫১ থেকে ৭৫ দিন: অ্যাডভান্সড ডেটাবেস রিলেশনশিপ, পেজ রিলোড ছাড়া শপিং কার্ট ও পেমেন্ট গেটওয়ে।',
-      durationWeeks: 4,
+      phaseTitle_en: 'Dynamic Full-Stack with Livewire 3 & Filament Admin v3',
+      phaseTitle_bn: 'লাইভওয়্যার ৩ দিয়ে ডায়নামিক ইউআই ও ফিলামেন্ট এডমিন প্যানেল',
+      phaseSubtitle_en: 'Build dynamic single-page experiences and enterprise back-offices fast.',
+      phaseSubtitle_bn: 'পেজ রিলোড ছাড়া রিঅ্যাক্টিভ ইন্টারফেস ও আধুনিক এডমিন প্যানেল তৈরি।',
+      durationWeeks: 5,
       modules: [
         {
-          id: 'mod-eloquent-livewire-bkash',
-          title_en: 'Eloquent Relationships, Livewire 3 and bKash Checkout',
-          title_bn: 'এলকুয়েন্ট ওআরএম, লাইভওয়্যার ও বিকাশ পেমেন্ট',
-          description_en: 'One-to-many, many-to-many relationships, eager loading with(), Livewire real-time search, and payment callbacks.',
-          description_bn: 'এন প্লাস ওয়ান (N+1) সমস্যা সমাধান, লাইভওয়্যার দিয়ে ইনস্ট্যান্ট সার্চ ও পেমেন্ট কনফার্মেশন।',
-          estimatedDays: 15,
-          mobileAccessible: false,
-          keyTopics: ['Eloquent Relationships (hasMany, belongsToMany)', 'Livewire 3 wire:model and real-time updates', 'bKash merchant API checkout flow'],
-          practicalTask_en: 'Build an e-commerce online store with product filtering, dynamic cart updates via Livewire, and bKash mock checkout.',
-          practicalTask_bn: 'লাইভওয়্যার দিয়ে একটি পূর্ণাঙ্গ অনলাইন শপ তৈরি করো যাতে কার্ট আপডেট ও বিকাশ পেমেন্ট সফলভাবে কাজ করে।'
+          id: 'lar-p3-m1',
+          title_en: 'Laravel Livewire 3: Reactive Components & Real-Time Filtering',
+          title_bn: 'লাইভওয়্যার ৩: রিঅ্যাক্টিভ কম্পোনেন্ট ও রিয়েল-টাইম ফিল্টারিং',
+          description_en: 'Build dynamic interactive UIs without writing custom JavaScript. Use wire:model.live, real-time search, wire:navigate, and Alpine.js transitions.',
+          description_bn: 'কোনো জটিল জাভাস্ক্রিপ্ট ছাড়াই লারাভেলে লাইভ সার্চ, ডাইনামিক ফিল্টার এবং পেজ রিলোড ছাড়া মসৃণ ইউআই তৈরি।',
+          estimatedDays: 14,
+          mobileAccessible: true,
+          keyTopics: ['Livewire 3 Component Lifecycles', 'wire:model.live for instant search', 'wire:navigate for SPA transitions', 'Alpine.js micro-interactions'],
+          practicalTask_en: 'Build a live eCommerce product filter with instant price sliders, category checkboxes, and zero full-page browser reloads.',
+          practicalTask_bn: 'লাইভওয়্যার ৩ দিয়ে একটি লাইভ প্রডাক্ট ফিল্টার বানাও যা পেজ রিলোড ছাড়াই সাথে সাথে রেজাল্ট আপডেট করে।'
+        },
+        {
+          id: 'lar-p3-m2',
+          title_en: 'Filament Admin v3: Resource Tables, Forms & Metrics Cards',
+          title_bn: 'ফিলামেন্ট ৩: রিসোর্স টেবিল, ফর্ম বিল্ডার ও বিজনেস ড্যাশবোর্ড',
+          description_en: 'Construct comprehensive administrative dashboards using Filament v3. Implement data tables with search, bulk actions, modal forms, and revenue charts.',
+          description_bn: 'ফিলামেন্ট ৩ দিয়ে অল্প পরিশ্রমে বিশ্বমানের এডমিন প্যানেল তৈরি, এক্সেল এক্সপোর্ট এবং মাসিক সেলস চার্ট যুক্ত করা।',
+          estimatedDays: 14,
+          mobileAccessible: true,
+          keyTopics: ['Filament Resource Generation', 'Table Columns, Filters & Actions', 'Form Schemas & File Uploads', 'Dashboard KPI Widgets'],
+          practicalTask_en: 'Build an enterprise agency admin panel in Filament v3 allowing administrators to manage orders, update statuses via modals, and view analytics charts.',
+          practicalTask_bn: 'ফিলামেন্ট ৩ দিয়ে একটি পূর্ণাঙ্গ অর্ডার ম্যানেজমেন্ট এডমিন প্যানেল তৈরি করো।'
         }
       ]
     },
     {
       phaseNumber: 4,
-      phaseTitle_en: 'Phase 4: cPanel & VPS Cloud Deployment and Agency Interview Prep',
-      phaseTitle_bn: 'চতুর্থ পর্ব: সিপ্যানেল ও ক্লাউড হোস্টিং এবং জব ইন্টারভিউ',
-      phaseSubtitle_en: 'Day 76 to 90: Live hosting on cPanel/VPS, domain DNS configuration, and agency portfolio.',
-      phaseSubtitle_bn: '৭৬ থেকে ৯০ দিন: সিপ্যানেল বা ক্লাউড ভিপিএসে সাইট লাইভ করা ও দেশীয় সফটওয়্যার ফার্মের ইন্টারভিউ প্রস্তুতি।',
-      durationWeeks: 2,
+      phaseTitle_en: 'Redis Queues, Payment Gateways (bKash/Stripe), Docker & Viva',
+      phaseTitle_bn: 'রেডিস ব্যাকগ্রাউন্ড কিউ, বিকাশ পেমেন্ট, ডকার ও চাকরি ভাইভা',
+      phaseSubtitle_en: 'Offload heavy email jobs to Redis, accept real money, and pass interviews.',
+      phaseSubtitle_bn: 'ব্যাকগ্রাউন্ডে ইমেইল পাঠানো, বিকাশ পেমেন্ট ইন্টিগ্রেশন ও চাকরি ভাইভা প্রস্তুতি।',
+      durationWeeks: 4,
       modules: [
         {
-          id: 'mod-cpanel-hosting-portfolio',
-          title_en: 'Live Domain Deployment and Performance Tuning',
-          title_bn: 'লাইভ ডোমেন হোস্টিং ও প্রজেক্ট শোকেস',
-          description_en: 'Setting up public folder root, Composer install, .env production secrets, database import, and SSL certificate installation.',
-          description_bn: 'সিপ্যানেলে বা ভিপিএসে লাইভ ডোমেনে সাইট হোস্ট করা, ফ্রি এসএসএল সক্রিয় করা ও স্পিড বাড়ানো।',
-          estimatedDays: 10,
+          id: 'lar-p4-m1',
+          title_en: 'Asynchronous Redis Queues & Horizon Worker Monitoring',
+          title_bn: 'রেডিস অ্যাসিনক্রোনাস কিউ ও লারাভেল হরাইজন মনিটরিং',
+          description_en: 'Dispatch heavy jobs (PDF invoices, customer emails) to background queues using Redis. Monitor throughput and failed retries with Laravel Horizon.',
+          description_bn: 'ইনভয়েস পিডিএফ তৈরি ও ইমেইল পাঠানোর ভারী কাজ ব্যাকগ্রাউন্ডে রেডিসে পাঠানো যাতে ইউজার কোনো স্লোডাউন না দেখে।',
+          estimatedDays: 12,
           mobileAccessible: false,
-          keyTopics: ['cPanel public_html document root configuration', 'Environment caching (config:cache, route:cache)', 'Live Let us Encrypt SSL activation'],
-          practicalTask_en: 'Deploy your completed Laravel e-commerce application to a live domain or sub-domain with full HTTPS encryption.',
-          practicalTask_bn: 'তোমার তৈরি করা ওয়েবসাইটটি ইন্টারনেটে একটি লাইভ ডোমেনে ডিপ্লয় করো যাতে সবাই ভিজিট করতে পারে।'
+          keyTopics: ['Queue Drivers (database vs redis)', 'Dispatching Jobs & Queued Mailables', 'Laravel Horizon Dashboard', 'Exponential Backoff on Failure'],
+          practicalTask_en: 'Dispatch order confirmation PDF generation to a Redis background queue so the checkout HTTP response completes in under 100ms.',
+          practicalTask_bn: 'অর্ডার করার সাথে সাথে ব্যাকগ্রাউন্ড কিউতে পিডিএফ ইনভয়েস জেনারেট করে ইমেইল পাঠানোর সিস্টেম বানাও।'
+        },
+        {
+          id: 'lar-p4-m2',
+          title_en: 'bKash Tokenized Checkout, Docker Deployment & Agency Viva',
+          title_bn: 'বিকাশ টোকেনাইজড পেমেন্ট গেটওয়ে, ডকার ও এজেন্সি ভাইভা প্রস্তুতি',
+          description_en: 'Integrate bKash Merchant APIs, verify callbacks, containerize with Docker, and practice answering full-stack technical interview questions.',
+          description_bn: 'বিকাশের পেমেন্ট গেটওয়ে যুক্ত করা, ডকার দিয়ে অ্যাপ হোস্ট করা এবং সফটওয়্যার ফার্মের ইন্টারভিউয়ের সেরা প্রস্তুতি।',
+          estimatedDays: 12,
+          mobileAccessible: true,
+          keyTopics: ['bKash Merchant Sandbox Integration', 'Handling Payment Callbacks & Webhooks', 'Dockerizing Laravel (Nginx + PHP-FPM)', 'Technical Agency Viva Questions'],
+          practicalTask_en: 'Deploy your complete Laravel eCommerce project with live bKash sandbox checkout on a VPS/cloud server and add the link to your CV.',
+          practicalTask_bn: 'তোমার লারাভেল ই-কমার্স প্রজেক্টটি বিকাশ স্যান্ডবক্স পেমেন্ট সহ লাইভ সার্ভারে ডিপ্লয় করে সিভিতে যুক্ত করো।'
         }
       ]
     }
   ],
   interviewQuestions: [
     {
-      id: 'laravel-q1',
-      question_en: 'What is the N+1 query problem in Laravel Eloquent? How do you detect and fix it?',
-      question_bn: 'লারাভেল এলকুয়েন্ট ওআরএম-এ N+1 কুয়েরি সমস্যা কী? এটি কীভাবে শনাক্ত করা যায় এবং কীভাবে সমাধান করতে হয়?',
-      category: 'Database Optimization',
-      whyAsked_en: 'The most popular Laravel interview question in Bangladeshi software agencies to test database optimization skills.',
-      whyAsked_bn: 'লারাভেল ইন্টারভিউয়ের সবচেয়ে গুরুত্বপূর্ণ প্রশ্ন যা প্রার্থীর ডেটাবেস পারফরম্যান্স ও সার্ভার অপ্টিমাইজেশনের দক্ষতা প্রমাণ করে।',
-      howToAnswer_en: 'The N+1 problem occurs when an application executes 1 initial database query to fetch a list of N records, and then inside a loop executes N additional queries to fetch related data for each record, resulting in N+1 total queries that crash the database under high traffic. For example, Post::all() followed by accessing $post->author in a foreach loop runs 1 query for posts and 100 separate queries for authors if there are 100 posts. To fix it: Use Eloquent Eager Loading with the with() method, such as Post::with(author)->get(). This reduces the entire operation to strictly 2 queries total, regardless of whether there are 10 or 10,000 records.',
-      howToAnswer_bn: 'N+1 কুয়েরি সমস্যা তখন তৈরি হয় যখন ডেটাবেস থেকে কোনো লিস্ট আনার পর লুপের ভেতর প্রতিটি আইটেমের সম্পর্কযুক্ত ডেটা আনতে আলাদা আলাদা কুয়েরি চালানো হয়। উদাহরণস্বরূপ: ১০০টি পোস্টের লেখক দেখানোর জন্য যদি প্রথমে সব পোস্ট আনা হয় (১টি কুয়েরি) এবং লুপের ভেতর প্রতিটি পোস্টের জন্য লেখকের নাম চাওয়া হয়, তবে ডেটাবেসে মোট ১০১টি (১+১০০) কুয়েরি রান হবে। হাজার হাজার ভিজিটর আসলে সার্ভার সাথে সাথে ক্র্যাশ করবে। সমাধান: লারাভেলের ইগার লোডিং (Eager Loading) মেথড with() ব্যবহার করতে হবে। যেমন: Post::with("author")->get()। এটি মাত্র ২টি কুয়েরিতে সব ডেটা মেমোরিতে নিয়ে আসে এবং ডেটাবেসের ওপর ৯০% চাপ কমিয়ে দেয়।',
-      commonMistakes_en: 'Thinking that Eloquent automatically joins tables behind the scenes for every relationship.',
-      commonMistakes_bn: 'মনে করা যে এলকুয়েন্ট নিজে থেকেই সবসময় জয়েন কুয়েরি চালিয়ে ডেটা আনে।'
+      id: 'lar-q1',
+      question_en: 'How does the streamlined application skeleton in Laravel 11/12 differ from legacy Laravel, and where are middlewares and exception handlers configured?',
+      question_bn: 'লারাভেল ১১/১২-এর নতুন স্ট্রিমলাইন্ড স্কেলেটন আগের ভার্সনগুলোর চেয়ে কীভাবে আলাদা এবং মিডলওয়্যার ও এরর হ্যান্ডলার এখন কোথায় কনফিগার করা হয়?',
+      category: 'Laravel 11 Architecture',
+      whyAsked_en: 'Verifies whether candidate is coding on modern late-2026 Laravel architecture or regurgitating outdated legacy structures.',
+      whyAsked_bn: 'প্রার্থী লারাভেলের আধুনিকতম ভার্সনে কাজ করে কি না তা নিশ্চিত করতে।',
+      howToAnswer_en: 'Laravel 11 introduced a massively streamlined directory structure to reduce file clutter. Legacy directories and files like app/Http/Kernel.php, app/Console/Kernel.php, and app/Exceptions/Handler.php have been completely removed. Routing, global middlewares, route aliases, scheduled console commands, and centralized exception handling are now all configured fluently inside the single unified bootstrap/app.php file using builder chains: Application::configure(basePath: dirname(__DIR__))->withRouting(...)->withMiddleware(function (Middleware $middleware) { ... })->withExceptions(function (Exceptions $exceptions) { ... })->create(). Config files are also consolidated and can be published only on demand.',
+      howToAnswer_bn: 'লারাভেল ১১-এ ফাইলের সংখ্যা কমিয়ে কোড স্ট্রাকচার অত্যন্ত হালকা ও পরিষ্কার করা হয়েছে। পুরনো Kernel.php এবং Handler.php ফাইলগুলো পুরোপুরি বাদ দেওয়া হয়েছে। এখন সমস্ত গ্লোবাল মিডলওয়্যার, রাউটিং, শিডিউল্ড কমান্ড এবং সেন্ট্রালাইজড এক্সেপশন হ্যান্ডলিং সরাসরি bootstrap/app.php ফাইলের ভেতরে ফ্লুয়েন্ট মেথড চেইনিং দিয়ে এক জায়গায় কনফিগার করা হয়। এছাড়া কনফিগ ফাইলগুলো অপ্রয়োজনীয়ভাবে ছড়িয়ে না রেখে শুধু প্রয়োজনমতো পাবলিশ করার অপশন রাখা হয়েছে।',
+      commonMistakes_en: 'Searching for Kernel.php in Laravel 11/12 to register custom middlewares.',
+      commonMistakes_bn: 'লারাভেল ১১-এর ভাইভায় মিডলওয়্যার যুক্ত করতে Kernel.php-এর কথা বলা।'
+    },
+    {
+      id: 'lar-q2',
+      question_en: 'What is the Eloquent N+1 Query Problem, how does eager loading (with()) solve it, and how do you automatically prevent it during local development?',
+      question_bn: 'এলকুয়েন্ট N+1 কুয়েরি সমস্যা কী, ইগার লোডিং (with()) কীভাবে এটি সমাধান করে এবং ডেভেলপমেন্টের সময় এটি স্বয়ংক্রিয়ভাবে কীভাবে রোধ করা যায়?',
+      category: 'Database Performance',
+      whyAsked_en: 'The benchmark database performance question asked in every Laravel technical interview.',
+      whyAsked_bn: 'ডেটাবেসের গতি শত গুণ বাড়িয়ে সার্ভার ক্র্যাশ প্রতিরোধ করার বাস্তব জ্ঞান দেখতে।',
+      howToAnswer_en: 'The N+1 query problem occurs when you fetch N parent records (e.g. 100 Books) with 1 SQL query, and then access a related model in a loop (e.g. foreach ($books as $book) { echo $book->author->name; }). This executes 1 initial query plus N additional queries (101 total database queries), causing severe database bottleneck and latency. Eager loading solves this by pre-loading relationships using Book::with("author")->get(). Eloquent executes exactly 2 queries: one for all books, and a single WHERE author_id IN (...) query for all authors, mapping them in memory. In local development, we prevent accidental lazy loading by adding Model::preventLazyLoading(!app()->isProduction()) inside AppServiceProvider boot(), which throws an immediate exception during testing if any unoptimized N+1 query is introduced.',
+      howToAnswer_bn: 'N+1 সমস্যা হলো ১০০টি বই ডেটাবেস থেকে আনার পর লুপের ভেতর প্রতিটি বইয়ের লেখকের নাম প্রিন্ট করতে গিয়ে আরও ১০০ বার আলাদা আলাদা ডেটাবেস কুয়েরি চালানো। এতে মোট ১০১টি কুয়েরি রান হয়ে সার্ভার মারাত্মক স্লো হয়ে যায়। ইগার লোডিং সমাধান করে Book::with("author")->get() দিয়ে। এটি প্রথমে সব বই আনে এবং দ্বিতীয় কুয়েরিতে WHERE IN দিয়ে একবারে সব লেখকের ডাটা মেমরিতে লোড করে, ফলে মাত্র ২টি কুয়েরিতেই সব কাজ শেষ হয়। আর ডেভেলপমেন্টের সময় অসাবধানতাবশত যেন কেউ এই ভুল না করে, সেজন্য AppServiceProvider-এ Model::preventLazyLoading() চালু রাখলে কোড রান করার সাথে সাথেই এরর দিয়ে ভুল ধরিয়ে দেয়।',
+      commonMistakes_en: 'Using load() inside loops instead of eager loading with() before executing the query.',
+      commonMistakes_bn: 'লুপের ভেতরে load() চালানো যা সমস্যা সমাধান না করে কুয়েরি সংখ্যা বাড়িয়ে দেয়।'
+    },
+    {
+      id: 'lar-q3',
+      question_en: 'What are the architectural differences between Laravel Livewire 3 and Inertia.js with React, and when should an agency choose each?',
+      question_bn: 'লারাভেল লাইভওয়্যার ৩ ও ইনারশিয়া.জেএস (রিয়্যাক্ট) এর মধ্যকার পার্থক্য কী এবং এজেন্সির প্রজেক্টে কখন কোনটি বেছে নেওয়া উচিত?',
+      category: 'Full-Stack Architecture',
+      whyAsked_en: 'Assesses whether candidate can select the most cost-effective and productive stack for client requirements.',
+      whyAsked_bn: 'ক্লায়েন্টের বাজেট ও প্রোজেক্টের ধরনের ওপর ভিত্তি করে সঠিক প্রযুক্তি বেছে নেওয়ার সিদ্ধান্ত নেওয়ার ক্ষমতা যাচাই করতে।',
+      howToAnswer_en: 'Livewire 3 is a server-driven reactive framework where component logic and state live entirely in PHP on the server. User interactions trigger lightweight AJAX morphing requests that return updated HTML snippets, accompanied by wire:navigate for single-page app feel without writing JavaScript. It is the fastest choice for internal portals, admin systems, and rapid MVPs with small development teams. Inertia.js acts as an adapter allowing you to build a true single-page application (SPA) using React or Vue on the frontend while using classic Laravel controllers and routing on the backend without building a REST API. Inertia is preferred for complex, highly interactive, animations-heavy consumer web apps where client-side state manipulation (offline support, dragging, complex canvas) justifies a dedicated JavaScript component tree.',
+      howToAnswer_bn: 'লাইভওয়্যার ৩ হলো সার্ভার-চালিত ফ্রেমওয়ার্ক যেখানে সমস্ত লজিক পিএইচপিতে থাকে এবং পেজ রিলোড ছাড়াই সার্ভার থেকে সরাসরি এইচটিএমএল আপডেট হয়ে যায়। আলাদা কোনো জাভাস্ক্রিপ্ট না লিখে দ্রুত ই-কমার্স, স্কুল বা হাসপাতাল ম্যানেজমেন্টের মতো প্রজেক্ট ডেলিভারি দেওয়ার জন্য লাইভওয়্যার সেরা। অন্যদিকে ইনারশিয়া.জেএস ক্লাসিক লারাভেল কন্ট্রোলারের সাথে ফ্রন্টএন্ডে রিয়্যাক্ট বা ভিউ যুক্ত করে দেয় কোনো আলাদা এপিআই বানানো ছাড়াই। যেসব কনজিউমার অ্যাপে প্রচুর ক্লায়েন্ট-সাইড ড্র্যাগ অ্যান্ড ড্রপ বা জটিল অ্যানিমেশন থাকে, সেখানে ইনারশিয়া রিয়্যাক্ট ব্যবহার করা বেশি কার্যকর।',
+      commonMistakes_en: 'Thinking Livewire requires React or Vue; it relies purely on PHP and lightweight Alpine.js.',
+      commonMistakes_bn: 'মনে করা যে লাইভওয়্যার চালাতে রিয়্যাক্ট জানা জরুরি, এটি সম্পূর্ণ পিএইচপি ও ব্লেডের ওপর চলে।'
+    },
+    {
+      id: 'lar-q4',
+      question_en: 'How do background queues in Laravel work with Redis, and how does Laravel Horizon help monitor job retries and failed transactions?',
+      question_bn: 'লারাভেল ব্যাকগ্রাউন্ড কিউ কীভাবে রেডিসের সাথে কাজ করে এবং ফেইল্ড ট্রানজ্যাকশন ও রিট্রাই মনিটর করতে লারাভেল হরাইজন কীভাবে সাহায্য করে?',
+      category: 'Queues & Scaling',
+      whyAsked_en: 'Tests whether candidate understands asynchronous processing so slow operations like payment processing or email dispatch never freeze the UI.',
+      whyAsked_bn: 'ভারী কাজের কারণে ওয়েবসাইট যাতে গ্রাহকদের জন্য ধীরগতির না হয় তা নিশ্চিত করার আর্কিটেকচারাল জ্ঞান দেখতে।',
+      howToAnswer_en: 'When a controller dispatches a job (e.g. GenerateInvoicePdf::dispatch($order)), Laravel serializes the job payload and pushes it onto an in-memory Redis list rather than executing it synchronously. Background queue workers (php artisan queue:work redis) continuously pop jobs and execute them independently from the user HTTP request, keeping API response latency under 100ms. If an external SMS gateway or payment webhook fails, the job can be configured with automatic retries ($tries = 3) and exponential backoff ($backoff = [10, 60, 300] seconds). Laravel Horizon provides an enterprise dashboard for Redis queues displaying real-time job throughput, memory utilization, runtime metrics, and allowing one-click retries for failed jobs directly from a clean web UI.',
+      howToAnswer_bn: 'লারাভেলে কোনো ভারী কাজ আসলে (যেমন পিডিএফ ইনভয়েস তৈরি বা ইমেইল পাঠানো) কন্ট্রোলার কাজটি সাথে সাথে না করে রেডিস মেমরিতে জমা করে দেয় এবং ব্যবহারকারীকে তৎক্ষণাৎ সাকসেস মেসেজ দেখিয়ে দেয়। ব্যাকগ্রাউন্ডে কিউ ওয়ার্কার রেডিস থেকে এক এক করে কাজ সম্পন্ন করে। যদি কোনো কারণে এসএমএস পাঠানো ব্যর্থ হয়, তবে অটো-রিট্রাই কনফিগার করে ১০ সেকেন্ড বা ১ মিনিট পর পুনরায় চেষ্টা করার নিয়ম রাখা যায়। আর লারাভেল হরাইজন একটি দৃষ্টিনন্দন রিয়েল-টাইম ড্যাশবোর্ড দেয় যার মাধ্যমে কোন জব ফেইল করল তা এক ক্লিকে দেখা যায় এবং পুনরায় রিট্রাই করা যায়।',
+      commonMistakes_en: 'Running synchronous database queue drivers in high-traffic production environments instead of Redis in-memory queues.',
+      commonMistakes_bn: 'লাইভ সাইটে রেডিসের বদলে ডেটাবেস কিউ ড্রাইভার ব্যবহার করে ডেটাবেস সার্ভার স্লো করে ফেলা।'
     }
   ],
   freeCerts: [
     {
-      id: 'cert-laravel-bootcamp',
-      title_en: 'Official Laravel Bootcamp and Laracasts Foundations',
-      title_bn: 'লারাভেল অফিশিয়াল বুটক্যাম্প ফ্রি কোর্স ও গাইড',
-      provider: 'Laravel LLC and Laracasts',
-      url: 'https://bootcamp.laravel.com/',
+      id: 'laracasts-laravel-beginner',
+      title_en: 'Laracasts: Laravel 11 from Scratch (Comprehensive Free Course)',
+      title_bn: 'ল্যারাকাস্টস: লারাভেল ১১ ফ্রম স্ক্র্যাচ অফিশিয়াল কোর্স',
+      provider: 'Laracasts',
+      url: 'https://laracasts.com/series/30-days-to-learn-laravel-11',
+      mobileAccessible: true,
+      language: 'en',
+      durationHours: 30,
+      cost: '100% Free',
+      isBdLocal: false,
+      category: 'international_free',
+      relevance_en: 'The global benchmark learning platform for PHP and Laravel created by Jeffrey Way covering modern routing, Blade, and Eloquent.',
+      relevance_bn: 'বিশ্বখ্যাত জেফরি ওয়ে পরিচালিত লারাভেলের অফিশিয়াল স্ট্যান্ডার্ড প্র্যাকটিক্যাল কোর্স।'
+    },
+    {
+      id: 'php-the-right-way',
+      title_en: 'PHP: The Right Way (Modern PHP 8+ Standards)',
+      title_bn: 'পিএইচপি: দ্য রাইট ওয়ে (আধুনিক স্ট্যান্ডার্ড গাইড)',
+      provider: 'The PHP League',
+      url: 'https://phptherightway.com/',
       mobileAccessible: true,
       language: 'en',
       durationHours: 20,
       cost: '100% Free',
-      relevance_en: 'Official step-by-step full-stack tutorial directly from Taylor Otwell and the Laravel core team.',
-      relevance_bn: 'লারাভেলের প্রতিষ্ঠাতা টেইলর অটওয়েলের অফিশিয়াল বুটক্যাম্প ও লাইভ প্রজেক্ট গাইড।'
+      isBdLocal: false,
+      category: 'international_free',
+      relevance_en: 'The official community guide for clean OOP coding standards, PSR adherence, dependency injection, and secure practices in modern PHP.',
+      relevance_bn: 'আধুনিক পিএইচপির সেরা কোডিং প্র্যাকটিস ও অবজেক্ট ওরিয়েন্টেড গাইডলাইন।'
+    },
+    {
+      id: 'filament-official-course',
+      title_en: 'Filament Official: Rapid Admin Dashboard Development',
+      title_bn: 'ফিলামেন্ট অফিশিয়াল: র‍্যাপিড এডমিন ড্যাশবোর্ড কোর্স',
+      provider: 'FilamentPHP',
+      url: 'https://filamentphp.com/docs',
+      mobileAccessible: true,
+      language: 'en',
+      durationHours: 15,
+      cost: '100% Free',
+      isBdLocal: false,
+      category: 'international_free',
+      relevance_en: 'Official interactive documentation and tutorials for building rapid full-stack dashboards, tables, and form builders.',
+      relevance_bn: 'ফিলামেন্টের নিজস্ব অফিশিয়াল ডকুমেন্টেশন ও এডমিন প্যানেল প্রজেক্ট টিউটোরিয়াল।'
     }
   ]
 };

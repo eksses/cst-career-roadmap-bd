@@ -2,368 +2,351 @@ import type { CareerTrack } from '../../../shared/types.js';
 
 export const frontendFullstackWebTrack: Omit<CareerTrack, 'id'> = {
   slug: 'frontend-fullstack-web',
-  title_en: 'Frontend and Full-Stack Web Development',
-  title_bn: 'ফ্রন্টএন্ড ও ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট',
-  summary_en: 'Modern JavaScript, TypeScript, React, Node.js, Express, PostgreSQL, and RESTful API architecture built for scalable web applications and SaaS platforms.',
-  summary_bn: 'আধুনিক জাভাস্ক্রিপ্ট, টাইপস্ক্রিপ্ট, রিয়্যাক্ট, নোড, এক্সপ্রেস ও পোস্টগ্রেসকিউএল ডেটাবেস দিয়ে পূর্ণাঙ্গ ওয়েব অ্যাপ্লিকেশন ও সফটওয়্যার তৈরির ট্র্যাক।',
-  pivotAdvice_en: 'Full-stack development has high career ceiling and remote earning potential, but requires at least 8 to 12 months of daily coding discipline. If you do not have a standard computer (8GB RAM) or need to earn money within 90 days, start with ISP networking or IT support first.',
-  pivotAdvice_bn: 'ফুল-স্ট্যাক ডেভেলপমেন্টে উচ্চ বেতন ও রিমোট জবের দারুণ সুযোগ রয়েছে, তবে এজন্য প্রতিদিন কয়েক ঘণ্টা কোডিংয়ের ধৈর্য প্রয়োজন। তোমার যদি বর্তমানে ল্যাপটপ না থাকে কিংবা ৩ মাসের মধ্যে আয় করা অত্যন্ত জরুরি হয়, তবে প্রথমে আইটি সাপোর্ট বা নেটওয়ার্কিং দিয়ে শুরু করা বুদ্ধিমানের কাজ হবে।',
+  title_en: 'Frontend and Full-Stack Software Engineering',
+  title_bn: 'ফ্রন্টএন্ড ও ফুল-স্ট্যাক সফটওয়্যার ইঞ্জিনিয়ারিং (২০২৬ এডিশন)',
+  summary_en: 'Calibrated for the 2026 post-AI software landscape. Master React 19, TypeScript strict mode, Next.js 15, Node.js 22, PostgreSQL with pgvector, and AI agent integration tools.',
+  summary_bn: '২০২৬ সালের পোস্ট-এআই সফটওয়্যার শিল্পের চাহিদানুযায়ী সাজানো। রিয়্যাক্ট ১৯, টাইপস্ক্রিপ্ট, নেক্সট.জেএস ১৫, পোস্টগ্রেসকিউএল ও এআই টুলিং দিয়ে আধুনিক ফুল-স্ট্যাক অ্যাপ্লিকেশন তৈরির ট্র্যাক।',
+  pivotAdvice_en: 'In 2026, writing repetitive boilerplate code is handled in seconds by AI assistants like Cursor and Claude. Companies in Dhaka and remote firms hire engineers who understand system architecture, data modeling, security auditing, and automated testing. If you lack a PC (8GB RAM), start with Linux or ISP networking first.',
+  pivotAdvice_bn: '২০২৬ সালে সাধারণ কোড লেখার কাজ এআই সহকারীরা নিমেষেই করে ফেলে। তাই ঢাকার আধুনিক সফটওয়্যার কোম্পানি ও রিমোট ফার্মগুলো এখন সিস্টেম আর্কিটেকচার, সিকিউরিটি অডিট ও টেস্টিং বোঝে এমন প্রকৌশলীদের নিয়োগ দেয়। তোমার যদি বর্তমানে পিসি না থাকে, তবে প্রথমে আইএসপি নেটওয়ার্কিং বা লিনাক্স দিয়ে শুরু করা সুবিধাজনক।',
   minPcRequired: 'standard',
   dayToDay_en: [
-    'Writing responsive UI components in React with Tailwind CSS and state management.',
-    'Designing RESTful APIs and middleware using Node.js, Express, and Zod schema validation.',
-    'Connecting PostgreSQL or MongoDB databases with Drizzle ORM or Prisma for reliable data persistence.',
-    'Debugging client errors in Chrome DevTools, network tab, and server-side logs.',
-    'Writing clean Git commits, managing GitHub pull requests, and deploying to Vercel or cloud VPS.'
+    'Architecting React 19 Server and Client Components with Next.js 15 App Router and Tailwind v4.',
+    'Designing type-safe REST and streaming endpoints using Node.js 22, Fastify/Express, and Zod validation.',
+    'Building relational schemas and vector search queries in PostgreSQL 17 using Drizzle ORM and pgvector.',
+    'Auditing and verifying AI-assisted code for security flaws, race conditions, and performance bottlenecks.',
+    'Writing automated unit and integration tests with Vitest and Playwright within GitHub Actions CI/CD pipelines.'
   ],
   dayToDay_bn: [
-    'রিয়্যাক্ট ও টেইলউইন্ড সিএসএস দিয়ে আধুনিক ও রেসপনসিভ ইউজার ইন্টারফেস তৈরি করা।',
-    'নোড এবং এক্সপ্রেস দিয়ে সিকিউর রেস্টফুল এপিআই (REST API) ও ডেটা ভ্যালিডেশন লেখা।',
-    'পোস্টগ্রেসকিউএল ডেটাবেসের টেবিল ডিজাইন এবং ওআরএম দিয়ে ডেটাবেস কুয়েরি পরিচালনা করা।',
-    'ব্রাউজারের কনসোল ও নেটওয়ার্ক ট্যাব দেখে এরর ডিবাগিং করা।',
-    'গিট ও গিটহাব ব্যবহার করে কোড ভার্সন কন্ট্রোল করা এবং ক্লাউড হোস্টিংয়ে ওয়েবসাইট ডিপ্লয় করা।'
+    'রিয়্যাক্ট ১৯ ও নেক্সট.জেএস ১৫ অ্যাপ রাউটার দিয়ে আধুনিক ওয়েব কম্পোনেন্ট তৈরি করা।',
+    'নোড.জেএস ২২ ও ড্রপ-ইন ওআরএম (Drizzle) দিয়ে টাইপ-সেফ ব্যাকএন্ড এপিআই ও স্ট্রিমিং এন্ডপয়েন্ট তৈরি।',
+    'পোস্টগ্রেসকিউএল ১৭ ডেটাবেস ডিজাইন এবং এআই সিমিলারিটি সার্চের জন্য pgvector পরিচালনা।',
+    'এআই-উৎপাদিত কোডের ভুলত্রুটি ও নিরাপত্তা ঝুঁকি যাচাই (Code Audit) এবং ডিবাগিং করা।',
+    'ভাইটেস্ট (Vitest) ও প্লে-রাইট (Playwright) দিয়ে স্বয়ংক্রিয় টেস্টিং ও সিআই/সিডি অটোমেশন নিশ্চিত করা।'
   ],
   mustHaveSkills: [
     {
-      id: 'js-ts-core',
-      name: 'JavaScript (ES6+) and TypeScript Foundations',
+      id: 'js-ts-2026',
+      name: 'TypeScript Strict & Modern JavaScript (ES2026)',
       category: 'Language Core',
       importance: 'Essential',
-      description_en: 'Async/await, closures, promises, array methods (map, filter, reduce), and static type interfaces.',
-      description_bn: 'প্রমিজ, অ্যাসিনক্রোনাস জাভাস্ক্রিপ্ট, এরে মেথড এবং টাইপস্ক্রিপ্ট টাইপ সিস্টেম।'
+      description_en: 'Strict type inference, generics, async generators, promises, and modern memory patterns.',
+      description_bn: 'কঠোর টাইপস্ক্রিপ্ট, জেনেরিক্স ও আধুনিক অ্যাসিনক্রোনাস জাভাস্ক্রিপ্ট প্যাটার্ন।'
     },
     {
-      id: 'react-ecosystem',
-      name: 'React and Modern Component Architecture',
+      id: 'react-19-next-15',
+      name: 'React 19 & Next.js 15 App Architecture',
       category: 'Frontend',
       importance: 'Essential',
-      description_en: 'Hooks (useState, useEffect, useMemo), custom hooks, context API, and Framer Motion transitions.',
-      description_bn: 'রিয়্যাক্ট হুকস, স্টেট ম্যানেজমেন্ট, কনটেক্সট এপিআই ও মসৃণ ইউআই ট্রানজিশন।'
+      description_en: 'React Server Components, Actions, optimistic mutations, Suspense boundaries, and Tailwind v4.',
+      description_bn: 'রিয়্যাক্ট ১৯ সার্ভার কম্পোনেন্টস, একশনস ও টেইলউইন্ড সিএসএস ভার্সন ৪।'
     },
     {
-      id: 'node-express-backend',
-      name: 'Node.js, Express and RESTful APIs',
+      id: 'backend-pg-drizzle',
+      name: 'Node.js 22 & PostgreSQL 17 (Drizzle + pgvector)',
       category: 'Backend',
       importance: 'Essential',
-      description_en: 'Router modularity, JWT authentication, CORS, error handling middleware, and rate limiting.',
-      description_bn: 'নোড ও এক্সপ্রেস দিয়ে সিকিউর রাউটিং, জেডব্লিউটি অথেনটিকেশন ও এরর হ্যান্ডলিং।'
+      description_en: 'Type-safe Drizzle schema modeling, migrations, connection pooling, and semantic vector indexing.',
+      description_bn: 'পোস্টগ্রেসকিউএল রিলেশনাল টেবিল মডেলিং, মাইগ্রেশন ও ড্রপ-ইন ওআরএম কুয়েরি।'
     },
     {
-      id: 'relational-database-orm',
-      name: 'PostgreSQL and Drizzle/Prisma ORM',
-      category: 'Database',
+      id: 'ai-tooling-audit',
+      name: 'AI Agent Tooling & Code Auditing (2026 Baseline)',
+      category: 'Modern Workflow',
       importance: 'Essential',
-      description_en: 'Foreign key relations, indexing, migrations, ACID transactions, and query optimization.',
-      description_bn: 'পোস্টগ্রেসকিউএল রিলেশনশিপ, ইনডেক্সিং, ডেটাবেস মাইগ্রেশন ও দ্রুতগতির কুয়েরি।'
+      description_en: 'Orchestrating AI tools, prompt context management, Model Context Protocol (MCP), and security auditing.',
+      description_bn: 'এআই কোডিং এজেন্টের সঠিক ব্যবহার, কোড ভেরিফিকেশন ও নিরাপত্তা নিশ্চিতকরণ।'
     },
     {
-      id: 'git-collaboration',
-      name: 'Git Version Control and GitHub Workflows',
-      category: 'DevOps',
+      id: 'automated-testing-cicd',
+      name: 'Automated Testing (Vitest & Playwright) & CI/CD',
+      category: 'Quality Assurance',
       importance: 'Essential',
-      description_en: 'Branching, resolving merge conflicts, pulling, pushing, and writing descriptive commit messages.',
-      description_bn: 'গিটহাব ব্রাঞ্চ তৈরি, কনফ্লিক্ট সমাধান ও দলগতভাবে কোড শেয়ার করার নিয়ম।'
+      description_en: 'Test-driven development, end-to-end browser tests, Docker containerization, and GitHub Actions.',
+      description_bn: 'স্বয়ংক্রিয় টেস্ট তৈরি, ডকার কনটেইনার ও গিটহাব একশন সিআই/সিডি অটোমেশন।'
     }
   ],
   marketData: {
     bangladesh: {
-      region: 'Dhaka (Banani, Gulshan, Uttara, Dhanmondi) and Remote BD',
-      entrySalary: { min: 25000, max: 45000, currency: 'BDT', formatted: '25,000 - 45,000 BDT' },
-      midSalary: { min: 55000, max: 110000, currency: 'BDT', formatted: '55,000 - 110,000 BDT' },
-      seniorSalary: { min: 120000, max: 250000, currency: 'BDT', formatted: '120,000 - 250,000 BDT' },
+      region: 'Dhaka (Gulshan, Banani, Uttara, Dhanmondi) & Hybrid/Remote BD',
+      entrySalary: { min: 30000, max: 50000, currency: 'BDT', formatted: '30,000 - 50,000 BDT' },
+      midSalary: { min: 65000, max: 135000, currency: 'BDT', formatted: '65,000 - 135,000 BDT' },
+      seniorSalary: { min: 150000, max: 300000, currency: 'BDT', formatted: '150,000 - 300,000 BDT' },
       hiringSectors: [
-        'Software Development Agencies and Offshore IT firms in Dhaka',
-        'Fintech and Digital Wallet Platforms (bKash, Nagad, Pathao, Chaldal)',
-        'E-Commerce Companies, EdTech Startups, and Corporate Tech Divisions',
-        'Enterprise ERP and HealthTech Vendors'
+        'Fintech Platforms & Mobile Wallets (bKash, Nagad, Upay)',
+        'E-Commerce & Logistics Giants (Chaldal, Pathao, Daraz)',
+        'Offshore Software Houses & AI Agencies in Dhaka (Brain Station 23, Enosis, TigerIT)',
+        'HealthTech, EdTech & Enterprise SaaS Startups'
       ],
       cvExpectations: [
-        'Live, deployed full-stack portfolio projects with GitHub source code links',
-        'Deep understanding of JavaScript fundamentals without copying code blindly',
-        'Clean component structure and responsive mobile design capability',
-        'Basic understanding of SQL queries and REST endpoints'
+        'Live deployed Next.js 15 / React 19 full-stack applications with public GitHub source code',
+        'Ability to explain database relations, index optimizations, and architectural tradeoffs in person',
+        'Demonstrated automated test suites (Vitest/Playwright) to prove code reliability',
+        'Effective use of modern AI engineering tools combined with rock-solid security awareness'
       ],
-      localDemandSummary_en: 'Software companies in Dhaka care very little about whether you studied in a university or polytechnic. If your GitHub repository shows well-architected full-stack apps with clean commits, you will get technical interview calls.',
-      localDemandSummary_bn: 'ঢাকার আধুনিক সফটওয়্যার কোম্পানিগুলো ডিগ্রির চেয়ে বাস্তব কোডিং দক্ষতা বেশি মূল্যায়ন করে। তোমার গিটহাবে যদি ৩-৪টি লাইভ ও গোছানো ফুল-স্ট্যাক প্রজেক্ট থাকে, তবে ডিপ্লোমা পাশ করেই আকর্ষণীয় বেতনে চাকরি পাওয়া সম্ভব।'
+      localDemandSummary_en: 'In late 2026, Dhaka software companies evaluate candidates by technical depth, problem-solving reasoning, and practical GitHub repositories. A CST diploma holder with verified live full-stack projects is recruited on equal terms with university graduates.',
+      localDemandSummary_bn: '২০২৬ সালের সফটওয়্যার বাজারে সনদের চেয়ে বাস্তব প্রজেক্টের গভীরতা বেশি মূল্যবান। তোমার গিটহাবে যদি টেস্ট-কাভার্ড, সুরক্ষিত ও লাইভ ফুল-স্ট্যাক প্রজেক্ট থাকে, তবে ডিপ্লোমা শেষ করেই সম্মানজনক বেতনে সফটওয়্যার ইঞ্জিনিয়ার হিসেবে ক্যারিয়ার শুরু করা সম্ভব।'
     },
     targetCountries: [
       {
         region: 'Europe',
-        countryName_en: 'Germany, Netherlands and Estonia',
+        countryName_en: 'Germany, Netherlands, and Estonia',
         countryName_bn: 'জার্মানি, নেদারল্যান্ডস ও এস্তোনিয়া',
         demandLevel: 'High',
         demandLevel_bn: 'উচ্চ',
-        visaReality_en: 'EU Blue Card or Tech Visa available for skilled developers with 3+ years experience and English fluency, even with polytechnic credentials if portfolio is exceptional.',
-        visaReality_bn: 'ইংরেজি দক্ষতা ও ৩ বছরের প্রজেক্ট অভিজ্ঞতা থাকলে ইউরোপীয় টেক ভিসার দারুণ সুযোগ রয়েছে।',
-        averageSalaryUsdOrLocal: '45,000 - 75,000 EUR / year (approx 5,000,000 - 8,500,000 BDT)',
+        visaReality_en: 'EU Blue Card available for skilled developers with 3+ years demonstrable experience and English proficiency, irrespective of diploma degree status if portfolio demonstrates high architectural standard.',
+        visaReality_bn: 'ইংরেজি দক্ষতা ও ৩ বছরের বাস্তব প্রজেক্ট পোর্টফোলিও থাকলে ইউরোপীয় ব্লু-কার্ড টেক ভিসার চমৎকার সুযোগ রয়েছে।',
+        averageSalaryUsdOrLocal: '50,000 - 85,000 EUR / year (approx 6,500,000 - 11,000,000 BDT)',
         requiredExperienceYears: '3 to 5 years'
       },
       {
-        region: 'North America',
-        countryName_en: 'United States and Canada (Remote Contract)',
-        countryName_bn: 'যুক্তরাষ্ট্র ও কানাডা (রিমোট কন্ট্রাক্ট)',
+        region: 'Middle East',
+        countryName_en: 'UAE (Dubai) and Saudi Arabia (Riyadh)',
+        countryName_bn: 'সংযুক্ত আরব আমিরাত (দুবাই) ও সৌদি আরব (রিয়াদ)',
         demandLevel: 'High',
         demandLevel_bn: 'উচ্চ',
-        visaReality_en: 'Direct immigration requires degree equivalence, but remote independent contractor hiring via Deel or Remote.com is widespread.',
-        visaReality_bn: 'রিমোট কন্ট্রাক্টর হিসেবে আন্তর্জাতিক প্ল্যাটফর্মের মাধ্যমে সরাসরি কাজ করার সুযোগ অবারিত।',
-        averageSalaryUsdOrLocal: '$2,500 - $6,000 / month (approx 300,000 - 720,000 BDT)',
-        requiredExperienceYears: '2+ years'
+        visaReality_en: 'Rapid digitization and fintech expansion in Riyadh and Dubai with direct tax-free employment contracts for full-stack and cloud engineers.',
+        visaReality_bn: 'দুবাই ও রিয়াদে ট্যাক্স-ফ্রি আকর্ষণীয় বেতনে পূর্ণাঙ্গ কর্মসংস্থানের সুযোগ।',
+        averageSalaryUsdOrLocal: '12,000 - 24,000 AED / month (approx 400,000 - 800,000 BDT)',
+        requiredExperienceYears: '2 to 4 years'
       }
     ],
     remote: {
       entryBarrier: 'Moderate',
       entryBarrier_bn: 'মাঝারি',
-      monthlyRangeUsd: '$800 - $3,500 / month',
-      competitionLevel: 'High global competition, won by building specialized full-stack products',
-      competitionLevel_bn: 'বৈশ্বিক প্রতিযোগিতা থাকে, যা নিজস্ব ইউনিক প্রজেক্ট দিয়ে জয় করতে হয়',
-      englishRequirement: 'Fluent written technical communication and clear asynchronous video updates',
-      englishRequirement_bn: 'চমৎকার লিখিত ইংরেজি ও মিটিংয়ে স্পষ্ট কথা বলার দক্ষতা আবশ্যক',
+      monthlyRangeUsd: '$1,000 - $4,000 USD',
+      competitionLevel: 'Moderate to High',
+      competitionLevel_bn: 'মাঝারি থেকে তীব্র',
+      englishRequirement: 'Professional English for code reviews, architecture syncs, and pull requests',
+      englishRequirement_bn: 'কোড রিভিউ ও টেকনিক্যাল মিটিংয়ের উপযোগী পেশাদার ইংরেজি',
       realities_en: [
-        'Clients hire for problem solving rather than hours logged',
-        'TypeScript and modern React frameworks dominate remote job boards',
-        'Portfolio quality matters 10x more than certifications'
+        'Remote startups in the US, Europe, and Singapore hire full-stack developers on asynchronous contracts.',
+        'A verified Next.js 15 app with passing Playwright and Vitest test suites on GitHub earns immediate trust.'
       ],
       realities_bn: [
-        'ক্লায়েন্টরা কেবল কত ঘণ্টা কাজ করছ তা দেখে না, কত দ্রুত সমাধান দিচ্ছ তা দেখে',
-        'আন্তর্জাতিক বাজারে টাইপস্ক্রিপ্ট ও রিয়্যাক্টের চাহিদা সবচেয়ে বেশি',
-        'সার্টিফিকেটের চেয়ে লাইভ প্রজেক্ট ও পরিষ্কার গিটহাব কোড দশগুণ বেশি গুরুত্বপূর্ণ'
+        'আমেরিকা, ইউরোপ ও সিঙ্গাপুরের স্টার্টআপগুলো ফুল-স্ট্যাক রিমোট ডেভেলপার নিয়মিত হায়ার করে।',
+        'গিটহাবে টেস্ট-কাভার্ড নেক্সট.জেএস ১৫ প্রজেক্ট থাকলে ইন্টারভিউ কল নিশ্চিত করা সহজ হয়।'
       ]
     }
   },
   roadmapPhases: [
     {
       phaseNumber: 1,
-      phaseTitle_en: 'Phase 1: Semantic HTML, Modern CSS and JavaScript Foundations',
-      phaseTitle_bn: 'প্রথম পর্ব: এইচটিএমএল, আধুনিক সিএসএস ও জাভাস্ক্রিপ্ট ভিত্তি',
-      phaseSubtitle_en: 'Day 1 to 30: Layout systems, DOM manipulation, and ES6+ programming.',
-      phaseSubtitle_bn: '১ থেকে ৩০ দিন: ফ্লেক্সবক্স, গ্রিড, ডম ম্যানিপুলেশন ও আধুনিক জাভাস্ক্রিপ্ট।',
+      phaseTitle_en: 'Phase 1: Modern JavaScript, TypeScript Strict & DOM Mastery',
+      phaseTitle_bn: 'প্রথম পর্ব: আধুনিক জাভাস্ক্রিপ্ট ও টাইপস্ক্রিপ্ট ফান্ডামেন্টালস',
+      phaseSubtitle_en: 'Day 1 to 30: ES2026, TypeScript strict mode, responsive Tailwind v4, and Git.',
+      phaseSubtitle_bn: '১ থেকে ৩০ দিন: আধুনিক জাভাস্ক্রিপ্ট, কঠোর টাইপস্ক্রিপ্ট, টেইলউইন্ড ও গিটহাব।',
       durationWeeks: 4,
       modules: [
         {
-          id: 'mod-html-css-flex',
-          title_en: 'Semantic HTML5 and Modern CSS Flexbox/Grid',
-          title_bn: 'সিমান্টিক এইচটিএমএল ও আধুনিক ফ্লেক্সবক্স/গ্রিড লেআউট',
-          description_en: 'Accessible web markup, responsive media queries, CSS variables, and modern flexbox layouts.',
-          description_bn: 'মোবাইল ও পিসিতে সুন্দরভাবে ফিট হওয়া রেসপনসিভ ওয়েবসাইট স্ট্রাকচার তৈরি।',
+          id: 'mod-html-css-tailwind-v4',
+          title_en: 'Semantic Markup, Responsive Layouts & Tailwind CSS v4',
+          title_bn: 'সিমান্টিক এইচটিএমএল ও আধুনিক টেইলউইন্ড সিএসএস ভার্সন ৪',
+          description_en: 'Building high-performance mobile-first responsive web interfaces with modern CSS grid, flexbox, and Tailwind v4 engine.',
+          description_bn: 'মোবাইল ও ডেসকটপে নিখুঁত রেসপনসিভ ওয়েব ইন্টারফেস ও টেইলউইন্ড ডিজাইন তৈরি।',
           estimatedDays: 10,
           mobileAccessible: false,
-          keyTopics: ['Flexbox justify/align', 'CSS Grid template areas', 'Mobile-first media queries'],
-          practicalTask_en: 'Recreate a clean Bangladeshi university or newspaper homepage layout from scratch.',
-          practicalTask_bn: 'একটি পরিচ্ছন্ন বাংলাদেশি নিউজ পোর্টাল বা কলেজের হোমপেজ লেআউট তৈরি করো।'
+          keyTopics: ['Flexbox and CSS Grid layout', 'Tailwind v4 theme variables', 'Mobile-first breakpoints'],
+          practicalTask_en: 'Build an accessible, high-speed polytechnic student portal landing page with dark mode support.',
+          practicalTask_bn: 'একটি ডার্ক-মোড সমৃদ্ধ আধুনিক পলিটেকনিক স্টুডেন্ট পোর্টাল হোমপেজ তৈরি করো।'
         },
         {
-          id: 'mod-js-engine-basics',
-          title_en: 'JavaScript Fundamentals and DOM Interactivity',
-          title_bn: 'জাভাস্ক্রিপ্ট ফান্ডামেন্টালস ও ব্রাউজার ইন্টারেকশন',
-          description_en: 'Variables, loops, array methods (map, filter, reduce), event listeners, and local storage persistence.',
-          description_bn: 'ডাটা টাইপ, ফাংশন, এরে ফিল্টার, ক্লিক ইভেন্ট এবং ব্রাউজারের লোকাল স্টোরেজ ব্যবহার।',
+          id: 'mod-ts-js-core-2026',
+          title_en: 'TypeScript Strict Mode & Async JavaScript Foundations',
+          title_bn: 'টাইপস্ক্রিপ্ট স্ট্রিক্ট মোড ও আধুনিক অ্যাসিনক্রোনাস প্রোগ্রামিং',
+          description_en: 'Variables, closures, array methods, async/await, promises, generics, and strict type safety without using any.',
+          description_bn: 'টাইপস্ক্রিপ্ট ইন্টারফেস, জেনেরিক্স, এরে মেথড ও অ্যাসিনক্রোনাস প্রমিজ হ্যান্ডলিং।',
           estimatedDays: 20,
           mobileAccessible: false,
-          keyTopics: ['Arrow functions', 'Destructuring and spread operator', 'Localstorage state saving'],
-          practicalTask_en: 'Build an offline-capable CST Student CGPA and Semester Credit Calculator with local storage save.',
-          practicalTask_bn: 'সিএসটি শিক্ষার্থীদের সেমিস্টার জিপিএ ও ক্রেডিট হিসাব করার কার্যকর ক্যালকুলেটর বানাও।'
+          keyTopics: ['TypeScript interfaces & types', 'Promises and async/await error handling', 'Array methods (map, filter, reduce)'],
+          practicalTask_en: 'Build an offline-first CST Semester CGPA & Credit calculator with LocalStorage type-safe schema.',
+          practicalTask_bn: 'টাইপস্ক্রিপ্ট ব্যবহার করে একটি নির্ভুল সেমিস্টার জিপিএ ও ক্রেডিট ক্যালকুলেটর বানাও।'
         }
       ]
     },
     {
       phaseNumber: 2,
-      phaseTitle_en: 'Phase 2: React Component Architecture and State Mastery',
-      phaseTitle_bn: 'দ্বিতীয় পর্ব: রিয়্যাক্ট ফ্রন্টএন্ড আর্কিটেকচার ও স্টেট হ্যান্ডলিং',
-      phaseSubtitle_en: 'Day 31 to 60: React 19, TypeScript, Tailwind CSS, and API consumption.',
-      phaseSubtitle_bn: '৩১ থেকে ৬০ দিন: রিয়্যাক্ট হুকস, টাইপস্ক্রিপ্ট, টেইলউইন্ড সিএসএস ও এপিআই কল।',
+      phaseTitle_en: 'Phase 2: React 19 Architecture, Server Components & Testing',
+      phaseTitle_bn: 'দ্বিতীয় পর্ব: রিয়্যাক্ট ১৯ আর্কিটেকচার, স্টেট ও স্বয়ংক্রিয় টেস্টিং',
+      phaseSubtitle_en: 'Day 31 to 60: React 19 hooks, Server Actions, Vitest testing, and API integration.',
+      phaseSubtitle_bn: '৩১ থেকে ৬০ দিন: রিয়্যাক্ট ১৯ হুকস, অপটিমিস্টিক মিউটেশন ও লাইভ এপিআই হ্যান্ডলিং।',
       durationWeeks: 4,
       modules: [
         {
-          id: 'mod-react-hooks-tailwind',
-          title_en: 'React Hooks and Tailwind CSS Design Systems',
-          title_bn: 'রিয়্যাক্ট হুকস ও টেইলউইন্ড সিএসএস ডিজাইন',
-          description_en: 'Building scalable reusable components with Tailwind utility classes and managing complex forms.',
-          description_bn: 'পুনর্ব্যবহারযোগ্য কম্পোনেন্ট তৈরি, টেইলউইন্ড সিএসএস ও ডায়নামিক ফর্ম হ্যান্ডলিং।',
+          id: 'mod-react-19-actions',
+          title_en: 'React 19 Components, Server Actions & Modern State',
+          title_bn: 'রিয়্যাক্ট ১৯ কম্পোনেন্ট আর্কিটেকচার ও সার্ভার একশনস',
+          description_en: 'Component modularity, useActionState, useOptimistic, custom hooks, and clean state separation.',
+          description_bn: 'রিয়্যাক্ট ১৯ এর নতুন হুকস, অপটিমিস্টিক ইউআই আপডেট ও স্টেট ম্যানেজমেন্ট।',
           estimatedDays: 15,
           mobileAccessible: false,
-          keyTopics: ['useState and useEffect lifecycles', 'Props typing with TypeScript', 'Tailwind mobile responsiveness'],
-          practicalTask_en: 'Build an interactive Job Board for Bangladeshi diploma holders with category filtering.',
-          practicalTask_bn: 'ডিপ্লোমা প্রকৌশলীদের জন্য একটি ক্যাটাগরিভিত্তিক রিয়্যাক্ট জব পোর্টাল ইন্টারফেস তৈরি করো।'
+          keyTopics: ['useActionState and useOptimistic', 'Custom reusable hooks', 'Form validation with Zod'],
+          practicalTask_en: 'Build an interactive job board for CST engineers featuring instant optimistic bookmarking and filters.',
+          practicalTask_bn: 'সিএসটি প্রকৌশলীদের জন্য একটি ক্যাটাগরিভিত্তিক লাইভ রিয়্যাক্ট ১৯ জব বোর্ড তৈরি করো।'
         },
         {
-          id: 'mod-async-api-fetching',
-          title_en: 'Asynchronous API Consumption and Error Handling',
-          title_bn: 'এপিআই থেকে ডেটা ফেচ ও লোডিং/এরর স্টেট ম্যানেজমেন্ট',
-          description_en: 'Using fetch and TanStack Query to load live JSON APIs, handle loading skeletons, and retry on failure.',
-          description_bn: 'লাইভ এপিআই থেকে ডেটা আনা, লোডিং কঙ্কাল (Skeleton) দেখানো এবং ইন্টারনেট অফলাইনে এরর হ্যান্ডলিং।',
+          id: 'mod-vitest-api-query',
+          title_en: 'Data Fetching, Cache Invalidation & Unit Testing with Vitest',
+          title_bn: 'এপিআই ক্যাশিং, ডাটা ফেচিং ও ভাইটেস্ট (Vitest) ইউনিট টেস্ট',
+          description_en: 'Using TanStack Query for cache synchronization and writing automated unit test suites with Vitest.',
+          description_bn: 'ট্যানস্ট্যাক কুয়েরি দিয়ে ব্যাকএন্ডের সাথে ক্যাশ সিঙ্ক এবং স্বয়ংক্রিয় ইউনিট টেস্ট লেখা।',
           estimatedDays: 15,
           mobileAccessible: false,
-          keyTopics: ['Try/catch error boundaries', 'Debounced search inputs', 'Pagination and infinite scrolling'],
-          practicalTask_en: 'Connect to an open weather API and display real-time weather alerts for all 64 districts of Bangladesh.',
-          practicalTask_bn: 'বাংলাদেশের ৬৪ জেলার আবহাওয়া তথ্য প্রদর্শনকারী একটি লাইভ এপিআই ড্যাশবোর্ড তৈরি করো।'
+          keyTopics: ['TanStack Query cache management', 'Vitest assertions & component tests', 'Skeleton loading states'],
+          practicalTask_en: 'Write unit tests for a full-featured e-commerce shopping cart and connect it to a live API.',
+          practicalTask_bn: 'একটি শপিং কার্ট মডিউলের জন্য স্বয়ংক্রিয় টেস্ট লিখো এবং লাইভ এপিআইতে যুক্ত করো।'
         }
       ]
     },
     {
       phaseNumber: 3,
-      phaseTitle_en: 'Phase 3: Backend APIs with Node.js, Express and PostgreSQL',
-      phaseTitle_bn: 'তৃতীয় পর্ব: নোড, এক্সপ্রেস ও পোস্টগ্রেসকিউএল ব্যাকএন্ড',
-      phaseSubtitle_en: 'Day 61 to 90: REST architecture, JWT auth, Drizzle ORM, and database indexing.',
-      phaseSubtitle_bn: '৬১ থেকে ৯০ দিন: রেস্ট এপিআই, জেডব্লিউটি লগইন সিস্টেম ও রিলেশনাল ডেটাবেস।',
+      phaseTitle_en: 'Phase 3: Backend APIs with Node.js 22, PostgreSQL 17 & Vector Search',
+      phaseTitle_bn: 'তৃতীয় পর্ব: নোড ২২, পোস্টগ্রেসকিউএল ১৭ ও ভেক্টর সার্চ ব্যাকএন্ড',
+      phaseSubtitle_en: 'Day 61 to 90: REST & streaming endpoints, Drizzle ORM, pgvector, and JWT security.',
+      phaseSubtitle_bn: '৬১ থেকে ৯০ দিন: সিকিউর ব্যাকএন্ড এপিআই, রিলেশনাল ডেটাবেস ও এআই সার্চ।',
       durationWeeks: 4,
       modules: [
         {
-          id: 'mod-express-rest-zod',
-          title_en: 'Express REST API Architecture and Zod Validation',
-          title_bn: 'এক্সপ্রেস ব্যাকএন্ড আর্কিটেকচার ও জেড ভ্যালিডেশন',
-          description_en: 'Clean controller-service separation, middleware pipelines, CORS security, and request payload schema validation.',
-          description_bn: 'পরিচ্ছন্ন ব্যাকএন্ড কোড স্ট্রাকচার, সিকিউর মিডলওয়্যার ও জেড (Zod) দিয়ে ইনপুট ভ্যালিডেশন।',
+          id: 'mod-node-22-express-zod',
+          title_en: 'Node.js 22 Backend Architecture & Secure REST/Streaming APIs',
+          title_bn: 'নোড ২২ ব্যাকএন্ড আর্কিটেকচার ও সিকিউর রেস্ট এপিআই',
+          description_en: 'Controller-service separation, middleware pipelines, JWT auth with refresh rotation, and rate limiting with Redis.',
+          description_bn: 'পরিচ্ছন্ন ব্যাকএন্ড কোড স্ট্রাকচার, রিফ্রেশ টোকেন রোটেশন ও রেডিস দিয়ে রেট লিমিটিং।',
           estimatedDays: 15,
           mobileAccessible: false,
-          keyTopics: ['Express route grouping', 'Zod parse and safeParse', 'Global error middleware handler'],
-          practicalTask_en: 'Build an authentication API supporting secure user registration, bcrypt password hashing, and JWT tokens.',
-          practicalTask_bn: 'পাসওয়ার্ড হ্যাশিং ও জেডব্লিউটি টোকেন সহ একটি সিকিউর ইউজার অথেনটিকেশন ব্যাকএন্ড তৈরি করো।'
+          keyTopics: ['Controller-service architecture', 'JWT auth & bcrypt password hashing', 'Server-Sent Events (SSE) streaming'],
+          practicalTask_en: 'Build an authentication API with secure password hashing, email verification tokens, and session refresh.',
+          practicalTask_bn: 'পাসওয়ার্ড হ্যাশিং ও সিকিউর রিফ্রেশ টোকেন সহ সম্পূর্ণ প্রমাণীকৃত ব্যাকএন্ড তৈরি করো।'
         },
         {
-          id: 'mod-postgres-drizzle',
-          title_en: 'PostgreSQL Relational Schema Design and Drizzle ORM',
-          title_bn: 'পোস্টগ্রেসকিউএল ডেটাবেস ডিজাইন ও ওআরএম কুয়েরি',
-          description_en: 'Designing one-to-many and many-to-many schemas, running database migrations, and executing type-safe queries.',
-          description_bn: 'টেবিল রিলেশনশিপ, ফরেন কি, ডেটাবেস মাইগ্রেশন এবং ড্রপ-ইন ওআরএম কুয়েরি।',
+          id: 'mod-postgres-17-pgvector',
+          title_en: 'PostgreSQL 17 Relational Schema, Drizzle ORM & pgvector Indexing',
+          title_bn: 'পোস্টগ্রেসকিউএল ১৭ স্কিমা ডিজাইন, ওআরএম ও pgvector ভেক্টর সার্চ',
+          description_en: 'Foreign key relations, composite indexing, Drizzle type-safe queries, migrations, and semantic vector embeddings.',
+          description_bn: 'পোস্টগ্রেস টেবিল রিলেশনশিপ, ইনডেক্সিং, ডেটাবেস মাইগ্রেশন ও এআই সার্চ ইন্ডেক্স।',
           estimatedDays: 15,
           mobileAccessible: false,
-          keyTopics: ['Foreign key cascades', 'PostgreSQL indexing basics', 'Drizzle ORM relations and joins'],
-          practicalTask_en: 'Design and seed a multi-table database schema for an inventory or polytechnic student portal.',
-          practicalTask_bn: 'একটি পলিটেকনিক স্টুডেন্ট পোর্টালের জন্য সম্পূর্ণ রিলেশনাল ডেটাবেস ডিজাইন ও সিড করো।'
+          keyTopics: ['Foreign key cascades and indexes', 'Drizzle ORM relations and joins', 'pgvector cosine distance queries'],
+          practicalTask_en: 'Design, seed, and query a polytechnic campus management database supporting semantic student search.',
+          practicalTask_bn: 'একটি পলিটেকনিক ম্যানেজমেন্ট ডেটাবেস তৈরি করো যাতে সেমান্টিক ভেক্টর সার্চ কাজ করে।'
         }
       ]
     },
     {
       phaseNumber: 4,
-      phaseTitle_en: 'Phase 4: Full-Stack Integration, Deployment and Technical Interviews',
-      phaseTitle_bn: 'চতুর্থ পর্ব: ফুল-স্ট্যাক লাইভ ডিপ্লয়মেন্ট ও সফটওয়্যার ইন্টারভিউ',
-      phaseSubtitle_en: 'Day 91 to 120: Monorepo deployment, Docker basics, and technical coding interviews.',
-      phaseSubtitle_bn: '৯১ থেকে ১২০ দিন: ক্লাউড ডিপ্লয়মেন্ট, সিকিউরিটি অডিট ও সফটওয়্যার কোম্পানির ইন্টারভিউ।',
+      phaseTitle_en: 'Phase 4: Cloud Deployment, Docker, AI Workflows & Viva Preparation',
+      phaseTitle_bn: 'চতুর্থ পর্ব: ক্লাউড ডিপ্লয়মেন্ট, ডকার, এআই কোডিং টুলস ও ভাইভা',
+      phaseSubtitle_en: 'Day 91 to 120: Docker containers, Vercel/VPS deploy, CI/CD, and Dhaka tech viva simulations.',
+      phaseSubtitle_bn: '৯১ থেকে ১২০ দিন: ডকার কনটেইনার, লাইভ ক্লাউড পাবলিকেশন ও সফটওয়্যার ভাইভা প্রস্তুতি।',
       durationWeeks: 4,
       modules: [
         {
-          id: 'mod-fullstack-deploy',
-          title_en: 'Production Cloud Deployment and Environment Security',
-          title_bn: 'প্রোডাকশন ক্লাউডে লাইভ ডিপ্লয়মেন্ট ও সিকিউরিটি',
-          description_en: 'Deploying frontend on Vercel, backend on Render/Railway/VPS, configuring environment variables, and SSL.',
-          description_bn: 'ভার্সেল ও ক্লাউড সার্ভারে লাইভ ওয়েবসাইট পাবলিশ করা এবং পরিবেশ ভ্যারিয়েবল গোপন রাখা।',
+          id: 'mod-docker-cloud-deploy',
+          title_en: 'Docker Containerization & Production Cloud Deployment',
+          title_bn: 'ডকার কনটেইনার তৈরি ও প্রোডাকশন ক্লাউডে লাইভ ডিপ্লয়মেন্ট',
+          description_en: 'Multi-stage Dockerfiles, Docker Compose local environments, Vercel frontend deployment, and cloud VPS hosting.',
+          description_bn: 'ডকার কনটেইনারাইজেশন, ক্লাউড সার্ভারে ডিপ্লয়মেন্ট ও ডোমেন-এসএসএল কনফিগারেশন।',
           estimatedDays: 12,
           mobileAccessible: false,
-          keyTopics: ['Vercel and Render deployment', 'CORS origin whitelisting', 'Handling production database connection pooling'],
-          practicalTask_en: 'Ship a complete full-stack web application with live production URLs and custom domain.',
-          practicalTask_bn: 'তোমার তৈরি করা একটি পূর্ণাঙ্গ ফুল-স্ট্যাক প্রজেক্ট ইন্টারনেটে লাইভ হোস্ট করো।'
+          keyTopics: ['Multi-stage Docker build', 'Docker Compose service orchestration', 'Environment secrets and SSL setup'],
+          practicalTask_en: 'Containerize and deploy your full-stack web application with live production URLs on custom domain.',
+          practicalTask_bn: 'তোমার তৈরি করা সম্পূর্ণ ফুল-স্ট্যাক প্রজেক্ট ডকার ও ক্লাউড সার্ভারে লাইভ হোস্ট করো।'
         },
         {
-          id: 'mod-frontend-interview-prep',
-          title_en: 'Software Engineering Interview Simulation',
-          title_bn: 'সফটওয়্যার ইঞ্জিনিয়ারিং ইন্টারভিউ ও কোডিং রাউন্ড প্রস্তুতি',
-          description_en: 'Handling closures, event loop questions, database joins, and live coding challenges in Dhaka tech firms.',
-          description_bn: 'ইন্টারভিউয়ের ইভেন্ট লুপ, ক্লোজার, অপটিমাইজেশন ও লাইভ কোডিং টেস্টের বাস্তবমুখী অনুশীলন।',
+          id: 'mod-2026-viva-simulation',
+          title_en: '2026 Post-AI Technical Interview & Architecture Defense',
+          title_bn: '২০২৬ টেকনিক্যাল ইন্টারভিউ ও আর্কিটেকচার ডিফেন্স সিমুলেশন',
+          description_en: 'Defending code architecture, auditing AI code, explaining database query plans (EXPLAIN ANALYZE), and live coding.',
+          description_bn: 'কোড আর্কিটেকচার ডিফেন্স, এআই কোড ভেরিফিকেশন ও লাইভ কোডিং ইন্টারভিউয়ের প্রস্তুতি।',
           estimatedDays: 18,
           mobileAccessible: true,
-          keyTopics: ['Event loop and microtask queue', 'React re-render optimization', 'Explaining architectural tradeoffs'],
-          practicalTask_en: 'Conduct a recorded mock interview walking through your code architecture and database decisions.',
-          practicalTask_bn: 'নিজের প্রজেক্টের কোড ও ডেটাবেস আর্কিটেকচার নিয়ে একটি পূর্ণাঙ্গ টেকনিক্যাল প্রেজেন্টেশন দাও।'
+          keyTopics: ['Explaining system tradeoffs', 'Auditing AI generated code', 'PostgreSQL EXPLAIN ANALYZE profiling'],
+          practicalTask_en: 'Conduct a recorded mock interview walking through your schema decisions, test coverage, and security audit.',
+          practicalTask_bn: 'নিজের প্রজেক্টের কোড, সিকিউরিটি ও ডেটাবেস ডিজাইন নিয়ে পূর্ণাঙ্গ টেকনিক্যাল ভাইভা দাও।'
         }
       ]
     }
   ],
   interviewQuestions: [
     {
-      id: 'dev-q1',
-      question_en: 'What is the JavaScript Event Loop and how does it handle asynchronous operations like setTimeout and fetch?',
-      question_bn: 'জাভাস্ক্রিপ্ট ইভেন্ট লুপ (Event Loop) কী এবং এটি কীভাবে অ্যাসিনক্রোনাস কাজ পরিচালনা করে?',
-      category: 'JavaScript Core',
-      whyAsked_en: 'The single most common core question in software interviews to separate superficial coders from deep thinkers.',
-      whyAsked_bn: 'জাভাস্ক্রিপ্ট ইন্টারভিউয়ের প্রধানতম মৌলিক প্রশ্ন যা প্রার্থীর ইঞ্জিন বোঝার গভীরতা প্রমাণ করে।',
-      howToAnswer_en: 'JavaScript is single-threaded with one call stack. Synchronous code executes immediately on the stack. Asynchronous tasks (like fetch or timers) are offloaded to Web APIs. When completed, their callbacks enter the Microtask Queue (promises) or Macrotask Queue (setTimeout). The Event Loop constantly monitors if the call stack is empty, pushing pending tasks to the stack in priority order.',
-      howToAnswer_bn: 'জাভাস্ক্রিপ্ট সিঙ্গেল থ্রেডেড। সিঙ্ক্রোনাস কোড সরাসরি কল স্ট্যাকে চলে। আর ফেচ বা টাইমারের মতো অ্যাসিনক্রোনাস কাজগুলো ব্রাউজার এপিআইতে চলে যায়। কাজ শেষ হলে সেগুলো মাইক্রোটাস্ক বা ম্যাক্রোটাস্ক কিউতে জমা হয়। কল স্ট্যাক ফাঁকা হলে ইভেন্ট লুপ অগ্রাধিকার ভিত্তিতে এগুলোকে এক্সিকিউট করার জন্য পাঠায়।',
-      commonMistakes_en: 'Saying JavaScript is multi-threaded or that setTimeout pauses the entire CPU browser thread.',
-      commonMistakes_bn: 'জাভাস্ক্রিপ্টকে মাল্টি-থ্রেডেড ভাষা বলা অথবা সেটটাইমআউট ব্রাউজারকে ফ্রিজ করে দেয় মনে করা।'
+      id: 'dev-2026-q1',
+      question_en: 'When using AI coding assistants to generate code, what specific security vulnerabilities and bugs do you check for before committing to production?',
+      question_bn: 'এআই কোডিং অ্যাসিস্ট্যান্ট দিয়ে কোড তৈরি করার সময় প্রোডাকশনে কমিট করার আগে তুমি কী কী নিরাপত্তা ত্রুটি বিশেষভাবে চেক করো?',
+      category: '2026 Post-AI Security',
+      whyAsked_en: 'In late 2026, companies assume candidates use AI tools. This question separates engineers who blind-paste code from engineers who critically audit and verify code.',
+      whyAsked_bn: '২০২৬ সালের ইন্টারভিউতে প্রার্থীর এআই কোড যাচাই ও অডিট করার সক্ষমতা পরীক্ষার জন্য এটি করা হয়।',
+      howToAnswer_en: '1) SQL Injection: Check that all database queries use parameterized inputs rather than string concatenation. 2) Missing Authentication / Authorization: Verify that protected routes enforce JWT token verification and tenant boundaries (IDOR prevention). 3) Input Validation: Ensure all request bodies are parsed through strict Zod schemas. 4) Resource Exhaustion: Check for missing pagination limits or unindexed database queries that could crash the server. 5) Secrets Exposure: Ensure no API keys or environment secrets are hardcoded in client-side bundles.',
+      howToAnswer_bn: '১) এসকিউএল ইনজেকশন: ডেটাবেস কুয়েরিতে প্যারামিটারাইজড কুয়েরি ব্যবহৃত হয়েছে কিনা দেখা। ২) অনুমোদন ও অথেনটিকেশন: সব রাউটে টোকেন ভ্যালিডেশন এবং আইডিওআর (IDOR) প্রিভেনশন নিশ্চিত করা। ৩) ইনপুট ভ্যালিডেশন: জেড (Zod) দিয়ে কঠোরভাবে টাইপ চেক করা। ৪) সার্ভার ওভারলোড: পেজিনেশন ও আন-ইনডেক্সড কুয়েরি চেক করা। ৫) সিক্রেট লিক: ফ্রন্টএন্ড কোডে কোনো এপিআই কি বা টোকেন সরাসরি হার্ডকোড করা আছে কিনা তা নিরীক্ষা করা।',
+      commonMistakes_en: 'Saying you never use AI tools, or stating that AI generated code is automatically bug-free and tested.',
+      commonMistakes_bn: 'এআই কোড সবসময় নির্ভুল দাবি করা অথবা কোড অডিটের কোনো সুনির্দিষ্ট ধাপ না বলতে পারা।'
     },
     {
-      id: 'dev-q2',
-      question_en: 'Why should you never mutate React state directly and how does React detect re-renders?',
-      question_bn: 'রিয়্যাক্ট স্টেট সরাসরি মিউটেট (পরিবর্তন) করা উচিত নয় কেন এবং রিয়্যাক্ট কীভাবে রি-রেন্ডার নির্ধারণ করে?',
-      category: 'React Internals',
-      whyAsked_en: 'Tests whether candidate understands immutability and shallow reference comparison in React.',
-      whyAsked_bn: 'ইমিউটেবিলিটি ও রিয়্যাক্টের ভার্চুয়াল ডম ট্র্যাকিংয়ের সঠিক ধারণা প্রার্থীর আছে কিনা জানতে।',
-      howToAnswer_en: 'React relies on shallow object reference equality (Object.is) to know when state has changed. If you mutate an existing array or object directly (e.g. state.push()), the memory reference remains identical, so React assumes nothing changed and skips re-rendering. Using setState with new spread copies triggers the render cycle cleanly.',
-      howToAnswer_bn: 'রিয়্যাক্ট মেমোরি রেফারেন্স (Shallow comparison) দেখে বোঝে স্টেট পরিবর্তন হয়েছে কিনা। সরাসরি অবজেক্ট বা এরে মডিফাই করলে মেমোরি অ্যাড্রেস একই থাকে, ফলে রিয়্যাক্ট পরিবর্তন ধরতে পারে না এবং স্ক্রিন রি-রেন্ডার হয় না। তাই সবসময় নতুন কপি (spread operator) তৈরি করে স্টেট আপডেট করতে হয়।',
-      commonMistakes_en: 'Using push() or directly reassigning state variables without setState.',
-      commonMistakes_bn: 'এরেতে সরাসরি push() ব্যবহার করা এবং স্টেট ফাংশন কল না করা।'
+      id: 'dev-2026-q2',
+      question_en: 'In React 19 and Next.js 15, what is the exact difference between Server Components and Client Components, and when should you use each?',
+      question_bn: 'রিয়্যাক্ট ১৯ ও নেক্সট.জেএস ১৫-এ সার্ভার কম্পোনেন্টস ও ক্লায়েন্ট কম্পোনেন্টসের মধ্যে মূল পার্থক্য কী এবং কখন কোনটি ব্যবহার করবে?',
+      category: 'React 19 Architecture',
+      whyAsked_en: 'Tests whether candidate understands modern component execution environments and client bundle optimization.',
+      whyAsked_bn: 'রিয়্যাক্ট ১৯ এর নতুন এক্সিকিউশন মডেল ও ব্রাউজার বান্ডেল অপটিমাইজেশন সম্পর্কে ধারণা যাচাই।',
+      howToAnswer_en: 'React Server Components (RSC) execute exclusively on the server at request or build time. They can directly query databases, read environment secrets, and produce zero client JavaScript bundle size. Client Components (declared with "use client") execute on both server (for initial SSR HTML) and hydrate on the browser, allowing event listeners (onClick), browser APIs, and state hooks (useState, useEffect). The rule of thumb: Default to Server Components for data fetching and layout; use Client Components only at the leaves of the component tree where interactivity is strictly required.',
+      howToAnswer_bn: 'সার্ভার কম্পোনেন্টস শুধু সার্ভারে চলে, সরাসরি ডেটাবেস কুয়েরি করতে পারে এবং ক্লায়েন্ট বান্ডেল সাইজ শূন্য রাখে। ক্লায়েন্ট কম্পোনেন্টস ("use client") ব্রাউজারে ইন্টারঅ্যাকশন (যেমন ক্লিক ইভেন্ট, useState, useEffect) পরিচালনার জন্য ব্যবহৃত হয়। নিয়ম হলো: ডেটা আনা ও পেজ লেআউটের জন্য সার্ভার কম্পোনেন্ট ব্যবহার করা এবং শুধুমাত্র যেখানে ক্লিক বা ফর্ম ইন্টারেকশন দরকার সেখানে ক্লায়েন্ট কম্পোনেন্ট ব্যবহার করা।',
+      commonMistakes_en: 'Putting "use client" at the top of every file or assuming Server Components cannot pass data to Client Components.',
+      commonMistakes_bn: 'সব ফাইলের উপরে অযথা "use client" বসিয়ে দেওয়া বা সার্ভার কম্পোনেন্ট কীভাবে কাজ করে তা না জানা।'
     },
     {
-      id: 'dev-q3',
-      question_en: 'What is the difference between SQL and NoSQL databases and when would you choose PostgreSQL over MongoDB?',
-      question_bn: 'এসকিউএল এবং নো-এসকিউএল ডেটাবেসের মধ্যে পার্থক্য কী এবং কখন মঙ্গোডিবি-র চেয়ে পোস্টগ্রেসকিউএল বেছে নেবে?',
-      category: 'Databases',
-      whyAsked_en: 'Evaluates architectural judgment when designing real-world backend applications.',
-      whyAsked_bn: 'বাস্তব সফটওয়্যার তৈরিতে সঠিক ডেটাবেস নির্বাচনের সক্ষমতা যাচাই।',
-      howToAnswer_en: 'PostgreSQL is a relational database enforcing strict schemas, ACID transactions, and foreign key integrity, ideal for financial transactions, e-commerce orders, and structured student records. MongoDB is a document database storing JSON-like BSON, flexible for rapidly shifting unstructured schemas or raw logging.',
-      howToAnswer_bn: 'পোস্টগ্রেসকিউএল হলো রিলেশনাল ডেটাবেস যা কঠোর স্কিমা, ফরেন কি ও এসিড (ACID) ট্রানজাকশন নিশ্চিত করে। ব্যাংকিং, পেমেন্ট ও ছাত্র রেকর্ডের মতো গুরুত্বপূর্ণ ডেটার জন্য এটি আদর্শ। অপরদিকে মঙ্গোডিবি ফ্লেক্সিবল ডকুমেন্ট স্টোরেজ যেখানে স্কিমা বারবার পরিবর্তন হতে পারে বা আনস্ট্রাকচার্ড লগ রাখা হয়।',
-      commonMistakes_en: 'Claiming MongoDB is always faster than SQL or SQL is outdated.',
-      commonMistakes_bn: 'মঙ্গোডিবি আধুনিক আর এসকিউএল পুরোনো ও অকেজো এমন অজ্ঞতামূলক মন্তব্য করা।'
+      id: 'dev-2026-q3',
+      question_en: 'What is vector search with pgvector in PostgreSQL 17, and how does it enable AI similarity search in a full-stack application?',
+      question_bn: 'পোস্টগ্রেসকিউএল ১৭-এ pgvector ভেক্টর সার্চ কী এবং এটি একটি ফুল-স্ট্যাক অ্যাপে কীভাবে এআই সিমিলারিটি সার্চ নিশ্চিত করে?',
+      category: 'Modern Databases & AI',
+      whyAsked_en: 'Evaluates if developer understands semantic search and RAG knowledge retrieval in modern software systems.',
+      whyAsked_bn: 'আধুনিক ফুল-স্ট্যাক সিস্টেমে এআই ভেক্টর এমবেডিং ও সিমিলারিটি কুয়েরি পরিচালনার দক্ষতা যাচাই।',
+      howToAnswer_en: 'Traditional SQL searches exact text keywords using LIKE or full-text tsvector. Vector search stores numerical embeddings (dense float vectors generated by AI embedding models like text-embedding-3 or local Ollama models) representing semantic meaning. Using the pgvector extension, PostgreSQL indexes these vectors using HNSW (Hierarchical Navigable Small World) and calculates cosine distance (<=>) to find the most contextually relevant documents or products in milliseconds.',
+      howToAnswer_bn: 'সাধারণ এসকিউএল শুধু নির্দিষ্ট শব্দ খোঁজে (LIKE কুয়েরি)। আর ভেক্টর সার্চ হলো এআই মডেলের মাধ্যমে শব্দের অর্থকে সংখ্যাসূচক ভেক্টরে রূপান্তর করে রাখা। পোস্টগ্রেসের pgvector এক্সটেনশন দিয়ে HNSW ইনডেক্সিং এবং কোসাইন ডিসট্যান্স মেপে মিল থাকা কনটেন্ট বা ডেটা দ্রুততম সময়ে খুঁজে বের করা যায়।',
+      commonMistakes_en: 'Confusing traditional relational indexing (B-Tree) with vector distance indexing (HNSW/IVFFlat).',
+      commonMistakes_bn: 'সাধারণ বি-ট্রি ইনডেক্সের সাথে এআই ভেক্টর ইনডেক্সের পার্থক্য না বোঝা।'
     },
     {
-      id: 'dev-q4',
-      question_en: 'What is CORS and how do you resolve CORS errors securely in an Express application?',
-      question_bn: 'করস (CORS) কী এবং একটি এক্সপ্রেস ব্যাকএন্ডে কীভাবে নিরাপদে করস এরর সমাধান করবে?',
-      category: 'Web Security',
-      whyAsked_en: 'Every web developer runs into CORS during development; tests security understanding.',
-      whyAsked_bn: 'ব্রাউজার সিকিউরিটি ও এপিআই যোগাযোগের অপরিহার্য নিরাপত্তা নীতি সম্পর্কে সচেতনতা দেখা।',
-      howToAnswer_en: 'CORS (Cross-Origin Resource Sharing) is a browser security mechanism blocking scripts from requesting resources from a different origin (domain, protocol, or port). In Express, use the cors middleware configuring explicit allowed origins (e.g. your specific frontend domain) and credentials rather than blindly setting origin to wildcard * in production.',
-      howToAnswer_bn: 'করস হলো ব্রাউজারের সিকিউরিটি পলিসি যা এক ডোমেইন থেকে অন্য ডোমেইনে অননুমোদিত ডেটা নেওয়া বন্ধ করে। এক্সপ্রেস অ্যাপে "cors" প্যাকেজ দিয়ে নির্দিষ্ট ফ্রন্টএন্ড ডোমেইনকে হোয়াইটলিস্ট করে দিতে হয়। প্রোডাকশনে কখনো ওয়াইল্ডকার্ড (*) দিয়ে সব ডোমেইনের জন্য উন্মুক্ত রাখা নিরাপদ নয়।',
-      commonMistakes_en: 'Setting Access-Control-Allow-Origin to * for financial or authenticated endpoints.',
-      commonMistakes_bn: 'ঝামেলা এড়াতে ওয়াইল্ডকার্ড (*) দিয়ে সবার জন্য এপিআই উন্মুক্ত করে দেওয়া।'
+      id: 'dev-2026-q4',
+      question_en: 'How do you implement streaming AI responses using Server-Sent Events (SSE) in a Node.js Express backend and consume them in React 19?',
+      question_bn: 'নোড.জেএস এক্সপ্রেস ব্যাকএন্ডে সার্ভার-সেন্ট ইভেন্টস (SSE) দিয়ে কীভাবে স্ট্রিমিং রেসপন্স তৈরি করবে এবং রিয়্যাক্টে তা প্রদর্শন করবে?',
+      category: 'API Streaming',
+      whyAsked_en: 'Streaming token generation is the standard UX pattern for modern AI web apps to eliminate multi-second loading latency.',
+      whyAsked_bn: 'ব্যবহারকারী যাতে এআই উত্তরের জন্য দীর্ঘক্ষণ অপেক্ষা না করে টাইপিং ইফেক্টে লাইভ উত্তর পায় সেই দক্ষতা দেখা।',
+      howToAnswer_en: 'In Express, set headers Content-Type to text/event-stream, Cache-Control to no-cache, and Connection to keep-alive. Flush incoming AI model tokens to the response stream using res.write(`data: ${JSON.stringify(chunk)}\\n\\n`). In React 19, consume the stream using fetch and getReader() on response.body, appending chunks to state as they arrive without waiting for the full response to finish.',
+      howToAnswer_bn: 'এক্সপ্রেস ব্যাকএন্ডে হেডার সেট করতে হয় text/event-stream। এরপর এআই থেকে আসা প্রতিটি টোকেন res.write() দিয়ে রিয়েলটাইমে ক্লায়েন্টে পুশ করা হয়। ফ্রন্টএন্ডে response.body.getReader() দিয়ে প্রতিটি খণ্ড আশা মাত্রই স্ক্রিনে লাইভ যুক্ত করে দেখানো হয়।',
+      commonMistakes_en: 'Using standard JSON responses that buffer the entire text before returning to the user.',
+      commonMistakes_bn: 'পুরো লেখা শেষ হওয়া পর্যন্ত অপেক্ষা করে সাধারণ রেসপন্স পাঠানো যাতে ইউজার ফ্রাস্ট্রেটেড হয়।'
     },
     {
-      id: 'dev-q5',
-      question_en: 'How do you optimize a slow React application with multiple heavy lists?',
-      question_bn: 'অনেক বড় তালিকা ও ভারী ডেটা থাকা একটি ধীরগতির রিয়্যাক্ট অ্যাপকে কীভাবে অপটিমাইজ করবে?',
-      category: 'Performance',
-      whyAsked_en: 'Differentiates junior frontend developers from mid-level engineers.',
-      whyAsked_bn: 'অ্যাপের পারফরম্যান্স ও স্মুথনেস নিশ্চিত করার বাস্তবমুখী অভিজ্ঞতা যাচাই।',
-      howToAnswer_en: '1) Virtualize long lists using react-window or tanstack-virtual so only visible items are rendered in DOM. 2) Memoize expensive computations with useMemo. 3) Wrap child components in React.memo and pass stable callbacks with useCallback. 4) Code-split routes with React.lazy and Suspense.',
-      howToAnswer_bn: '১) ভার্চুয়ালাইজেশন (react-window) ব্যবহার করে শুধু স্ক্রিনে থাকা উপাদানগুলো রেন্ডার করব। ২) ভারী ক্যালকুলেশনে useMemo ব্যবহার করব। ৩) অপ্রয়োজনীয় রি-রেন্ডার ঠেকাতে React.memo ও useCallback ব্যবহার করব। ৪) কোড-স্প্লিটিং (React.lazy) করে ইনিশিয়াল বান্ডেল সাইজ ছোট রাখব।',
-      commonMistakes_en: 'Wrapping every single function blindly in useCallback without measuring overhead.',
-      commonMistakes_bn: 'কোনো কারণ ছাড়াই প্রতিটি ছোট ফাংশনে useCallback মেমোরাইজেশন চাপিয়ে দেওয়া।'
+      id: 'dev-2026-q5',
+      question_en: 'How do you optimize an application experiencing slow database queries using PostgreSQL EXPLAIN ANALYZE?',
+      question_bn: 'একটি ধীরগতির ডেটাবেস কুয়েরির কারণ নির্ণয় ও সমাধান করার জন্য পোস্টগ্রেসকিউএল EXPLAIN ANALYZE কীভাবে ব্যবহার করবে?',
+      category: 'Database Performance',
+      whyAsked_en: 'Distinguishes practical engineers who understand database query execution plans from junior coders who guess.',
+      whyAsked_bn: 'ডেটাবেস পারফরম্যান্স সমস্যা অনুমান না করে বৈজ্ঞানিক উপায়ে সমাধান করার সক্ষমতা যাচাই।',
+      howToAnswer_en: 'Prepend EXPLAIN (ANALYZE, BUFFERS) before the SQL query. Look for: 1) Sequential Scans (Seq Scan) on large tables, which indicates missing indexes. 2) Cost discrepancies between estimated rows and actual rows, which indicates outdated table statistics (run ANALYZE table_name). 3) Nested Loop joins on large datasets without indexed foreign keys. Resolve bottlenecks by creating targeted composite or partial B-Tree indexes, restructuring joins, or adding Redis caching for read-heavy hotspots.',
+      howToAnswer_bn: 'কুয়েরির আগে EXPLAIN ANALYZE বসিয়ে এক্সিকিউশন প্ল্যান দেখতে হয়। যদি বড় টেবিলে "Seq Scan" দেখায়, তার মানে প্রয়োজনীয় ইনডেক্স নেই। তখন নির্দিষ্ট কলামের উপর বি-ট্রি (B-Tree) ইনডেক্স তৈরি করতে হয় এবং ঘনঘন পঠিত ডেটাতে রেডিস ক্যাশিং যুক্ত করতে হয়।',
+      commonMistakes_en: 'Blindly adding indexes on every table column without checking read vs write performance tradeoffs.',
+      commonMistakes_bn: 'সব কলামে না বুঝে ইনডেক্স বসিয়ে দেওয়া যা রাইট ও ইনসার্ট অপারেশনকে ধীরগতির করে ফেলে।'
     }
   ],
   freeCerts: [
     {
-      id: 'cert-fcc-responsive-web',
-      title_en: 'Responsive Web Design Certification',
-      title_bn: 'রেসপনসিভ ওয়েব ডিজাইন ভেরিফায়েড সার্টিফিকেট',
+      id: 'cert-fcc-fullstack-2026',
+      title_en: 'freeCodeCamp Full Stack Developer Professional Certification (2026 Edition)',
+      title_bn: 'ফ্রি-কোড-ক্যাম্প ফুল স্ট্যাক প্রফেশনাল ভেরিফায়েড সার্টিফিকেট',
       provider: 'freeCodeCamp',
-      url: 'https://www.freecodecamp.org/learn/2022/responsive-web-design/',
+      url: 'https://www.freecodecamp.org/learn/',
       mobileAccessible: true,
       language: 'en',
-      durationHours: 40,
+      durationHours: 80,
       cost: '100% Free',
       isBdLocal: false,
       category: 'international_free',
-      relevance_en: 'Globally recognized hands-on projects teaching HTML5, modern CSS flexbox, and mobile responsiveness.',
-      relevance_bn: 'বিশ্বখ্যাত ফ্রি-কোড-ক্যাম্পের শতভাগ ফ্রি সার্টিফিকেট যা সিভিতে আন্তর্জাতিক গ্রহণযোগ্যতা দেয়।'
+      relevance_en: 'Globally recognized project-based credential covering modern responsive UI, TypeScript algorithms, Node APIs, and databases.',
+      relevance_bn: 'বিশ্বখ্যাত ফ্রি-কোড-ক্যাম্পের সম্পূর্ণ ফ্রি আন্তর্জাতিক ডিজিটাল সার্টিফিকেট।'
     },
     {
-      id: 'cert-fcc-js-algorithms',
-      title_en: 'JavaScript Algorithms and Data Structures',
-      title_bn: 'জাভাস্ক্রিপ্ট অ্যালগরিদম ও ডেটা স্ট্রাকচার',
-      provider: 'freeCodeCamp',
-      url: 'https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/',
-      mobileAccessible: true,
-      language: 'en',
-      durationHours: 50,
-      cost: '100% Free',
-      isBdLocal: false,
-      category: 'international_free',
-      relevance_en: 'Master core JavaScript ES6+, functional programming, and algorithmic problem solving.',
-      relevance_bn: 'কোডিং ইন্টারভিউতে ভালো করার জন্য প্র্যাকটিক্যাল জাভাস্ক্রিপ্টের সেরা ফ্রি ভেরিফায়েড কোর্স।'
-    },
-    {
-      id: 'cert-harvard-cs50',
-      title_en: 'CS50x: Introduction to Computer Science',
+      id: 'cert-harvard-cs50x-2026',
+      title_en: 'Harvard CS50x: Computer Science Foundations (2026 Edition)',
       title_bn: 'হার্ভার্ড সিএস৫০ কম্পিউটার সায়েন্স ভেরিফায়েড সার্টিফিকেট',
       provider: 'Harvard University',
       url: 'https://cs50.harvard.edu/x/',
@@ -373,13 +356,13 @@ export const frontendFullstackWebTrack: Omit<CareerTrack, 'id'> = {
       cost: '100% Free',
       isBdLocal: false,
       category: 'international_free',
-      relevance_en: 'World-renowned foundational computer science and algorithmic problem-solving course by Harvard.',
+      relevance_en: 'World-renowned foundational computer science and algorithmic problem-solving course by Harvard University.',
       relevance_bn: 'হার্ভার্ড ইউনিভার্সিটির সম্পূর্ণ ফ্রি বিশ্বমানের সিএস কোর্স ও ভেরিফায়েড ডিজিটাল সার্টিফিকেট।'
     },
     {
-      id: 'cert-basis-seip-web',
-      title_en: 'BASIS SEIP Professional Web Development Certification',
-      title_bn: 'বেসিস এসইআইপি প্রফেশনাল ওয়েব ডেভেলপমেন্ট জাতীয় সার্টিফিকেট',
+      id: 'cert-basis-seip-2026',
+      title_en: 'BASIS SEIP Professional Software Engineering Certification',
+      title_bn: 'বেসিস এসইআইপি প্রফেশনাল সফটওয়্যার ইঞ্জিনিয়ারিং জাতীয় সার্টিফিকেট',
       provider: 'BASIS & Finance Ministry Bangladesh',
       url: 'https://seip-fd.gov.bd/',
       mobileAccessible: false,
@@ -392,18 +375,18 @@ export const frontendFullstackWebTrack: Omit<CareerTrack, 'id'> = {
       relevance_bn: 'বাংলাদেশ সরকারের অর্থায়নে পরিচালিত বিনামূল্যে আইটি প্রশিক্ষণ, শিক্ষাবৃত্তি ও লোকাল চাকরির প্লেসমেন্ট।'
     },
     {
-      id: 'cert-postman-api-expert',
-      title_en: 'Postman Student Expert Certification',
-      title_bn: 'পোস্টম্যান স্টুডেন্ট এক্সপার্ট ব্যাজ',
+      id: 'cert-postman-api-2026',
+      title_en: 'Postman API Fundamentals Student Expert',
+      title_bn: 'পোস্টম্যান এপিআই ফান্ডামেন্টালস অফিশিয়াল ব্যাজ',
       provider: 'Postman Academy',
       url: 'https://academy.postman.com/',
       mobileAccessible: true,
       language: 'en',
-      durationHours: 8,
+      durationHours: 10,
       cost: '100% Free',
       isBdLocal: false,
       category: 'international_free',
-      relevance_en: 'Proves mastery of REST API testing, authorization tokens, and API automation.',
+      relevance_en: 'Proves practical mastery of REST API testing, authorization tokens, and automated test collections.',
       relevance_bn: 'এপিআই টেস্টিং ও ব্যাকএন্ডের জন্য বহুল সমাদৃত অফিশিয়াল ডিজিটাল ব্যাজ।'
     }
   ]

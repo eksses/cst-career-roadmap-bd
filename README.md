@@ -207,6 +207,17 @@ npm run start
 
 Once running, navigate to `http://localhost:5657` in your browser.
 
+### Vercel Deployment
+
+The platform is pre-configured for zero-friction serverless deployment on Vercel:
+
+1. Import this repository into your Vercel account.
+2. Set the following **Environment Variables** in project settings:
+   * `DATABASE_URL`: Your pooled PostgreSQL connection string (Neon or standard Postgres).
+   * `AI_API_KEY`: (Optional) Gemini API key for the interactive career mentor feature.
+3. The build configuration in `vercel.json` automatically triggers `npm run build`, outputs static assets to `dist/client`, and routes `/api/*` to the serverless function in `api/index.ts`.
+4. Click **Deploy**. Both the single-page application and backend API routes deploy automatically.
+
 ---
 
 ## 7. API Endpoints

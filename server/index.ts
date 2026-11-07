@@ -45,7 +45,12 @@ if (fs.existsSync(clientDistPath)) {
   });
 }
 
-// Start server
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`CST Career Roadmap Backend running on http://0.0.0.0:${PORT}`);
-});
+export { app };
+export default app;
+
+// Start server if running directly (not in Vercel serverless environment)
+if (!process.env.VERCEL) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`CST Career Roadmap Backend running on http://0.0.0.0:${PORT}`);
+  });
+}
