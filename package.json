@@ -1,0 +1,53 @@
+{
+  "name": "cst-career-roadmap-bd",
+  "version": "1.0.0",
+  "description": "Adaptive Career Guidance, Diagnostic Survey & Roadmap Platform for CST Students in Bangladesh",
+  "type": "module",
+  "scripts": {
+    "dev:server": "tsx watch server/index.ts",
+    "dev:client": "vite",
+    "dev": "tsx server/index.ts",
+    "build": "vite build && tsc -p server/tsconfig.json",
+    "start": "NODE_ENV=production tsx server/index.ts",
+    "db:push": "drizzle-kit push",
+    "db:seed": "tsx server/db/seed.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1164.0",
+    "@aws-sdk/s3-request-presigner": "^3.1164.0",
+    "@neon/config": "^1.13.0",
+    "@neon/env": "^2.1.0",
+    "@neondatabase/serverless": "^1.2.0",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "drizzle-orm": "^0.45.4",
+    "express": "^5.3.0",
+    "framer-motion": "^14.10.1",
+    "lucide-react": "^1.70.0",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0",
+    "ws": "^8.22.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.2",
+    "@vitejs/plugin-react": "^6.2.1",
+    "autoprefixer": "^10.6.2",
+    "drizzle-kit": "^0.31.11",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}

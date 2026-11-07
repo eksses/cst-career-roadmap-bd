@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover" />
+    <title>CST Career Guidance & Adaptive Roadmap | কারিগরি ক্যারিয়ার রোডম্যাপ</title>
+    <meta name="description" content="Adaptive Career Guidance, Diagnostic Survey, and Job Roadmap for CST Diploma & College Students in Bangladesh." />
+    <!-- Google Fonts: Plus Jakarta Sans, Hind Siliguri, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- SVG Favicon (Zero emojis) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C84B31' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'></polygon><polyline points='2 17 12 22 22 17'></polyline><polyline points='2 12 12 17 22 12'></polyline></svg>" />
+    <script>
+      // Strict mobile viewport and zoom lock
+      // 1. Block iOS Safari gesture zooms
+      document.addEventListener('gesturestart', function(e) { e.preventDefault(); }, { passive: false });
+      document.addEventListener('gesturechange', function(e) { e.preventDefault(); }, { passive: false });
+      document.addEventListener('gestureend', function(e) { e.preventDefault(); }, { passive: false });
+
+      // 2. Block multi-touch pinch zoom
+      document.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      // 3. Block double-tap to zoom
+      var lastTouchEndTime = 0;
+      document.addEventListener('touchend', function(e) {
+        var now = Date.now();
+        if (now - lastTouchEndTime <= 300) {
+          e.preventDefault();
+        }
+        lastTouchEndTime = now;
+      }, { passive: false });
+    </script>
+  </head>
+  <body class="bg-[#F7F6F2] text-[#141413] antialiased selection:bg-[#C84B31] selection:text-white min-h-screen overflow-x-hidden w-full max-w-full">
+    <div id="root" class="w-full max-w-full overflow-x-hidden min-h-screen"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
