@@ -1,24 +1,25 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
 import pg from 'pg';
-import dns from 'dns';
 import * as schema from './schema.js';
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://cst_user:cst_pass@localhost:5432/cst_roadmap';
+const rawConnectionString = process.env.DATABASE_URL || 'postgresql://cst_user:cst_pass@localhost:5432/cst_roadmap';
+
+// Standardize SSL mode to verify-full to eliminate pg-connection-string security warnings on Vercel
+const connectionString = rawConnectionString.replace(/sslmode=(require|prefer|verify-ca)/g, 'sslmode=verify-full');
 
 let pool: pg.Pool;
 
 if (connectionString.includes('neon.tech')) {
   if (process.env.VERCEL) {
-    // Vercel serverless environment connects using standard Neon connection string
+    // Vercel serverless environment connects using standard Neon connection string with verified SSL
     pool = new pg.Pool({
       connectionString,
-      ssl: { rejectUnauthorized: false },
       max: 10,
       idleTimeoutMillis: 10000,
-      connectionTimeoutMillis: 5000,
+      connectionTimeoutMillis: 10000,
     });
   } else {
     // Local / container environment with custom host override
