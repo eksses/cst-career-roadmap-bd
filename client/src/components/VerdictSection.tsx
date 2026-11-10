@@ -49,6 +49,18 @@ export const VerdictSection: React.FC = () => {
     ],
   };
 
+  const shortTermSuitabilityBadge = language === 'bn'
+    ? (activeVerdict.shortTermSuitability_bn || trackVerdict.shortTermSuitability_bn)
+    : (activeVerdict.shortTermSuitability || trackVerdict.shortTermSuitability);
+
+  const stayDecisionText = language === 'bn'
+    ? (activeVerdict.stayDecision_bn || trackVerdict.stayDecision_bn)
+    : (activeVerdict.stayDecision_en || trackVerdict.stayDecision_en);
+
+  const worldRealityText = language === 'bn'
+    ? (activeVerdict.worldReality_bn || trackVerdict.worldReality_bn)
+    : (activeVerdict.worldReality_en || trackVerdict.worldReality_en);
+
   const competitionLevelBadge = language === 'bn' 
     ? (activeVerdict.competitionLevel_bn || trackVerdict.competitionLevel_bn)
     : (activeVerdict.competitionLevel || trackVerdict.competitionLevel);
@@ -84,103 +96,46 @@ export const VerdictSection: React.FC = () => {
   return (
     <div className="space-y-6">
       
-      {/* Primary Strategic Verdict Card */}
-      <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
-        
-        {/* Header Badge */}
-        <div className="flex items-center gap-2 mb-2.5">
+      {/* 1. Honest Staying Decision & World Reality Card */}
+      <div className="bg-[#FFFFFF] border-2 border-[#C84B31]/30 rounded-2xl p-5 sm:p-7 shadow-xs">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C84B31]/10 text-[#C84B31]">
             <ShieldAlert className="w-3.5 h-3.5 stroke-[2]" />
-            {t.dashboard.verdictBadge}
+            {t.dashboard.stayVerdictBadge}
           </span>
-          {requiresFoundationTrack && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#1B4332]/10 text-[#1B4332]">
-              30-Day Bridge Active
-            </span>
-          )}
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
+            {shortTermSuitabilityBadge}
+          </span>
         </div>
 
-        {/* Heading & Executive Body */}
         <h2 className="text-lg sm:text-xl font-bold text-[#141413] tracking-tight leading-snug">
-          {language === 'bn' ? activeVerdict.heading_bn : activeVerdict.heading_en}
+          {t.dashboard.stayVerdictTitle}
         </h2>
-        <p className="mt-2 text-xs sm:text-sm text-[#575653] leading-relaxed">
-          {language === 'bn' ? activeVerdict.body_bn : activeVerdict.body_en}
-        </p>
 
-        {/* 4 Reality Columns: Hardware, Language, Timeline, Expense */}
-        <div className="mt-5 pt-4 border-t border-[#E5E4DF] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          
-          {/* Hardware Reality */}
-          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
-            <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-[11px] uppercase tracking-wider mb-1.5">
-              <Cpu className="w-3.5 h-3.5 stroke-[2]" />
-              <span>Hardware</span>
-            </div>
-            <p className="text-xs text-[#141413] leading-relaxed">
-              {language === 'bn' ? activeVerdict.hardwareVerdict_bn : activeVerdict.hardwareVerdict_en}
-            </p>
+        {/* Tactical Recommendation Box */}
+        <div className="mt-4 p-4 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+          <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-xs uppercase tracking-wider mb-1.5">
+            <Zap className="w-4 h-4 stroke-[2]" />
+            <span>{t.dashboard.suitabilityLabel}</span>
           </div>
-
-          {/* English Language Reality */}
-          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
-            <div className="flex items-center gap-1.5 text-[#1B4332] font-bold text-[11px] uppercase tracking-wider mb-1.5">
-              <Globe2 className="w-3.5 h-3.5 stroke-[2]" />
-              <span>Language</span>
-            </div>
-            <p className="text-xs text-[#141413] leading-relaxed">
-              {language === 'bn' ? activeVerdict.englishVerdict_bn : activeVerdict.englishVerdict_en}
-            </p>
-          </div>
-
-          {/* Financial Urgency Reality */}
-          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
-            <div className="flex items-center gap-1.5 text-[#575653] font-bold text-[11px] uppercase tracking-wider mb-1.5">
-              <Clock className="w-3.5 h-3.5 stroke-[2]" />
-              <span>Timeline</span>
-            </div>
-            <p className="text-xs text-[#141413] leading-relaxed">
-              {language === 'bn' ? activeVerdict.urgencyVerdict_bn : activeVerdict.urgencyVerdict_en}
-            </p>
-          </div>
-
-          {/* Course & Expense Budget Reality */}
-          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
-            <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-[11px] uppercase tracking-wider mb-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 stroke-[2]" />
-              <span>Course & Budget</span>
-            </div>
-            <p className="text-xs text-[#141413] leading-relaxed">
-              {language === 'bn' ? (activeVerdict.expenseVerdict_bn || '১০০% ফ্রি রিসোর্স ও ভেরিফায়েড সার্টিফিকেট অগ্রাধিকার দেওয়া হয়েছে।') : (activeVerdict.expenseVerdict_en || 'Prioritizes 100% free verified certifications with zero tuition costs.')}
-            </p>
-          </div>
-
+          <p className="text-xs sm:text-sm text-[#141413] leading-relaxed font-medium">
+            {stayDecisionText}
+          </p>
         </div>
 
-        {/* Action Plan Points */}
-        <div className="mt-5 pt-4 border-t border-[#E5E4DF]">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-[#141413] mb-2.5">
-            {language === 'bn' ? 'তোমার জন্য সরাসরি করণীয়:' : 'Immediate Action Steps:'}
-          </h3>
-          <div className="space-y-2">
-            {(language === 'bn' ? activeVerdict.actionPlanPoints_bn : activeVerdict.actionPlanPoints_en)?.map(
-              (point: string, idx: number) => (
-                <div key={idx} className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-[#1B4332]/10 text-[#1B4332] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px] font-mono-numbers">
-                    {idx + 1}
-                  </div>
-                  <p className="text-xs text-[#141413] leading-relaxed">
-                    {point}
-                  </p>
-                </div>
-              )
-            )}
+        {/* Clear View of the World Reality Box (Non-demotivating) */}
+        <div className="mt-4 p-4 rounded-xl bg-[#1B4332]/5 border border-[#1B4332]/20">
+          <div className="flex items-center gap-1.5 text-[#1B4332] font-bold text-xs uppercase tracking-wider mb-1.5">
+            <Globe2 className="w-4 h-4 stroke-[2]" />
+            <span>{t.dashboard.worldRealityTitle}</span>
           </div>
+          <p className="text-xs sm:text-sm text-[#141413] leading-relaxed">
+            {worldRealityText}
+          </p>
         </div>
-
       </div>
 
-      {/* 2026 Competition Reality & Candidate Landscape Card */}
+      {/* 2. 2026 Competition Reality & Candidate Landscape Card */}
       <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
         
         {/* Header Badge */}
@@ -247,7 +202,7 @@ export const VerdictSection: React.FC = () => {
 
       </div>
 
-      {/* 2026 Realistic Timeline to Employment Card */}
+      {/* 3. 2026 Realistic Timeline to Employment Card */}
       <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
         
         {/* Header Badge */}
@@ -326,7 +281,103 @@ export const VerdictSection: React.FC = () => {
 
       </div>
 
-      {/* Alternative Backup Track & Honest Pivot Advice */}
+      {/* 4. Primary Strategic Verdict Card */}
+      <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
+        
+        {/* Header Badge */}
+        <div className="flex items-center gap-2 mb-2.5">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C84B31]/10 text-[#C84B31]">
+            <ShieldAlert className="w-3.5 h-3.5 stroke-[2]" />
+            {t.dashboard.verdictBadge}
+          </span>
+          {requiresFoundationTrack && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#1B4332]/10 text-[#1B4332]">
+              30-Day Bridge Active
+            </span>
+          )}
+        </div>
+
+        {/* Heading & Executive Body */}
+        <h3 className="text-base sm:text-lg font-bold text-[#141413] tracking-tight leading-snug">
+          {language === 'bn' ? activeVerdict.heading_bn : activeVerdict.heading_en}
+        </h3>
+        <p className="mt-2 text-xs sm:text-sm text-[#575653] leading-relaxed">
+          {language === 'bn' ? activeVerdict.body_bn : activeVerdict.body_en}
+        </p>
+
+        {/* 4 Reality Columns: Hardware, Language, Timeline, Expense */}
+        <div className="mt-5 pt-4 border-t border-[#E5E4DF] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          
+          {/* Hardware Reality */}
+          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+            <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-[11px] uppercase tracking-wider mb-1.5">
+              <Cpu className="w-3.5 h-3.5 stroke-[2]" />
+              <span>Hardware</span>
+            </div>
+            <p className="text-xs text-[#141413] leading-relaxed">
+              {language === 'bn' ? activeVerdict.hardwareVerdict_bn : activeVerdict.hardwareVerdict_en}
+            </p>
+          </div>
+
+          {/* English Language Reality */}
+          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+            <div className="flex items-center gap-1.5 text-[#1B4332] font-bold text-[11px] uppercase tracking-wider mb-1.5">
+              <Globe2 className="w-3.5 h-3.5 stroke-[2]" />
+              <span>Language</span>
+            </div>
+            <p className="text-xs text-[#141413] leading-relaxed">
+              {language === 'bn' ? activeVerdict.englishVerdict_bn : activeVerdict.englishVerdict_en}
+            </p>
+          </div>
+
+          {/* Financial Urgency Reality */}
+          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+            <div className="flex items-center gap-1.5 text-[#575653] font-bold text-[11px] uppercase tracking-wider mb-1.5">
+              <Clock className="w-3.5 h-3.5 stroke-[2]" />
+              <span>Timeline</span>
+            </div>
+            <p className="text-xs text-[#141413] leading-relaxed">
+              {language === 'bn' ? activeVerdict.urgencyVerdict_bn : activeVerdict.urgencyVerdict_en}
+            </p>
+          </div>
+
+          {/* Course & Expense Budget Reality */}
+          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+            <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-[11px] uppercase tracking-wider mb-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 stroke-[2]" />
+              <span>Course & Budget</span>
+            </div>
+            <p className="text-xs text-[#141413] leading-relaxed">
+              {language === 'bn' ? (activeVerdict.expenseVerdict_bn || '১০০% ফ্রি রিসোর্স ও ভেরিফায়েড সার্টিফিকেট অগ্রাধিকার দেওয়া হয়েছে।') : (activeVerdict.expenseVerdict_en || 'Prioritizes 100% free verified certifications with zero tuition costs.')}
+            </p>
+          </div>
+
+        </div>
+
+        {/* Action Plan Points */}
+        <div className="mt-5 pt-4 border-t border-[#E5E4DF]">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-[#141413] mb-2.5">
+            {language === 'bn' ? 'তোমার জন্য সরাসরি করণীয়:' : 'Immediate Action Steps:'}
+          </h4>
+          <div className="space-y-2">
+            {(language === 'bn' ? activeVerdict.actionPlanPoints_bn : activeVerdict.actionPlanPoints_en)?.map(
+              (point: string, idx: number) => (
+                <div key={idx} className="flex items-start gap-2.5">
+                  <div className="w-4 h-4 rounded-full bg-[#1B4332]/10 text-[#1B4332] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px] font-mono-numbers">
+                    {idx + 1}
+                  </div>
+                  <p className="text-xs text-[#141413] leading-relaxed">
+                    {point}
+                  </p>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+      </div>
+
+      {/* 5. Alternative Backup Track & Honest Pivot Advice */}
       {secondaryTrack && (
         <div className="bg-[#FAF9F5] border border-[#E5E4DF] rounded-2xl p-5 sm:p-6 shadow-xs">
           <div className="flex items-center justify-between gap-3 mb-2">

@@ -18,7 +18,8 @@ import { RequirementsChecklist } from './components/RequirementsChecklist.js';
 import { RoadmapTimeline } from './components/RoadmapTimeline.js';
 import { DesktopTelemetryPanel } from './components/DesktopTelemetryPanel.js';
 import { AiMentorDrawer } from './components/AiMentorDrawer.js';
-import type { SurveySubmission } from '../shared/types.js';
+import type { SurveySubmission } from '../../shared/types.js';
+import { getTrackVerdict } from '../../shared/trackVerdictData.js';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Compass, 
@@ -33,7 +34,8 @@ import {
   Layers,
   Sparkles,
   SlidersHorizontal,
-  Loader2
+  Loader2,
+  ArrowRight
 } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -354,6 +356,42 @@ export const App: React.FC = () => {
                       )}
                     </div>
 
+                    {/* Honest Track Verdict Callout Banner */}
+                    {primaryTrack && (
+                      <div className="bg-[#FFFFFF] border-2 border-[#C84B31]/30 rounded-2xl p-3.5 sm:p-4 mb-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div className="flex items-start gap-2.5 min-w-0">
+                          <div className="w-8 h-8 rounded-lg bg-[#C84B31]/10 text-[#C84B31] flex items-center justify-center shrink-0 mt-0.5">
+                            <ShieldAlert className="w-4 h-4 stroke-[2]" />
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-[#C84B31]">
+                                {t.dashboard.stayVerdictQuickLabel}
+                              </span>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
+                                {language === 'bn' 
+                                  ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack.slug).shortTermSuitability_bn)
+                                  : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack.slug).shortTermSuitability)}
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#141413] leading-relaxed line-clamp-2 font-medium">
+                              {language === 'bn'
+                                ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack.slug).stayDecision_bn)
+                                : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack.slug).stayDecision_en)}
+                            </p>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => setActiveTab('verdict')}
+                          className="shrink-0 px-3 py-1.5 bg-[#C84B31] hover:bg-[#B33E26] text-white rounded-xl text-xs font-bold inline-flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer self-start sm:self-center"
+                        >
+                          <span>{t.dashboard.viewVerdictBtn}</span>
+                          <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
+                        </button>
+                      </div>
+                    )}
+
                     {/* Modern Segmented Navigation Bar */}
                     <div className="bg-[#FAF9F5] border border-[#E5E4DF] p-1 rounded-2xl mb-5 shadow-2xs flex items-center gap-1 overflow-x-auto scrollbar-none">
                       <button
@@ -366,6 +404,18 @@ export const App: React.FC = () => {
                       >
                         <Map className="w-3.5 h-3.5 stroke-[2]" />
                         <span>{language === 'bn' ? 'রোডম্যাপ' : 'Roadmap'}</span>
+                      </button>
+
+                      <button
+                        onClick={() => setActiveTab('verdict')}
+                        className={`flex-1 min-w-[90px] sm:min-w-[110px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
+                          activeTab === 'verdict'
+                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
+                            : 'text-[#575653] hover:text-[#141413]'
+                        }`}
+                      >
+                        <ShieldAlert className="w-3.5 h-3.5 stroke-[2] text-[#C84B31]" />
+                        <span>{language === 'bn' ? 'বাস্তব রায় ও প্রতিযোগিতা' : 'Verdict & Reality'}</span>
                       </button>
 
                       <button
@@ -403,18 +453,6 @@ export const App: React.FC = () => {
                         <CheckSquare className="w-3.5 h-3.5 stroke-[2]" />
                         <span>{language === 'bn' ? 'স্কিলস' : 'Skills'}</span>
                       </button>
-
-                      <button
-                        onClick={() => setActiveTab('verdict')}
-                        className={`flex-1 min-w-[76px] sm:min-w-[90px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
-                          activeTab === 'verdict'
-                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
-                            : 'text-[#575653] hover:text-[#141413]'
-                        }`}
-                      >
-                        <ShieldAlert className="w-3.5 h-3.5 stroke-[2]" />
-                        <span>{language === 'bn' ? 'দিকনির্দেশনা' : 'Guidance'}</span>
-                      </button>
                     </div>
 
                     {/* Asymmetric Split-Pane Layout on Desktop (8 cols canvas, 4 cols sticky telemetry) */}
@@ -434,6 +472,7 @@ export const App: React.FC = () => {
                         <DesktopTelemetryPanel
                           onOpenMentorDrawer={() => setIsMentorDrawerOpen(true)}
                           onOpenCatalogModal={() => setViewState('catalog')}
+                          onSelectTab={setActiveTab}
                         />
                       </div>
 

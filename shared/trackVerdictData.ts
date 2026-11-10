@@ -17,6 +17,14 @@ export interface TrackVerdictInfo {
   timelineVerdict_bn: string;
   milestones_en: string[];
   milestones_bn: string[];
+
+  // Staying Decision & World Reality
+  shortTermSuitability: 'High' | 'Moderate' | 'Low' | 'Bridge';
+  shortTermSuitability_bn: string;
+  stayDecision_en: string;
+  stayDecision_bn: string;
+  worldReality_en: string;
+  worldReality_bn: string;
 }
 
 export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
@@ -46,7 +54,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ৩ মাস: পাইথন, পাইটর্চ বেসিক ও পোস্টগ্রেস পিজিভেক্টর',
       '৪ থেকে ৬ মাস: প্রোডাকশন RAG, ভিএলএলএম সার্ভিং ও ল্যাংগ্রাফ এজেন্ট',
       '৭ থেকে ১০ মাস: আনস্লথ লোরা ফাইন-টিউনিং ও হাগিংফেসে লাইভ প্রজেক্ট'
-    ]
+    ],
+    shortTermSuitability: 'Low',
+    shortTermSuitability_bn: 'দ্রুত চাকরির জন্য উপযুক্ত নয় (৮ থেকে ১০ মাস লাগবে)',
+    stayDecision_en: 'If you need immediate income within 2 to 4 months, do NOT stay on this track full-time. AI engineering requires 8 to 10 months of disciplined groundwork. If urgent money is needed, take an ISP, IT Support, or Laravel Web role first to start earning, and study AI during evenings. If you have a 1-year study runway during your diploma, this is the most rewarding long-term path.',
+    stayDecision_bn: 'যদি তোমার ২ থেকে ৪ মাসের মধ্যে জরুরি আয়ের প্রয়োজন থাকে, তবে এই ট্র্যাকে ফুল-টাইম থেকো না! কারণ এআই ও মেশিন লার্নিংয়ে কাজের সুযোগ পেতে গভীর ল্যাব প্র্যাকটিস ও অন্তত ৮ থেকে ১০ মাস সময় লাগে। দ্রুত টাকা দরকার হলে আগে আইএসপি, আইটি সাপোর্ট বা লারাভেল ওয়েব দিয়ে আয় শুরু করো, আর রাতে অবসর সময়ে এআই শেখো। তবে তোমার হাতে যদি এক বছর সময় থাকে, তবে এটি ২০২৬ সালের সর্বোচ্চ মর্যাদাপূর্ণ ক্যারিয়ার।',
+    worldReality_en: 'The tech world in 2026 is divided: AI is automating basic repetitive tasks, but companies are desperately seeking engineers who can connect LLMs to real production APIs and databases. You do not need a PhD to earn a great salary, you just need to be the person who makes AI actually work inside a company.',
+    worldReality_bn: '২০২৬ সালের আসল সত্য হলো: এআই সাধারণ কাজগুলো বদলে দিচ্ছে, কিন্তু দেশ-বিদেশের কোম্পানিগুলো হন্যে হয়ে এমন মানুষ খুঁজছে যারা এআই মডেলগুলোকে আসল সার্ভার ও সফটওয়্যারে কার্যকরভাবে যুক্ত করতে পারে। তোমাকে বিশ্বমানের গণিতবিদ বা পিএইচডি হতে হবে না; কেবল ব্যবহারিক অ্যাপ্লায়েড কাজ জানলেই তুমি সম্মানের সাথে টিকে থাকবে।'
   },
 
   'backend-systems-engineering': {
@@ -75,7 +89,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: গো বা টাইপস্ক্রিপ্ট কোর, এইচটিটিপি প্রটোকল ও জটিল এসকিউএল',
       '৩ থেকে ৪ মাস: কনকারেন্সি, রেডিস ক্যাশ, জেডব্লিউটি অথ ও ডকার কনটেইনার',
       '৫ থেকে ৭ মাস: ৫০০০ রিকোয়েস্ট/সেকেন্ড লোড টেস্টেড এপিআই ও ভাইভা প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৫ থেকে ৭ মাস)',
+    stayDecision_en: 'Stay on this roadmap if you have a 5 to 7 month preparation runway. Backend concurrency in Go and Node has far less applicant saturation than frontend web. As long as you write tested, concurrent code, companies will interview you regardless of degree.',
+    stayDecision_bn: 'তোমার হাতে যদি ৫ থেকে ৭ মাস সময় থাকে, তবে অবশ্যই এই ট্র্যাকে থাকো। এটি রাতারাতি শেখার বিষয় নয়, তবে ফ্রন্টএন্ডের মতো এখানে লাখ লাখ প্রার্থীর ভিড় নেই। যারা গো-ল্যাং ও ডেটাবেস লকিংয়ে প্র্যাকটিক্যাল কোড লিখতে পারে, কোম্পানিগুলো তাদের আগ্রহের সাথে ডেকে নেয়।',
+    worldReality_en: 'In 2026, frontends are generated rapidly with modern tools, but payment gateway security, server reliability, and database concurrency cannot be left to chance. Backend engineers who protect customer data and guarantee zero downtime are treated with the highest respect.',
+    worldReality_bn: '২০২৬ সালে এআই দিয়ে সাধারণ ইউআই সহজে বানানো যায়, কিন্তু ব্যাংক পেমেন্ট সিকিউরিটি, সার্ভারের লোড ব্যালেন্সিং ও ডেটাবেস লকিং কখনো ভুল হওয়া চলবে না। ব্যাকএন্ড ইঞ্জিনিয়াররাই যেকোনো টেক কোম্পানির মূল মেরুদণ্ড।'
   },
 
   'isp-mikrotik-networking': {
@@ -104,7 +124,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ম মাস: আইপি সাবনেটিং, উইনবক্স, ডিএইচসিপি ও ন্যাট রাউটিং',
       '২য় মাস: বিজিপি, ওএসপিএফ, ব্যান্ডউইথ ম্যানেজমেন্ট ও ফাইবার স্প্লাইসিং',
       '৩য় মাস: সিসকো নেটঅ্যাকাড ব্যাজ ও সরাসরি স্থানীয় আইএসপিতে আবেদন'
-    ]
+    ],
+    shortTermSuitability: 'High',
+    shortTermSuitability_bn: 'দ্রুত চাকরির জন্য ১০০% সেরা (২ থেকে ৩ মাস)',
+    stayDecision_en: 'If you need a job in the shortest possible time, STAY on this roadmap! It has the highest immediate placement rate for CST diploma holders across Bangladesh. Most polytechnic graduates get hired before final exams.',
+    stayDecision_bn: 'যদি তোমার খুব দ্রুত (২ থেকে ৩ মাসের মধ্যে) চাকরি বা ইন্টার্নশিপ দরকার হয়, তবে ১০০% এই ট্র্যাকেই থাকো! সমগ্র বাংলাদেশে পলিটেকনিক শিক্ষার্থীদের জন্য এর চেয়ে দ্রুত নিশ্চিত চাকরি পাওয়ার পথ আর নেই। অধিকাংশ শিক্ষার্থী ফাইনাল পরীক্ষার আগেই চাকরির অফার পেয়ে যান।',
+    worldReality_en: 'Every home, bank, and corporate office in Bangladesh needs physical internet connectivity. Software developers may sit in air-conditioned offices, but the internet they run on is kept alive by ISP engineers. This profession is practical, grounded, and immune to AI automation.',
+    worldReality_bn: 'বাস্তব সত্য হলো: দেশের প্রতিটি বাড়ি, ব্যাংক ও কারখানায় ইন্টারনেট লাইন লাগবেই। সফটওয়্যার ডেভেলপাররা হয়তো ঘরে বসে কোড করেন, কিন্তু তাদের ইন্টারনেট ঠিক রাখার দায়িত্ব আইএসপি ইঞ্জিনিয়ারদের হাতে। এই কাজ কখনো এআই দিয়ে রিপ্লেস হবে না এবং এটি অত্যন্ত স্থিতিশীল পেশা।'
   },
 
   'cybersecurity-soc-analyst': {
@@ -133,7 +159,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: নেটওয়ার্কিং ফান্ডামেন্টালস, টিসিপি হ্যান্ডশেক ও লিনাক্স ওএস',
       '৩ থেকে ৪ মাস: ওয়্যারশার্ক প্যাকেট অ্যানালাইসিস ও ওয়াজুহ এসআইইএম ল্যাব',
       '৫ থেকে ৮ মাস: ওওয়াস্প শীর্ষ ১০ আক্রমণ প্রতিরোধ, ইনসিডেন্ট রিপোর্ট ও ভাইভা'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৬ থেকে ৮ মাস)',
+    stayDecision_en: 'Stay if you have 6 to 8 months and seek a prestigious, high-security role in banking or telecom sectors. Not suitable if you need quick money next month, but highly resilient once you land your first role.',
+    stayDecision_bn: 'তোমার হাতে ৬ থেকে ৮ মাস থাকলে এবং ব্যাংক বা করপোরেট প্রতিষ্ঠানে মর্যাদাপূর্ণ ক্যারিয়ার চাইলে অবশ্যই থাকো। আগামী মাসে চাকরি চাইলে এটা সঠিক নয়; তবে একবার এসওসি অ্যানালিস্ট হিসেবে ঢুকলে ক্যারিয়ার নিয়ে আর অনিশ্চয়তা থাকে না।',
+    worldReality_en: 'With cyber incidents multiplying globally, Bangladesh Bank makes 24/7 SOC teams mandatory for every scheduled bank. Banks never cut cybersecurity budgets. Candidates who know how to read packet captures will always find open doors.',
+    worldReality_bn: 'সাইবার হামলার যুগে ব্যাংক ও আর্থিক প্রতিষ্ঠানগুলোর সাইবার সিকিউরিটি বাজেট কখনোই কমানো হয় না। বাংলাদেশ ব্যাংকের কঠোর নিয়মের কারণে ব্যাংকগুলোতে সার্বক্ষণিক মনিটরিংয়ের জন্য সিকিউরিটি অ্যানালিস্টদের চাহিদা সবসময় অটুট।'
   },
 
   'linux-devops-admin': {
@@ -162,7 +194,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: লিনাক্স কমান্ডলাইন, ব্যাশ স্ক্রিপ্ট ও সিস্টেমডি সার্ভিস',
       '৩ থেকে ৪ মাস: ডকার কনটেইনারাইজেশন, এনজিনএক্স রিভার্স প্রক্সি ও এসএসএল',
       '৫ থেকে ৮ মাস: গিটহাব একশন পাইপলাইন, ওপেনটোফু বেসিক ও লাইভ সার্ভার ডিপ্লয়'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৬ থেকে ৮ মাস)',
+    stayDecision_en: 'Stay if you have 6 to 8 months. DevOps is purely practical: live terminal tasks decide hiring, not university degrees. Highly valued in both Dhaka software hubs and international remote teams.',
+    stayDecision_bn: '৬ থেকে ৮ মাস সময় থাকলে থাকো। ডেভঅপ্সে প্রাতিষ্ঠানিক ডিগ্রির কড়াকড়ি নেই; ডকার ও সিআই/সিডি অটোমেশন দেখাতে পারলেই কোম্পানি সরাসরি নিয়ে নেয়।',
+    worldReality_en: 'Every company needs reliable deployments without outages. A DevOps engineer who keeps Docker containers healthy and automates continuous integration is indispensable to management.',
+    worldReality_bn: 'সার্ভার ডাউন হলে কোম্পানির লাখ লাখ টাকা ক্ষতি হয়। যারা ডকার ও গিটহাব একশন দিয়ে নিরাপদে সফটওয়্যার লাইভ রাখতে পারে, প্রতিষ্ঠানে তাদের কদর অপরিসীম।'
   },
 
   'cloud-solutions-architecture': {
@@ -191,7 +229,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: লিনাক্স, আইপি নেটওয়ার্কিং ও এডব্লিউএস বেসিক সার্ভিস (EC2, S3)',
       '৩ থেকে ৪ মাস: এডব্লিউএস সিকিউরিটি (IAM), ভিপিসি নেটওয়ার্ক ও ক্লাউড ডেটাবেস',
       '৫ থেকে ৮ মাস: টেরাফর্ম দিয়ে অটোমেশন, সার্ভার মনিটরিং ও ভাইভা প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৬ থেকে ৮ মাস)',
+    stayDecision_en: 'Stay if you have 6 to 8 months. Cloud infrastructure pays higher starting salaries than junior frontend development and opens paths to global remote work.',
+    stayDecision_bn: '৬ থেকে ৮ মাস সময় থাকলে এই ট্র্যাকে থাকো। সাধারণ জুনিয়র কোডারদের চেয়ে ক্লাউড ইঞ্জিনিয়ারদের প্রারম্ভিক বেতন বেশি এবং আন্তর্জাতিক রিমোট চাকরির সুযোগ সবচেয়ে চমৎকার।',
+    worldReality_en: 'Every scaling business is migrating from physical hardware to AWS or Google Cloud. Writing Infrastructure-as-Code with Terraform allows a single engineer to manage hundreds of cloud servers from a laptop.',
+    worldReality_bn: 'দেশি-বিদেশি সব প্রতিষ্ঠান এখন ক্লাউডে শিফট করছে। টেরাফর্ম দিয়ে একবার স্বয়ংক্রিয় ক্লাউড আর্কিটেকচার বানিয়ে দিলে তুমি ঘরে বসেই যেকোনো দেশের সার্ভার পরিচালনা করতে পারবে।'
   },
 
   'laravel-php-agency-dev': {
@@ -220,7 +264,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: আধুনিক পিএইচপি অবজেক্ট ওরিয়েন্টেড কনসেপ্ট ও মাইএসকিউএল',
       '৩য় মাস: লারাভেল ১১ এমভিসি, এলোকোয়েন্ট রিলেশনশিপ ও ইউজার অথেন্টিকেশন',
       '৪ থেকে ৫ মাস: লাইভওয়্যার ৩, ফিলামেন্ট অ্যাডমিন ও বিকাশ পেমেন্ট গেটওয়ে প্রজেক্ট'
-    ]
+    ],
+    shortTermSuitability: 'High',
+    shortTermSuitability_bn: 'দ্রুত চাকরির জন্য চমৎকার (৪ থেকে ৫ মাস)',
+    stayDecision_en: 'Stay if you want to join a Dhaka software agency in 4 to 5 months. It has the highest volume of entry-level software openings in Bangladesh. Livewire and Filament expertise guarantees quick interview calls.',
+    stayDecision_bn: '৪ থেকে ৫ মাসের মধ্যে দেশীয় সফটওয়্যার ফার্ম বা এজেন্সিতে চাকরি পেতে চাইলে এই ট্র্যাকে থাকা সবচেয়ে বুদ্ধিমানের কাজ। দেশের লোকাল সফটওয়্যার মার্কেটে ফ্রেশারদের জন্য সবচেয়ে বেশি নিয়োগ হয় লারাভেলে।',
+    worldReality_en: 'Agency web development moves at high speed. Real estate portals, e-commerce stores, and invoice systems need to be shipped in weeks. Laravel powers 70% of business software in Bangladesh because it delivers results fast.',
+    worldReality_bn: 'বাস্তব সত্য হলো: দেশের রিয়েল এস্টেট, হাসপাতাল, সুপারশপ ও ই-কমার্স ব্যবসাগুলোর দ্রুত সফটওয়্যার প্রয়োজন। লারাভেল এমন একটি ফ্রেমওয়ার্ক যা দিয়ে যেকোনো বিজনেস সফটওয়্যার দ্রুত বানানো যায়, তাই এর চাহিদা কখনোই শেষ হয় না।'
   },
 
   'frontend-fullstack-web': {
@@ -249,7 +299,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: আধুনিক জাভাস্ক্রিপ্ট, টেইলউইন্ড সিএসএস ও খাঁটি টাইপস্ক্রিপ্ট',
       '৩ থেকে ৪ মাস: রিয়্যাক্ট ১৯, নেক্সট.জেএস ১৫ ও পোস্টগ্রেস ডেটাবেস কানেকশন',
       '৫ থেকে ৭ মাস: অটোমেটেড টেস্টিং, অথেন্টিকেশন সিকিউরিটি ও লাইভ ডিপ্লয়মেন্ট'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৫ থেকে ৭ মাস)',
+    stayDecision_en: 'Stay only if you are willing to learn strict TypeScript and write automated tests. If you only want to copy-paste beginner tutorial code, you will be lost in a sea of applicants. With Next.js 15 and Vitest, you bypass generic competitors.',
+    stayDecision_bn: 'এই ট্র্যাকে তখনই থাকবে যখন তুমি সাধারণ টিউটোরিয়াল কপি না করে খাঁটি টাইপস্ক্রিপ্ট ও টেস্ট সহ সিরিয়াস সফটওয়্যার বানাতে প্রস্তুত। শুধু ইউটিউব দেখে টু-ডু অ্যাপ বানালে ভিড়ে হারিয়ে যাবে; কিন্তু সুনির্দিষ্ট আর্কিটেকচার শিখলে ৫ থেকে ৭ মাসেই চাকরি নিশ্চিত।',
+    worldReality_en: 'Web development is the largest tech market in Bangladesh. The rumor that AI destroys web dev is incorrect; AI only eliminates people who copy-paste without understanding. Developers with strict TypeScript, state architecture, and testing skills are hired rapidly.',
+    worldReality_bn: 'বাস্তবতা হলো: এআই ওয়েব ডেভেলপমেন্ট ধ্বংস করছে না, বরং এআই শুধু তাদের বাদ দিচ্ছে যারা না বুঝে কপি-পেস্ট করত। ভালো টাইপস্ক্রিপ্ট ও নেক্সট.জেএস জানা প্রফেশনাল ডেভেলপারদের কাজের গতি ও বেতন দুটোই এখন আগের চেয়ে অনেক বেশি।'
   },
 
   'mobile-app-development': {
@@ -278,7 +334,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: ডার্ট প্রোগ্রামিং, ফ্লাটার উইজেট ও রেসপনসিভ ইউআই ডিজাইন',
       '৩ থেকে ৪ মাস: রেস্ট এপিআই ইন্টিগ্রেশন, স্টেট ম্যানেজমেন্ট ও অফলাইন স্টোরেজ',
       '৫ থেকে ৭ মাস: পুশ নোটিফিকেশন, এপিকে বিল্ড তৈরি ও ইন্টারভিউ প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৫ থেকে ৭ মাস)',
+    stayDecision_en: 'Stay if you have 5 to 7 months and the determination to publish 2 complete playable APKs on Google Play Store or GitHub. Flutter hiring remains steady across agencies.',
+    stayDecision_bn: '৫ থেকে ৭ মাস সময় থাকলে এবং প্লে-স্টোরে বা গিটহাবে ২টি লাইভ অ্যাপ প্রকাশ করার ধৈর্য থাকলে অবশ্যই থাকো। ঢাকা শহরের সফটওয়্যার এজেন্সিগুলোতে নিয়মিত ফ্লাটার ডেভেলপার নেওয়া হয়।',
+    worldReality_en: 'Over 90% of digital users in Bangladesh browse via mobile devices. Every retail and services business wants cross-platform mobile apps, making Flutter engineers continuously employable.',
+    worldReality_bn: 'বাংলাদেশে ৯০% মানুষ মোবাইলেই ইন্টারনেট ব্যবহার করে। প্রতিটি প্রতিষ্ঠান তাদের সেবার জন্য মোবাইল অ্যাপ তৈরি করছে, ফলে ফ্লাটার দিয়ে একই সাথে অ্যান্ড্রয়েড ও আইওএস অ্যাপ বানানোর চাহিদা স্থায়ী।'
   },
 
   'enterprise-java-fintech': {
@@ -307,7 +369,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: জাভা ২১ কোর কনসেপ্ট, অবজেক্ট ওরিয়েন্টেড ডিজাইন ও এসকিউএল',
       '৩ থেকে ৪ মাস: স্প্রিং বুট ৩, স্প্রিং জেপিএ, স্প্রিং সিকিউরিটি ও জেডব্লিউটি',
       '৫ থেকে ৮ মাস: মাইক্রোসার্ভিস আর্কিটেকচার, ডকার ও ফিনটেক ভাইভা প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৬ থেকে ৮ মাস)',
+    stayDecision_en: 'Stay if you have 6 to 8 months and desire lifelong career stability in banking software, payment gateways, and telecommunications.',
+    stayDecision_bn: '৬ থেকে ৮ মাসের ধৈর্য থাকলে এবং দেশের ব্যাংক ও বিকাশ/নগদ ইকোসিস্টেমে আজীবন নিশ্চিত ও স্থায়ী ক্যারিয়ার চাইলে এই ট্র্যাকে থাকা সেরা সিদ্ধান্ত।',
+    worldReality_en: 'Financial institutions in Bangladesh settle billions of Takas daily. They choose Spring Boot and Java because reliability and security matter more than any new trend.',
+    worldReality_bn: 'দেশের ব্যাংকিং ও মোবাইল ফিন্যান্সিয়াল সার্ভিসেস প্রতিদিন হাজার কোটি টাকার লেনদেন করে। এই প্রতিষ্ঠানগুলো ট্রেন্ডি ফ্রেমওয়ার্কের চেয়ে জাভার বিশ্বস্ততা ও নিরাপত্তাকে সবচেয়ে বেশি প্রাধান্য দেয়।'
   },
 
   'python-data-ai': {
@@ -336,7 +404,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: অ্যাডভান্সড এক্সেল, এসকিউএল জয়েন ও জটিল কুয়েরি সমাধান',
       '৩ থেকে ৪ মাস: পাইথন প্রোগ্রামিং, প্যান্ডাস ডেটা প্রসেসিং ও ভিজ্যুয়ালাইজেশন',
       '৫ থেকে ৬ মাস: পাওয়ার বিআই ড্যাশবোর্ড ও স্বয়ংক্রিয় ওয়েব স্ক্র্যাপিং প্রজেক্ট'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৪ থেকে ৬ মাস)',
+    stayDecision_en: 'Stay if you have 4 to 6 months. It is an ideal gateway for CST students who prefer business analytics, spreadsheets, and SQL rather than software architecture.',
+    stayDecision_bn: '৪ থেকে ৬ মাস সময় থাকলে এই ট্র্যাকে থাকো। বিভিন্ন করপোরেট প্রতিষ্ঠান, ই-কমার্স ও রিটেইল চেইনে ডেটা অ্যানালিস্ট বা এমআইএস পদের জন্য এটি চমৎকার।',
+    worldReality_en: 'Executives do not make decisions on gut feeling anymore. Business analysts who transform messy spreadsheets into clear visual dashboards in Power BI hold real influence in corporate offices.',
+    worldReality_bn: 'প্রতিটি ব্যবসায়ে এখন ডেটা দেখে সিদ্ধান্ত নেওয়া হয়। অগোছালো তথ্যকে পাওয়ার বিআই বা এসকিউএল দিয়ে সুন্দর ড্যাশবোর্ডে রূপান্তর করতে পারলে যেকোনো করপোরেট অফিসে স্থায়ী চাকরি পাওয়া যায়।'
   },
 
   'data-engineering-big-data': {
@@ -365,7 +439,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: ডেটাবেস আর্কিটেকচার, জটিল কুয়েরি ও পাইথন স্ক্রিপ্টিং',
       '৩ থেকে ৫ মাস: অ্যাপাচি কাফকা স্ট্রিমিং ও পাইস্পার্ক ডিস্ট্রিবিউটেড প্রসেসিং',
       '৬ থেকে ৯ মাস: অ্যাপাচি এয়ারফ্লো অর্কেস্ট্রেশন ও লাইভ পাইপলাইন ডেপ্লয়'
-    ]
+    ],
+    shortTermSuitability: 'Low',
+    shortTermSuitability_bn: 'মাঝারি থেকে দীর্ঘ সময় প্রয়োজন (৭ থেকে ৯ মাস)',
+    stayDecision_en: 'Do not stay if you need urgent salary in 3 months. Big data distributed systems require 7 to 9 months of heavy pipeline engineering, but reward you with top-tier salaries.',
+    stayDecision_bn: '৩ মাসে চাকরি চাইলে এই ট্র্যাকে থেকো না। বিগ ডেটা ও ক্লাউড ডেটাবেস আয়ত্ত করতে ৭ থেকে ৯ মাস নিবিড় অনুশীলনের প্রয়োজন, তবে এর বেতন দেশীয় ও রিমোট উভয় খাতেই সর্বোচ্চ পর্যায়ের।',
+    worldReality_en: 'Modern applications collect massive volumes of data every second. Building fault-tolerant pipelines with Kafka and Spark requires disciplined systems engineering that cannot be faked.',
+    worldReality_bn: 'টেলিকম ও ব্যাংকিং খাতে প্রতিদিন কোটি কোটি ডেটা জমা হয়। এই বিশাল ডেটা সুরক্ষিত ও সঠিকভাবে প্রসেস করার মতো দক্ষ ডেটা ইঞ্জিনিয়ারের তীব্র সংকট রয়েছে।'
   },
 
   'embedded-iot-robotics': {
@@ -394,7 +474,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: সি/সি++ মেমোরি পয়েন্টার, ডিজিটাল ইলেকট্রনিক্স ও জিপিআইও',
       '৩ থেকে ৪ মাস: ইএসপি৩২ ওয়াইফাই, ফ্রিআরটিওএস ও সেন্সর ড্রাইভার তৈরি',
       '৫ থেকে ৮ মাস: ইন্ডাস্ট্রিয়াল মডবাস ও এমকিউটিটি ক্লাউড ড্যাশবোর্ড কানেকশন'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৬ থেকে ৮ মাস)',
+    stayDecision_en: 'Stay if you love physical hardware, microcontroller coding, and factory automation. Requires 6 to 8 months of circuit tinkering, but leads to solid, stable manufacturing careers.',
+    stayDecision_bn: 'সার্কিট, চিপ প্রোগ্রামিং ও ফ্যাক্টরি অটোমেশন ভালোবাসলে এবং ৬ থেকে ৮ মাস সময় থাকলে এই ট্র্যাকে থাকা সেরা পছন্দ। গার্মেন্টস ও ইলেকট্রনিক্স কোম্পানিতে এই কাজের ব্যাপক কদর রয়েছে।',
+    worldReality_en: 'Bangladesh is a global industrial manufacturing hub. As textile and consumer electronics factories automate their production lines with sensors and PLCs, embedded technicians remain in high demand.',
+    worldReality_bn: 'বাংলাদেশের টেক্সটাইল ও ইলেকট্রনিক্স ম্যানুফ্যাকচারিং কারখানাগুলো স্বয়ংক্রিয় হচ্ছে। যারা বোর্ডে কোড ফ্ল্যাশ করতে পারে এবং সেন্সর দিয়ে মেশিন নিয়ন্ত্রণ করতে পারে, তাদের জন্য ফ্যাক্টরিগুলোতে নিয়মিত নিয়োগ হয়।'
   },
 
   'qa-software-testing': {
@@ -423,7 +509,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: সফটওয়্যার টেস্টিং লাইফসাইকেল, বাগ রিপোর্ট তৈরি ও পোস্টম্যান এপিআই টেস্ট',
       '৩ থেকে ৪ মাস: টাইপস্ক্রিপ্ট ও প্লে-রাইট দিয়ে ব্রাউজার অটোমেশন স্ক্রিপ্ট তৈরি',
       '৫ম মাস: গিটহাব একশনে টেস্ট অটোমেশন এবং ভাইভা প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৪ থেকে ৫ মাস)',
+    stayDecision_en: 'Stay if you have 4 to 5 months. It offers one of the most accessible entry gates into the software industry, provided you learn automated scripting in TypeScript.',
+    stayDecision_bn: '৪ থেকে ৫ মাসের প্রস্তুতিতে সফটওয়্যার ফার্মে প্রবেশের এটি একটি অন্যতম সেরা পথ। তবে শুধু ম্যানুয়াল নয়, প্লে-রাইট দিয়ে অটোমেটেড টেস্টিং শিখতে হবে।',
+    worldReality_en: 'Software bugs cost companies money and user trust. Modern engineering teams depend on automated QA pipelines to ship new features with confidence.',
+    worldReality_bn: 'সফটওয়্যারে বাগ থাকলে কাস্টমার চলে যায়। কোড লিখে স্বয়ংক্রিয়ভাবে টেস্ট করতে পারা কিউএ ইঞ্জিনিয়ারদের সফটওয়্যার ইন্ডাস্ট্রিতে প্রতিনিয়ত প্রয়োজন।'
   },
 
   'it-hardware-support': {
@@ -450,7 +542,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
     milestones_bn: [
       '১ম মাস: কম্পিউটার অ্যাসেম্বলি, যন্ত্রাংশ ট্রাবলশুটিং ও উইন্ডোজ ইনস্টলেশন',
       '২য় মাস: অফিস ল্যান ক্যাবল ক্রিপিং, নেটওয়ার্ক প্রিন্টার সেটআপ ও ভাইভা প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'High',
+    shortTermSuitability_bn: 'দ্রুততম সময়ে স্থায়ী চাকরি (১ থেকে ২ মাস)',
+    stayDecision_en: 'Stay if you need a dependable local salary within 30 to 60 days. Every bank branch, factory, and educational institution in your district requires on-site IT technicians.',
+    stayDecision_bn: 'যদি ১ থেকে ২ মাসের মধ্যে নিজের জেলা বা ঢাকায় নিশ্চিত বেতনের চাকরি দরকার হয়, তবে অবিলম্বে এই ট্র্যাকে থাকো। প্রতিটি ব্যাংক শাখা, হাসপাতাল, পোশাক কারখানা ও কলেজে আইটি অফিসার বাধ্যতামূলক।',
+    worldReality_en: 'Hardware issues and severed network cables cannot be fixed remotely or solved by AI. When equipment breaks, an engineer with hands-on physical troubleshooting skills must step in.',
+    worldReality_bn: 'কম্পিউটারের হার্ডওয়্যার নষ্ট হলে বা অফিসের নেটওয়ার্ক কেবল কেটে গেলে কোনো সফটওয়্যার বা এআই তা ঠিক করতে পারে না। সরাসরি মানুষকেই হাত দিয়ে সার্ভিসিং করতে হয়, তাই এই কাজের সুযোগ সর্বত্র।'
   },
 
   'ui-ux-design': {
@@ -479,7 +577,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: ডিজাইনের মূলনীতি, টাইপোগ্রাফি ও ফিগমা অটো-লেআউট',
       '৩ থেকে ৪ মাস: ডিজাইন সিস্টেম, রেসপনসিভ ইউআই ও ইন্টারেক্টিভ প্রোটোটাইপ',
       '৫ থেকে ৬ মাস: ইউজার ইন্টারভিউ, ৩টি পূর্ণাঙ্গ কেস স্টাডি ও বিহ্যান্স পোর্টফোলিও'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৪ থেকে ৬ মাস)',
+    stayDecision_en: 'Stay if you have 4 to 6 months to create 3 detailed Figma case studies. Recruitment is entirely portfolio-based with zero degree discrimination.',
+    stayDecision_bn: '৪ থেকে ৬ মাস সময় নিয়ে ফিগমাতে ৩টি পূর্ণাঙ্গ কেস স্টাডি বানানোর আগ্রহ থাকলে থাকো। এখানে কোনো সার্টিফিকেট দেখা হয় না, পোর্টফোলিও ভালো হলেই চাকরি।',
+    worldReality_en: 'Great product design is not about superficial graphics; it is about solving human interaction friction. Designers who understand developer constraints and responsive grids are prized.',
+    worldReality_bn: 'ভালো ডিজাইনারের কাজ শুধু রঙ মাখা নয়, বরং সাধারণ মানুষের ব্যবহারের জটিলতা দূর করা। যারা ডেভেলপারের সাথে কথা বলে কোড-বান্ধব ডিজাইন করতে পারেন, তাদের চাহিদা তুঙ্গে।'
   },
 
   'ethical-hacking-bug-bounty': {
@@ -508,7 +612,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ৩ মাস: এইচটিটিপি প্রটোকল, ওওয়াস্প শীর্ষ ১০ ও পোর্টসুইগার ল্যাব',
       '৪ থেকে ৬ মাস: বার্প স্যুট প্র্যাকটিস, আইডিবাউআর ও বিজনেস লজিক ত্রুটি নির্ণয়',
       '৭ থেকে ৯ মাস: পাবলিক অ্যাসেট হান্টিং, বাগ রিপোর্ট তৈরি ও ভাইভা প্রস্তুতি'
-    ]
+    ],
+    shortTermSuitability: 'Low',
+    shortTermSuitability_bn: 'ধৈর্য ও দীর্ঘ সাধনা প্রয়োজন (৬ থেকে ৯ মাস)',
+    stayDecision_en: 'Do not stay if you expect regular monthly income next month. Bounty hunting payouts are irregular initially. Stay if you have genuine curiosity and a 6 to 9 month runway.',
+    stayDecision_bn: 'পরের মাস থেকেই নির্দিষ্ট বেতনের চাকরি চাইলে এই ট্র্যাকে থেকো না। বাউন্টি উপার্জনে সময় লাগে। তবে সাইবার সিকিউরিটিতে অগাধ ভালোবাসা এবং ৬ থেকে ৯ মাসের ধৈর্য থাকলে এটি দারুণ সম্ভাবনাময়।',
+    worldReality_en: 'Bug bounties are a pure meritocracy. Platforms like HackerOne reward valid security findings regardless of nationality or education.',
+    worldReality_bn: 'বাগ বাউন্টিতে কোনো স্বজনপ্রীতি বা ডিগ্রির পক্ষপাত নেই। তুমি যদি আন্তর্জাতিক প্ল্যাটফর্মে একটি বৈধ ত্রুটি রিপোর্ট করতে পারো, তোমাকে সাথে সাথে ভেরিফায়েড ডলার রিওয়ার্ড দেওয়া হবে।'
   },
 
   'desktop-app-development': {
@@ -537,7 +647,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: টাইপস্ক্রিপ্ট বা সি-শার্প বেসিক, অফলাইন এসকিউলাইট ডেটাবেস',
       '৩ থেকে ৪ মাস: তাউরি বা ইলেকট্রন ইউআই এবং থার্মাল ক্যাশ রসিদ প্রিন্ট সিস্টেম',
       '৫ থেকে ৬ মাস: বারকোড রিডার সেটআপ ও কমার্শিয়াল ইনস্টলার তৈরি'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৪ থেকে ৬ মাস)',
+    stayDecision_en: 'Stay if you want to sell offline POS billing software directly to pharmacies and retail shops in your town, or build desktop tools for companies.',
+    stayDecision_bn: 'নিজের এলাকার ফার্মেসি, সুপারশপ ও দোকানে অফলাইন পিওএস এবং রসিদ প্রিন্ট করার সফটওয়্যার বানিয়ে সরাসরি বিক্রি করতে বা ফার্মে কাজ করতে চাইলে থাকো।',
+    worldReality_en: 'Web apps cannot operate when electricity or broadband disconnects. Thousands of retail shops in Bangladesh rely strictly on offline-first desktop tools.',
+    worldReality_bn: 'ইন্টারনেট বা বিদ্যুৎ চলে গেলেও দোকানের ক্যাশ মেমো বন্ধ থাকা চলবে না। তাই লোকাল দোকানে অফলাইন ডেস্কটপ সফটওয়্যারের ব্যাপক ব্যবহারিক বাজার রয়েছে।'
   },
 
   'blockchain-web3-developer': {
@@ -566,7 +682,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: ইথেরিয়াম ভার্চুয়াল মেশিন, সলিডিটি কোড ও ইআরসি-২০ টোকেন',
       '৩ থেকে ৫ মাস: ফাউন্ড্রি দিয়ে টেস্ট অটোমেশন ও ওপেনজেপেলিন সিকিউরিটি',
       '৬ থেকে ৯ মাস: ডিসেন্ট্রালাইজড ওয়েব অ্যাপ তৈরি ও অডিট পোর্টফোলিও'
-    ]
+    ],
+    shortTermSuitability: 'Low',
+    shortTermSuitability_bn: 'দীর্ঘ সাধনা ও বৈশ্বিক মান প্রয়োজন (৭ থেকে ৯ মাস)',
+    stayDecision_en: 'Do not stay for quick local jobs in Bangladesh. Positions are almost entirely international and remote. Stay only if you have a 7 to 9 month runway and focus on contract security.',
+    stayDecision_bn: 'দ্রুত লোকাল চাকরির জন্য এই ট্র্যাকে থেকো না। বাংলাদেশে লোকাল জব কম। তবে আন্তর্জাতিক রিমোট অনুদান ও গ্লোবাল প্রজেক্টের লক্ষ্য থাকলে এবং ৭ থেকে ৯ মাস সময় থাকলে থাকো।',
+    worldReality_en: 'Smart contracts manage real digital wealth. A single logic flaw can drain a project, so engineering standards and security audits are strict.',
+    worldReality_bn: 'স্মার্ট কন্ট্রাক্ট সরাসরি কোটি টাকার ক্রিপ্টো লেনদেন পরিচালনা করে। এখানে কোডে কোনো ভুল সহ্য করা হয় না, তাই গভীর নিরাপত্তা জ্ঞান ছাড়া এতে ঢোকা ঝুঁকিপূর্ণ।'
   },
 
   'game-development-unity': {
@@ -595,7 +717,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: সি-শার্প কোডিং, ইউনিটি ইন্টারফেস ও ২ডি ফিজিক্স ইঞ্জিন',
       '৩ থেকে ৪ মাস: ইউআই মেনু, সাউন্ড ইফেক্ট ও মোবাইল টাচ কন্ট্রোল সিস্টেম',
       '৫ থেকে ৮ মাস: অ্যান্ড্রয়েড এপিকে অপ্টিমাইজেশন ও প্লে-স্টোরে লাইভ গেম'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৬ থেকে ৮ মাস)',
+    stayDecision_en: 'Stay if you have 6 to 8 months and commit to finishing 2 mobile game prototypes. Studios in Dhaka test applicants by playing your actual game build.',
+    stayDecision_bn: '৬ থেকে ৮ মাস সময় থাকলে এবং প্লে-স্টোরে ২টি সম্পূর্ণ খেলার যোগ্য মোবাইল গেম বানানোর ধৈর্য থাকলে থাকো। দেশের গেম স্টুডিওগুলো সরাসরি গেমপ্লে দেখে নিয়োগ দেয়।',
+    worldReality_en: 'Building games requires rigorous mathematics, physics, and frame-rate optimization. It is challenging work, but creating games that people enjoy provides immense satisfaction.',
+    worldReality_bn: 'গেম বানানো শুধুই খেলা নয়, এর পেছনে মেমোরি ও ফ্রেমরেট অপ্টিমাইজেশনের গভীর কারিগরি সাধনা থাকে। তবে সঠিক কাজ জানলে দেশীয় গেম স্টুডিওতে সুন্দর ক্যারিয়ার গড়া যায়।'
   },
 
   'digital-marketing-ecommerce': {
@@ -624,7 +752,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ম মাস: গুগল অ্যানালিটিক্স ৪ (GA4) ও গুগল ট্যাগ ম্যানেজার সেটআপ',
       '২য় মাস: মেটা অ্যাডস ম্যানেজার ও সিএপিআই (CAPI) সার্ভার ট্র্যাকিং',
       '৩ থেকে ৪ মাস: ই-কমার্স সেলস ফানেল তৈরি ও রিটার্ন অন ইনভেস্টমেন্ট বৃদ্ধি'
-    ]
+    ],
+    shortTermSuitability: 'High',
+    shortTermSuitability_bn: 'দ্রুত চাকরির জন্য ভালো (৩ থেকে ৪ মাস)',
+    stayDecision_en: 'Stay if you want to join an e-commerce brand or digital agency in 3 to 4 months. Focus on server-side tracking rather than basic Facebook posting.',
+    stayDecision_bn: '৩ থেকে ৪ মাসে সার্ভার-সাইড ট্র্যাকিং ও মেটা অ্যাডস শিখে ই-কমার্স ব্যবসায়ে সেলস বাড়ানোর কাজ করতে চাইলে অবশ্যই এই ট্র্যাকে থাকো।',
+    worldReality_en: 'Every retail brand in Bangladesh operates online. Companies willingly pay strong salaries to marketers who can reliably track conversions and scale sales.',
+    worldReality_bn: 'ফেসবুকে ছবি পোস্ট করা আর মার্কেটিং এক নয়। যারা সার্ভার ট্র্যাকিং ও ডেটা অ্যানালিটিক্স বোঝে, ই-কমার্স কোম্পানিগুলো তাদের প্রচুর সম্মানী দেয়।'
   },
 
   'graphic-design-motion': {
@@ -653,7 +787,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ থেকে ২ মাস: ইলাস্ট্রেটরে ভেক্টর আর্ট ও ব্র্যান্ড কালার তৈরি',
       '৩য় মাস: আফটার ইফেক্টস কি-ফ্রেম, স্পিড গ্রাফ ও টাইপোগ্রাফি অ্যানিমেশন',
       '৪ থেকে ৫ মাস: ৩০ সেকেন্ডের প্রফেশনাল শোরিল ও বিহ্যান্স শোকেস'
-    ]
+    ],
+    shortTermSuitability: 'Moderate',
+    shortTermSuitability_bn: 'মাঝারি সময় প্রয়োজন (৪ থেকে ৫ মাস)',
+    stayDecision_en: 'Stay if you are willing to learn After Effects motion design. Static banner creation is crowded, but 2D motion graphics and Lottie web animations are in high demand.',
+    stayDecision_bn: 'স্থির ব্যানার ছেড়ে আফটার ইফেক্টসে মোশন গ্রাফিক্স ও ওয়েব অ্যানিমেশন শিখতে রাজি থাকলে ৪ থেকে ৫ মাসে এজেন্সিতে ভালো সুযোগ রয়েছে।',
+    worldReality_en: 'Modern social media users scroll past static images. Motion graphics and short animated explainers are essential for every startup launching new digital products.',
+    worldReality_bn: 'সোশ্যাল মিডিয়ায় এখন স্থির ছবির চেয়ে অ্যানিমেশন ভিডিওর আবেদন বহুগুণ বেশি। যারা মোশন গ্রাফিক্সে পারদর্শী, বিজ্ঞাপনী সংস্থাগুলো তাদের অগ্রাধিকার দেয়।'
   },
 
   'bpo-tech-support-data': {
@@ -682,7 +822,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
       '১ম মাস: টাচ টাইপিং গতি বৃদ্ধি ও প্রফেশনাল ইমেইল লেখার নিয়ম',
       '২য় মাস: জেনডেস্ক সিআরএম ও গ্রাহক সেবার আন্তর্জাতিক স্ক্রিপ্ট মক টেস্ট',
       '৩য় মাস: ঢাকার প্রধান প্রধান বিপিও কোম্পানিতে সরাসরি ইন্টারভিউ'
-    ]
+    ],
+    shortTermSuitability: 'High',
+    shortTermSuitability_bn: 'দ্রুততম সময়ে চাকরি (২ থেকে ৩ মাস)',
+    stayDecision_en: 'Stay if you have conversational English and want immediate income in Dhaka within 60 to 90 days. Top BPO firms recruit regularly with attractive base salaries.',
+    stayDecision_bn: 'ইংরেজি কথা বলার জড়তা দূর করে ২ থেকে ৩ মাসের মধ্যে ঢাকায় ২৫ থেকে ৩৫ হাজার টাকা বেতনে কাজ শুরু করতে চাইলে এটি সেরা পথ।',
+    worldReality_en: 'International companies outsource their patient support and customer service to Dhaka. Clear spoken communication and empathy matter more than any code.',
+    worldReality_bn: 'আমেরিকা ও ইউরোপের বড় বড় হেলথকেয়ার ও টেক কোম্পানি ঢাকায় বিপিও সেন্টারের মাধ্যমে কাস্টমার সাপোর্ট পরিচালনা করে। শুদ্ধ ইংরেজি বলতে পারলে এখানে খুব দ্রুত নিয়োগ পাওয়া যায়।'
   },
 
   'digital-literacy-foundation': {
@@ -709,7 +855,13 @@ export const TRACK_VERDICTS: Record<string, TrackVerdictInfo> = {
     milestones_bn: [
       '১ থেকে ২ সপ্তাহ: টাচ টাইপিং প্র্যাকটিস ও কম্পিউটার ওএস নেভিগেশন',
       '৩ থেকে ৪ সপ্তাহ: গিট বেসিক ও নিজের মূল ক্যারিয়ার ট্র্যাক চূড়ান্ত করা'
-    ]
+    ],
+    shortTermSuitability: 'Bridge',
+    shortTermSuitability_bn: '৩০ দিনের ভিত্তি প্রস্তুতকারী ব্রিজ',
+    stayDecision_en: 'Stay for 30 days only. Practice keyboard typing and file management patiently, then immediately transition to a professional career track.',
+    stayDecision_bn: 'এই ট্র্যাকে শুধু ৩০ দিন থাকো। কিবোর্ডে না তাকিয়ে টাইপিং শেখা এবং কম্পিউটারের ভয় দূর করার পর যেকোনো একটি প্রফেশনাল রোড়ম্যাপে চলে যাও।',
+    worldReality_en: 'Every senior software architect and network engineer was once a beginner learning where keys are. 30 days of consistent basics builds permanent technical confidence.',
+    worldReality_bn: 'কেউ মায়ের পেট থেকে ইঞ্জিনিয়ার হয়ে জন্মায় না। পৃথিবীর সেরা প্রোগ্রামারও একদিন প্রথম কিবোর্ডে হাত দিয়েছিলেন। ৩০ দিনের ধৈর্য তোমার আত্মবিশ্বাস পুরো বদলে দেবে।'
   }
 };
 

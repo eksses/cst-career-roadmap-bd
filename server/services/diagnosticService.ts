@@ -751,6 +751,12 @@ export async function createDirectSelectionProfile(params: {
     timelineVerdict_bn: trackVerdict.timelineVerdict_bn,
     milestones_en: trackVerdict.milestones_en,
     milestones_bn: trackVerdict.milestones_bn,
+    shortTermSuitability: trackVerdict.shortTermSuitability,
+    shortTermSuitability_bn: trackVerdict.shortTermSuitability_bn,
+    stayDecision_en: trackVerdict.stayDecision_en,
+    stayDecision_bn: trackVerdict.stayDecision_bn,
+    worldReality_en: trackVerdict.worldReality_en,
+    worldReality_bn: trackVerdict.worldReality_bn,
   };
 
   const [newProfile] = await db.insert(studentProfiles).values({
@@ -845,6 +851,12 @@ function buildHonestVerdict(params: {
       timelineVerdict_bn: trackVerdict.timelineVerdict_bn,
       milestones_en: trackVerdict.milestones_en,
       milestones_bn: trackVerdict.milestones_bn,
+      shortTermSuitability: trackVerdict.shortTermSuitability,
+      shortTermSuitability_bn: trackVerdict.shortTermSuitability_bn,
+      stayDecision_en: trackVerdict.stayDecision_en,
+      stayDecision_bn: trackVerdict.stayDecision_bn,
+      worldReality_en: trackVerdict.worldReality_en,
+      worldReality_bn: trackVerdict.worldReality_bn,
     };
   }
 
@@ -953,5 +965,11 @@ function buildHonestVerdict(params: {
     timelineVerdict_bn: trackVerdict.timelineVerdict_bn,
     milestones_en: trackVerdict.milestones_en,
     milestones_bn: trackVerdict.milestones_bn,
+    shortTermSuitability: trackVerdict.shortTermSuitability,
+    shortTermSuitability_bn: trackVerdict.shortTermSuitability_bn,
+    stayDecision_en: trackVerdict.stayDecision_en,
+    stayDecision_bn: trackVerdict.stayDecision_bn,
+    worldReality_en: trackVerdict.worldReality_en,
+    worldReality_bn: trackVerdict.worldReality_bn,
   };
 }

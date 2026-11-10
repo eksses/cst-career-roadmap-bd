@@ -1,19 +1,22 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext.js';
 import { useStudent } from '../context/StudentContext.js';
-import { Sparkles, KeyRound, Copy, Check, MessageSquare, ArrowRight, ShieldCheck, MapPin, Laptop, Smartphone } from 'lucide-react';
+import { Sparkles, KeyRound, Copy, Check, MessageSquare, ArrowRight, ShieldCheck, MapPin, Laptop, Smartphone, ShieldAlert } from 'lucide-react';
+import { getTrackVerdict } from '../../../shared/trackVerdictData.js';
 
 interface DesktopTelemetryPanelProps {
   onOpenMentorDrawer: () => void;
   onOpenCatalogModal: () => void;
+  onSelectTab?: (tab: 'roadmap' | 'market' | 'interview' | 'requirements' | 'verdict') => void;
 }
 
 export const DesktopTelemetryPanel: React.FC<DesktopTelemetryPanelProps> = ({
   onOpenMentorDrawer,
   onOpenCatalogModal,
+  onSelectTab,
 }) => {
   const { language, t } = useLanguage();
-  const { saveCode, primaryTrack, matchScore, completedMilestoneIds, completedCertIds, personalizedRole, targetStack } = useStudent();
+  const { saveCode, primaryTrack, matchScore, completedMilestoneIds, completedCertIds, personalizedRole, targetStack, verdict } = useStudent();
   const [copied, setCopied] = React.useState<boolean>(false);
 
   if (!primaryTrack) return null;
@@ -92,6 +95,35 @@ export const DesktopTelemetryPanel: React.FC<DesktopTelemetryPanelProps> = ({
           <span>{t.dashboard.switchTrack}</span>
           <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
         </button>
+      </div>
+
+      {/* Honest Track Verdict Snapshot Card */}
+      <div className="bg-[#FFFFFF] border-2 border-[#C84B31]/30 rounded-2xl p-5 shadow-xs">
+        <div className="flex items-center justify-between gap-1 mb-2">
+          <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-xs uppercase tracking-wider">
+            <ShieldAlert className="w-4 h-4 stroke-[2]" />
+            <span>{t.dashboard.stayVerdictQuickLabel}</span>
+          </div>
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
+            {language === 'bn' 
+              ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack.slug).shortTermSuitability_bn)
+              : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack.slug).shortTermSuitability)}
+          </span>
+        </div>
+        <p className="text-xs text-[#141413] leading-relaxed line-clamp-3 mb-3 font-medium">
+          {language === 'bn'
+            ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack.slug).stayDecision_bn)
+            : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack.slug).stayDecision_en)}
+        </p>
+        {onSelectTab && (
+          <button
+            onClick={() => onSelectTab('verdict')}
+            className="w-full py-2 px-3 text-xs font-bold text-white bg-[#C84B31] hover:bg-[#B33E26] rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
+          >
+            <span>{t.dashboard.viewVerdictBtn}</span>
+            <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
+          </button>
+        )}
       </div>
 
       {/* Salary Telemetry Snapshot */}

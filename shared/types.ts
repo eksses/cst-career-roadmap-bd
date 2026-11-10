@@ -224,6 +224,12 @@ export interface DiagnosticResult {
     timelineVerdict_bn?: string;
     milestones_en?: string[];
     milestones_bn?: string[];
+    shortTermSuitability?: string;
+    shortTermSuitability_bn?: string;
+    stayDecision_en?: string;
+    stayDecision_bn?: string;
+    worldReality_en?: string;
+    worldReality_bn?: string;
   };
   saveCode: string;
   studentId: number;
