@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext.js';
-import type { CareerTrack } from '../../shared/types.js';
+import type { CareerTrack } from '../../../shared/types.js';
 import { 
   ArrowLeft, 
   ArrowRight, 

@@ -248,7 +248,7 @@ export const RoadmapTimeline: React.FC = () => {
                     </div>
 
                     {/* Core Topics Pills */}
-                    {module.keyTopics && module.keyTopics.length > 0 && (
+                    {Array.isArray(module.keyTopics) && module.keyTopics.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-1.5">
                         {module.keyTopics.map((topic, tIdx) => (
                           <span

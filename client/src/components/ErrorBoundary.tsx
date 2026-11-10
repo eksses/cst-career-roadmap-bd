@@ -1,5 +1,5 @@
 import React, { Component, type ReactNode } from 'react';
-import { RotateCcw, AlertTriangle } from 'lucide-react';
+import { RotateCcw, AlertTriangle, Compass } from 'lucide-react';
 
 interface Props {
   children: ReactNode;
@@ -28,6 +28,15 @@ export class ErrorBoundary extends Component<Props, State> {
     window.location.reload();
   };
 
+  public handleStartFresh = () => {
+    try {
+      localStorage.removeItem('cst_save_code');
+      sessionStorage.clear();
+    } catch (e) {}
+    this.setState({ hasError: false, error: undefined });
+    window.location.href = '/';
+  };
+
   public render() {
     if (this.state.hasError) {
       return (
@@ -38,16 +47,38 @@ export class ErrorBoundary extends Component<Props, State> {
           <h2 className="text-xl font-bold text-[#141413] mb-2">
             রোডম্যাপ লোড করতে সাময়িক সমস্যা হয়েছে
           </h2>
-          <p className="text-xs text-[#575653] max-w-md mb-6 leading-relaxed">
-            There was a temporary rendering issue loading this track. Please reset the console to refresh state.
+          <p className="text-xs text-[#575653] max-w-md mb-4 leading-relaxed">
+            তোমার নির্বাচিত রোডম্যাপের ডেটা লোড করতে একটি ব্রাউজার রেন্ডারিং সমস্যা হয়েছে। নিচে থাকা বাটন দিয়ে সরাসরি রোডম্যাপ পুনরায় শুরু করো।
           </p>
-          <button
-            onClick={this.handleReset}
-            className="px-4 py-2.5 bg-[#141413] text-white rounded-xl text-xs font-bold flex items-center gap-2 hover:bg-[#2A2927] transition-all cursor-pointer shadow-xs"
-          >
-            <RotateCcw className="w-4 h-4 stroke-[2]" />
-            <span>কনসোল রিলোড করুন (Reload Console)</span>
-          </button>
+
+          {this.state.error && (
+            <div className="mb-6 p-3 bg-[#FAF9F5] border border-[#E5E4DF] rounded-xl text-left max-w-md w-full">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-[#C84B31] mb-1">
+                ত্রুটির বিবরণ (Diagnostic Error):
+              </div>
+              <p className="text-[11px] font-mono text-[#575653] break-all leading-relaxed">
+                {this.state.error.message || String(this.state.error)}
+              </p>
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={this.handleStartFresh}
+              className="px-4 py-2.5 bg-[#C84B31] hover:bg-[#B33E26] text-white rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shadow-xs"
+            >
+              <Compass className="w-4 h-4 stroke-[2]" />
+              <span>নতুন করে রোডম্যাপ নির্বাচন করো (Choose Roadmap)</span>
+            </button>
+
+            <button
+              onClick={this.handleReset}
+              className="px-4 py-2.5 bg-[#141413] hover:bg-[#2A2927] text-white rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shadow-xs"
+            >
+              <RotateCcw className="w-4 h-4 stroke-[2]" />
+              <span>কনসোল রিলোড করুন (Reload Page)</span>
+            </button>
+          </div>
         </div>
       );
     }

@@ -45,6 +45,7 @@ export const App: React.FC = () => {
     personalizedRole,
     targetStack,
     hardwareSetupGuide,
+    verdict,
     setDiagnosticResult, 
     resetSession, 
     allTracks,
@@ -70,14 +71,15 @@ export const App: React.FC = () => {
   // Auto-recovery mechanism: If in dashboard mode but primaryTrack is not set, recover smoothly
   useEffect(() => {
     if (viewState === 'dashboard' && !primaryTrack && !isLoading) {
+      const saved = localStorage.getItem('cst_save_code');
+      // If student has a saveCode, let loadProfileByCode do its work first
+      if (saved) return;
+
       if (allTracks.length > 0) {
         // Automatically default to the first available track
         switchActiveTrack(allTracks[0].slug);
       } else {
-        const saved = localStorage.getItem('cst_save_code');
-        if (!saved) {
-          setViewState('onboarding');
-        }
+        setViewState('onboarding');
       }
     }
   }, [viewState, primaryTrack, isLoading, allTracks]);
@@ -149,6 +151,7 @@ export const App: React.FC = () => {
   };
 
   const isGlobalBusy = isLoading || isSubmittingSurvey;
+  const activeVerdict = verdict || (primaryTrack?.slug ? getTrackVerdict(primaryTrack.slug) : null);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F6F2] text-[#141413]">
@@ -296,8 +299,8 @@ export const App: React.FC = () => {
 
                           <h1 className="text-xl sm:text-2xl font-extrabold text-[#141413] tracking-tight">
                             {personalizedRole 
-                              ? (language === 'bn' ? personalizedRole.bn : personalizedRole.en)
-                              : (language === 'bn' ? primaryTrack.title_bn : primaryTrack.title_en)}
+                              ? (language === 'bn' ? (personalizedRole.bn || personalizedRole.en) : (personalizedRole.en || personalizedRole.bn))
+                              : (language === 'bn' ? (primaryTrack.title_bn || primaryTrack.title_en) : (primaryTrack.title_en || primaryTrack.title_bn))}
                           </h1>
 
                           {/* Concise Tech Stack Badges */}
@@ -318,7 +321,7 @@ export const App: React.FC = () => {
                           )}
 
                           <p className="mt-2 text-xs text-[#575653] max-w-2xl leading-relaxed">
-                            {language === 'bn' ? primaryTrack.summary_bn : primaryTrack.summary_en}
+                            {language === 'bn' ? (primaryTrack.summary_bn || primaryTrack.summary_en) : (primaryTrack.summary_en || primaryTrack.summary_bn)}
                           </p>
                         </div>
 
@@ -336,13 +339,19 @@ export const App: React.FC = () => {
                       </div>
 
                       {/* Device Workaround: Only rendered when truly actionable for phone/low-spec users */}
-                      {hardwareSetupGuide && (
-                        hardwareSetupGuide.en.toLowerCase().includes('phone') || 
-                        hardwareSetupGuide.en.toLowerCase().includes('termux') || 
-                        hardwareSetupGuide.en.toLowerCase().includes('codespaces') || 
-                        hardwareSetupGuide.en.toLowerCase().includes('otg') || 
-                        hardwareSetupGuide.bn.includes('মোবাইল') || 
-                        hardwareSetupGuide.bn.includes('টার্মাক্স')
+                      {Boolean(
+                        hardwareSetupGuide && (
+                          (hardwareSetupGuide.en && (
+                            hardwareSetupGuide.en.toLowerCase().includes('phone') || 
+                            hardwareSetupGuide.en.toLowerCase().includes('termux') || 
+                            hardwareSetupGuide.en.toLowerCase().includes('codespaces') || 
+                            hardwareSetupGuide.en.toLowerCase().includes('otg')
+                          )) || 
+                          (hardwareSetupGuide.bn && (
+                            hardwareSetupGuide.bn.includes('মোবাইল') || 
+                            hardwareSetupGuide.bn.includes('টার্মাক্স')
+                          ))
+                        )
                       ) && (
                         <div className="mt-3 pt-3 border-t border-[#E5E4DF] text-xs text-[#141413] bg-[#FAF9F5] p-2.5 rounded-xl border border-[#E5E4DF]/60 flex items-start gap-2">
                           <Compass className="w-4 h-4 stroke-[2] text-[#C84B31] shrink-0 mt-0.5" />
@@ -350,7 +359,7 @@ export const App: React.FC = () => {
                             <strong className="text-[#141413] font-bold mr-1">
                               {language === 'bn' ? 'ডিভাইস গাইড:' : 'Device Guide:'}
                             </strong>
-                            {language === 'bn' ? hardwareSetupGuide.bn : hardwareSetupGuide.en}
+                            {language === 'bn' ? (hardwareSetupGuide?.bn || hardwareSetupGuide?.en) : (hardwareSetupGuide?.en || hardwareSetupGuide?.bn)}
                           </p>
                         </div>
                       )}
@@ -370,14 +379,14 @@ export const App: React.FC = () => {
                               </span>
                               <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
                                 {language === 'bn' 
-                                  ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack?.slug)?.shortTermSuitability_bn || '')
-                                  : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack?.slug)?.shortTermSuitability || '')}
+                                  ? (activeVerdict?.shortTermSuitability_bn || '')
+                                  : (activeVerdict?.shortTermSuitability || '')}
                               </span>
                             </div>
                             <p className="text-xs text-[#141413] leading-relaxed line-clamp-2 font-medium">
                               {language === 'bn'
-                                ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack?.slug)?.stayDecision_bn || '')
-                                : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack?.slug)?.stayDecision_en || '')}
+                                ? (activeVerdict?.stayDecision_bn || '')
+                                : (activeVerdict?.stayDecision_en || '')}
                             </p>
                           </div>
                         </div>

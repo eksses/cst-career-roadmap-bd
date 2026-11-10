@@ -82,7 +82,7 @@ export const MarketExplorer: React.FC = () => {
                   {t.market.entryLevel}
                 </span>
                 <span className="font-mono-numbers text-xl sm:text-2xl font-extrabold text-[#C84B31] block mt-1">
-                  {bangladesh.entrySalary.formatted}
+                  {bangladesh?.entrySalary?.formatted || 'BDT 15,000 - 25,000'}
                 </span>
                 <span className="text-[11px] text-[#575653] block mt-1">
                   Polytechnic fresh graduate
@@ -95,7 +95,7 @@ export const MarketExplorer: React.FC = () => {
                   {t.market.midLevel}
                 </span>
                 <span className="font-mono-numbers text-xl sm:text-2xl font-extrabold text-[#141413] block mt-1">
-                  {bangladesh.midSalary.formatted}
+                  {bangladesh?.midSalary?.formatted || 'BDT 35,000 - 65,000'}
                 </span>
                 <span className="text-[11px] text-[#575653] block mt-1">
                   Proven project ownership
@@ -108,7 +108,7 @@ export const MarketExplorer: React.FC = () => {
                   {t.market.seniorLevel}
                 </span>
                 <span className="font-mono-numbers text-xl sm:text-2xl font-extrabold text-[#1B4332] block mt-1">
-                  {bangladesh.seniorSalary.formatted}
+                  {bangladesh?.seniorSalary?.formatted || 'BDT 80,000 - 150,000+'}
                 </span>
                 <span className="text-[11px] text-[#575653] block mt-1">
                   Lead engineer / administrator
@@ -135,7 +135,7 @@ export const MarketExplorer: React.FC = () => {
                 <span>{t.market.hiringIndustries}</span>
               </div>
               <ul className="space-y-2">
-                {bangladesh.hiringSectors.map((sector, idx) => (
+                {(Array.isArray(bangladesh?.hiringSectors) ? bangladesh.hiringSectors : []).map((sector, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs text-[#141413] leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#1B4332] shrink-0 mt-0.5 stroke-[2]" />
                     <span>{sector}</span>
@@ -151,7 +151,7 @@ export const MarketExplorer: React.FC = () => {
                 <span>{t.market.cvReality}</span>
               </div>
               <ul className="space-y-2">
-                {bangladesh.cvExpectations.map((item, idx) => (
+                {(Array.isArray(bangladesh?.cvExpectations) ? bangladesh.cvExpectations : []).map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs text-[#141413] leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C84B31] shrink-0 mt-0.5 stroke-[2]" />
                     <span>{item}</span>
@@ -171,7 +171,7 @@ export const MarketExplorer: React.FC = () => {
           
           {/* Country Selector Pills */}
           <div className="flex flex-wrap gap-2">
-            {targetCountries.map((c, idx) => (
+            {(Array.isArray(targetCountries) ? targetCountries : []).map((c, idx) => (
               <button
                 key={idx}
                 onClick={() => setSelectedCountryIndex(idx)}
@@ -181,13 +181,13 @@ export const MarketExplorer: React.FC = () => {
                     : 'bg-[#F7F6F2] border border-[#E5E4DF] text-[#575653] hover:text-[#141413]'
                 }`}
               >
-                {language === 'bn' ? c.countryName_bn : c.countryName_en}
+                {language === 'bn' ? c?.countryName_bn : c?.countryName_en}
               </button>
             ))}
           </div>
 
           {/* Active Target Country Card */}
-          {targetCountries[selectedCountryIndex] && (
+          {Array.isArray(targetCountries) && targetCountries[selectedCountryIndex] && (
             <div className="p-5 rounded-xl border border-[#E5E4DF] bg-[#FAF9F5] space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
@@ -307,7 +307,7 @@ export const MarketExplorer: React.FC = () => {
               {t.market.remoteRealities}:
             </span>
             <ul className="space-y-2">
-              {(language === 'bn' ? remote.realities_bn : remote.realities_en).map((item, idx) => (
+              {(Array.isArray(language === 'bn' ? remote?.realities_bn : remote?.realities_en) ? (language === 'bn' ? remote?.realities_bn : remote?.realities_en) : []).map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs text-[#141413] leading-relaxed">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#1B4332] shrink-0 mt-0.5 stroke-[2]" />
                   <span>{item}</span>

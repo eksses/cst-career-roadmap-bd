@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext.js';
-import type { CareerTrack, SuggestedTrackItem } from '../../shared/types.js';
+import type { CareerTrack, SuggestedTrackItem } from '../../../shared/types.js';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -170,7 +170,7 @@ export const SuggestedRoadmapsView: React.FC<SuggestedRoadmapsViewProps> = ({
                 {/* Target Tech Stack */}
                 {item.targetStack && item.targetStack.length > 0 && (
                   <div className="mt-3 flex flex-wrap items-center gap-1.5">
-                    {item.targetStack.map((tech, sIdx) => (
+                    {item.targetStack.map((tech: any, sIdx: number) => (
                       <span
                         key={sIdx}
                         className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]"

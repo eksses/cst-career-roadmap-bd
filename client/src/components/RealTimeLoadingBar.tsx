@@ -10,9 +10,9 @@ export const RealTimeLoadingBar: React.FC<RealTimeLoadingBarProps> = ({ isLoadin
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    let timer1: NodeJS.Timeout;
-    let timer2: NodeJS.Timeout;
-    let timer3: NodeJS.Timeout;
+    let timer1: ReturnType<typeof setTimeout>;
+    let timer2: ReturnType<typeof setTimeout>;
+    let timer3: ReturnType<typeof setTimeout>;
 
     if (isLoading) {
       setIsVisible(true);

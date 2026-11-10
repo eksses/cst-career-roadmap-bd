@@ -10,9 +10,13 @@ export const RequirementsChecklist: React.FC = () => {
 
   if (!primaryTrack) return null;
 
-  const dayToDay = language === 'bn' ? primaryTrack.dayToDay_bn : primaryTrack.dayToDay_en;
-  const skills: SkillItem[] = primaryTrack.mustHaveSkills || [];
-  const completedCount = skills.filter(s => completedSkillIds.includes(s.id)).length;
+  const rawDayToDay = language === 'bn' 
+    ? (primaryTrack.dayToDay_bn || primaryTrack.dayToDay_en) 
+    : (primaryTrack.dayToDay_en || primaryTrack.dayToDay_bn);
+  const dayToDay: string[] = Array.isArray(rawDayToDay) ? rawDayToDay : [];
+  const skills: SkillItem[] = Array.isArray(primaryTrack.mustHaveSkills) ? primaryTrack.mustHaveSkills : [];
+  const safeCompletedSkillIds = Array.isArray(completedSkillIds) ? completedSkillIds : [];
+  const completedCount = skills.filter(s => safeCompletedSkillIds.includes(s.id)).length;
 
   return (
     <div className="space-y-6">
@@ -69,7 +73,7 @@ export const RequirementsChecklist: React.FC = () => {
         {/* Skills List with Checkboxes */}
         <div className="space-y-3 mt-4">
           {skills.map((skill) => {
-            const isChecked = completedSkillIds.includes(skill.id);
+            const isChecked = safeCompletedSkillIds.includes(skill.id);
             return (
               <div
                 key={skill.id}

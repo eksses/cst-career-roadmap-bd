@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext.js';
-import type { CareerTrack, LanguageItem, SkillMatrixItem, InterestMatrixItem } from '../../shared/types.js';
+import type { CareerTrack, LanguageItem, SkillMatrixItem, InterestMatrixItem } from '../../../shared/types.js';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -177,7 +177,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
         const matchTitleBn = t.title_bn.toLowerCase().includes(query);
         const matchSummaryEn = t.summary_en.toLowerCase().includes(query);
         const matchSummaryBn = t.summary_bn.toLowerCase().includes(query);
-        const matchSkills = t.mustHaveSkills?.some(s => s.name.toLowerCase().includes(query));
+        const matchSkills = t.mustHaveSkills?.some((s: any) => s.name.toLowerCase().includes(query));
         return matchTitleEn || matchTitleBn || matchSummaryEn || matchSummaryBn || matchSkills;
       }
       return true;
@@ -220,9 +220,9 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
   const roadmapLanguages = useMemo(() => {
     if (!currentRoadmap) return [];
     return languagesList.filter(l => 
-      l.associatedRoadmaps.some(r => r.trackSlug === currentRoadmap.slug)
+      l.associatedRoadmaps.some((r: any) => r.trackSlug === currentRoadmap.slug)
     ).map(l => {
-      const match = l.associatedRoadmaps.find(r => r.trackSlug === currentRoadmap.slug);
+      const match = l.associatedRoadmaps.find((r: any) => r.trackSlug === currentRoadmap.slug);
       return {
         ...l,
         importance: match?.importance || 'Recommended',
@@ -236,9 +236,9 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
   const roadmapSkills = useMemo(() => {
     if (!currentRoadmap) return [];
     return skillsList.filter(s => 
-      s.associatedRoadmaps.some(r => r.trackSlug === currentRoadmap.slug)
+      s.associatedRoadmaps.some((r: any) => r.trackSlug === currentRoadmap.slug)
     ).map(s => {
-      const match = s.associatedRoadmaps.find(r => r.trackSlug === currentRoadmap.slug);
+      const match = s.associatedRoadmaps.find((r: any) => r.trackSlug === currentRoadmap.slug);
       return {
         ...s,
         importance: match?.importance || 'Recommended',
@@ -252,8 +252,8 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
     const langObj = languagesList.find(l => l.id === comboLanguage);
     
     const candidates = tracks.filter(t => {
-      const matchesInterest = interestObj ? interestObj.matchingRoadmaps.some(m => m.trackSlug === t.slug) : true;
-      const matchesLang = langObj ? langObj.associatedRoadmaps.some(r => r.trackSlug === t.slug) : true;
+      const matchesInterest = interestObj ? interestObj.matchingRoadmaps.some((m: any) => m.trackSlug === t.slug) : true;
+      const matchesLang = langObj ? langObj.associatedRoadmaps.some((r: any) => r.trackSlug === t.slug) : true;
       return matchesInterest || matchesLang;
     });
 
@@ -427,7 +427,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
                   {/* Skills tags preview */}
                   {track.mustHaveSkills && track.mustHaveSkills.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-3">
-                      {track.mustHaveSkills.slice(0, 3).map((s, idx) => (
+                      {track.mustHaveSkills.slice(0, 3).map((s: any, idx: number) => (
                         <button
                           key={idx}
                           onClick={(e) => {
@@ -547,7 +547,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {currentInterest?.matchingRoadmaps.map((r, idx) => {
+              {currentInterest?.matchingRoadmaps.map((r: any, idx: number) => {
                 const trackObj = tracks.find(t => t.slug === r.trackSlug);
                 return (
                   <div
@@ -679,7 +679,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
                     <span>{language === 'bn' ? 'পরবর্তী ধাপে কী শেখা উচিত (Next Step Suggestion):' : 'What to learn next:'}</span>
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {currentLanguage.nextLanguageSuggestions.map((sug, sIdx) => (
+                    {currentLanguage.nextLanguageSuggestions.map((sug: any, sIdx: number) => (
                       <div key={sIdx} className="p-3 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF] text-xs">
                         <span className="font-bold text-[#141413] block mb-1">
                           {language === 'bn' ? `শেখো: ${sug.nextLanguageName}` : `Learn: ${sug.nextLanguageName}`}
@@ -702,7 +702,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {languageRoadmaps.map((r, idx) => (
+              {languageRoadmaps.map((r: any, idx: number) => (
                 <div
                   key={idx}
                   className="bg-[#FFFFFF] border border-[#E5E4DF] hover:border-[#1B4332]/40 rounded-2xl p-5 shadow-xs flex flex-col justify-between transition-all"
@@ -832,7 +832,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {skillRoadmaps.map((r, idx) => {
+              {skillRoadmaps.map((r: any, idx: number) => {
                 const trackObj = tracks.find(t => t.slug === r.trackSlug);
                 return (
                   <div
@@ -1040,7 +1040,7 @@ export const LanguageSkillMatrixView: React.FC<LanguageSkillMatrixViewProps> = (
                   </div>
 
                   <div className="space-y-3">
-                    {(roadmapSkills.length > 0 ? roadmapSkills : currentRoadmap.mustHaveSkills || []).map((skill: any, idx) => (
+                    {(roadmapSkills.length > 0 ? roadmapSkills : currentRoadmap.mustHaveSkills || []).map((skill: any, idx: number) => (
                       <div
                         key={idx}
                         className="p-3 bg-[#FAF9F5] border border-[#E5E4DF] rounded-xl hover:border-[#1B4332]/30 transition-colors cursor-pointer"

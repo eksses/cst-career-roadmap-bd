@@ -10,7 +10,7 @@ export const InterviewVault: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  if (!primaryTrack?.interviewQuestions || primaryTrack.interviewQuestions.length === 0) {
+  if (!primaryTrack?.interviewQuestions || !Array.isArray(primaryTrack.interviewQuestions) || primaryTrack.interviewQuestions.length === 0) {
     return (
       <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-6 sm:p-8 shadow-xs text-center py-12">
         <p className="text-xs text-[#575653]">
@@ -27,7 +27,7 @@ export const InterviewVault: React.FC = () => {
   const filteredQuestions = questions.filter((q) => {
     if (!searchQuery.trim()) return true;
     const query = searchQuery.toLowerCase();
-    const textToSearch = `${q.question_en} ${q.question_bn} ${q.category} ${q.howToAnswer_en} ${q.howToAnswer_bn}`.toLowerCase();
+    const textToSearch = `${q.question_en || ''} ${q.question_bn || ''} ${q.category || ''} ${q.howToAnswer_en || ''} ${q.howToAnswer_bn || ''}`.toLowerCase();
     return textToSearch.includes(query);
   });
 
