@@ -38,9 +38,17 @@ export const RoadmapTimeline: React.FC = () => {
     );
   }
 
-  const phases: RoadmapPhase[] = primaryTrack.roadmapPhases;
-  const currentPhase = phases[activePhaseIndex] || phases[0];
-  const allFreeCerts: FreeCertification[] = primaryTrack.freeCerts || [];
+  const rawPhases = primaryTrack.roadmapPhases;
+  const phases: RoadmapPhase[] = Array.isArray(rawPhases)
+    ? rawPhases
+    : typeof rawPhases === 'string'
+    ? (() => { try { return JSON.parse(rawPhases); } catch { return []; } })()
+    : [];
+  const currentPhase = phases[activePhaseIndex] || phases[0] || { phaseNumber: 1, durationWeeks: 4, phaseTitle_en: 'Phase 01', phaseTitle_bn: 'পর্ব ০১', phaseSubtitle_en: '', phaseSubtitle_bn: '', modules: [] };
+  const allFreeCerts: FreeCertification[] = Array.isArray(primaryTrack.freeCerts) ? primaryTrack.freeCerts : [];
+
+  const completedIds = completedMilestoneIds || [];
+  const certIds = completedCertIds || [];
 
   const freeCerts = allFreeCerts.filter(c => {
     if (certFilter === 'intl') return c.isBdLocal === false || c.category === 'international_free';
@@ -49,7 +57,7 @@ export const RoadmapTimeline: React.FC = () => {
   });
 
   const totalCertsCount = allFreeCerts.length;
-  const claimedCertsCount = allFreeCerts.filter(c => completedCertIds.includes(c.id)).length;
+  const claimedCertsCount = allFreeCerts.filter(c => certIds.includes(c.id)).length;
 
   return (
     <div className="space-y-6">
@@ -104,8 +112,9 @@ export const RoadmapTimeline: React.FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {phases.map((phase, idx) => {
               const isActive = activePhaseIndex === idx;
-              const totalModules = phase.modules.length;
-              const completedInPhase = phase.modules.filter(m => completedMilestoneIds.includes(m.id)).length;
+              const pMods = phase.modules || [];
+              const totalModules = pMods.length;
+              const completedInPhase = pMods.filter(m => completedIds.includes(m?.id)).length;
               const isPhaseFullyDone = totalModules > 0 && completedInPhase === totalModules;
 
               return (
@@ -164,14 +173,14 @@ export const RoadmapTimeline: React.FC = () => {
               </div>
 
               <div className="self-start sm:self-auto px-3.5 py-1.5 rounded-full bg-[#FAF9F5] border border-[#E5E4DF] text-xs font-bold text-[#141413] font-mono-numbers">
-                {currentPhase.modules.filter(m => completedMilestoneIds.includes(m.id)).length} / {currentPhase.modules.length} {language === 'bn' ? 'সম্পন্ন' : 'Done'}
+                {(currentPhase.modules || []).filter(m => completedIds.includes(m?.id)).length} / {(currentPhase.modules || []).length} {language === 'bn' ? 'সম্পন্ন' : 'Done'}
               </div>
             </div>
 
             {/* Modules List: Clean, Direct & Simple */}
             <div className="mt-5 space-y-4">
-              {currentPhase.modules.map((module) => {
-                const isCompleted = completedMilestoneIds.includes(module.id);
+              {(currentPhase.modules || []).map((module) => {
+                const isCompleted = completedIds.includes(module.id);
 
                 return (
                   <div
@@ -312,7 +321,7 @@ export const RoadmapTimeline: React.FC = () => {
             {/* Certificate Cards */}
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {freeCerts.map((cert) => {
-                const isClaimed = completedCertIds.includes(cert.id);
+                const isClaimed = certIds.includes(cert.id);
 
                 return (
                   <div

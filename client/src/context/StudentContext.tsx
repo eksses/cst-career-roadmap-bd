@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { CareerTrack, DiagnosticResult, SuggestedTrackItem } from '../../../shared/types.js';
+import { getTrackVerdict } from '../../../shared/trackVerdictData.js';
 
 interface StudentContextType {
   saveCode: string | null;
@@ -207,6 +208,15 @@ export const StudentProvider: React.FC<{ children: React.ReactNode }> = ({ child
         .map((s: any) => typeof s === 'string' ? s : (s?.name || s?.id || String(s)))
         .slice(0, 6);
       setTargetStack(stackStrings.length > 0 ? stackStrings : ['Core Skills', 'Lab Projects', 'Git & GitHub']);
+      const updatedVerdict = getTrackVerdict(trackSlug);
+      setVerdict((prev: any) => ({
+        ...(prev || {}),
+        ...updatedVerdict,
+        heading_en: `Career Strategy: ${localFound!.title_en}`,
+        heading_bn: `ক্যারিয়ার দিকনির্দেশনা: ${localFound!.title_bn}`,
+        body_en: localFound!.summary_en,
+        body_bn: localFound!.summary_bn,
+      }));
     }
 
     if (!saveCode) {
@@ -223,6 +233,9 @@ export const StudentProvider: React.FC<{ children: React.ReactNode }> = ({ child
       const data = await res.json();
       if (data.success && data.newTrack) {
         setPrimaryTrack(data.newTrack);
+        if (data.verdict) {
+          setVerdict(data.verdict);
+        }
         setIsLoading(false);
         return true;
       }

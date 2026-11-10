@@ -89,9 +89,10 @@ export const VerdictSection: React.FC = () => {
     ? (activeVerdict.timelineVerdict_bn || trackVerdict.timelineVerdict_bn)
     : (activeVerdict.timelineVerdict_en || trackVerdict.timelineVerdict_en);
 
-  const milestonesList = (language === 'bn'
+  const rawMilestones = language === 'bn'
     ? (activeVerdict.milestones_bn || trackVerdict.milestones_bn)
-    : (activeVerdict.milestones_en || trackVerdict.milestones_en)) || [];
+    : (activeVerdict.milestones_en || trackVerdict.milestones_en);
+  const milestonesList: string[] = Array.isArray(rawMilestones) ? rawMilestones : [];
 
   return (
     <div className="space-y-6">
@@ -360,18 +361,19 @@ export const VerdictSection: React.FC = () => {
             {language === 'bn' ? 'তোমার জন্য সরাসরি করণীয়:' : 'Immediate Action Steps:'}
           </h4>
           <div className="space-y-2">
-            {(language === 'bn' ? activeVerdict.actionPlanPoints_bn : activeVerdict.actionPlanPoints_en)?.map(
-              (point: string, idx: number) => (
-                <div key={idx} className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-[#1B4332]/10 text-[#1B4332] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px] font-mono-numbers">
-                    {idx + 1}
-                  </div>
-                  <p className="text-xs text-[#141413] leading-relaxed">
-                    {point}
-                  </p>
+            {(Array.isArray(language === 'bn' ? activeVerdict.actionPlanPoints_bn : activeVerdict.actionPlanPoints_en)
+              ? (language === 'bn' ? activeVerdict.actionPlanPoints_bn : activeVerdict.actionPlanPoints_en)
+              : []
+            ).map((point: string, idx: number) => (
+              <div key={idx} className="flex items-start gap-2.5">
+                <div className="w-4 h-4 rounded-full bg-[#1B4332]/10 text-[#1B4332] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px] font-mono-numbers">
+                  {idx + 1}
                 </div>
-              )
-            )}
+                <p className="text-xs text-[#141413] leading-relaxed">
+                  {point}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

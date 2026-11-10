@@ -366,18 +366,18 @@ export const App: React.FC = () => {
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-2 mb-0.5">
                               <span className="text-[11px] font-bold uppercase tracking-wider text-[#C84B31]">
-                                {t.dashboard.stayVerdictQuickLabel}
+                                {t.dashboard?.stayVerdictQuickLabel || 'Honest Verdict'}
                               </span>
                               <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
                                 {language === 'bn' 
-                                  ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack.slug).shortTermSuitability_bn)
-                                  : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack.slug).shortTermSuitability)}
+                                  ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack?.slug)?.shortTermSuitability_bn || '')
+                                  : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack?.slug)?.shortTermSuitability || '')}
                               </span>
                             </div>
                             <p className="text-xs text-[#141413] leading-relaxed line-clamp-2 font-medium">
                               {language === 'bn'
-                                ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack.slug).stayDecision_bn)
-                                : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack.slug).stayDecision_en)}
+                                ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack?.slug)?.stayDecision_bn || '')
+                                : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack?.slug)?.stayDecision_en || '')}
                             </p>
                           </div>
                         </div>
@@ -386,7 +386,7 @@ export const App: React.FC = () => {
                           onClick={() => setActiveTab('verdict')}
                           className="shrink-0 px-3 py-1.5 bg-[#C84B31] hover:bg-[#B33E26] text-white rounded-xl text-xs font-bold inline-flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer self-start sm:self-center"
                         >
-                          <span>{t.dashboard.viewVerdictBtn}</span>
+                          <span>{t.dashboard?.viewVerdictBtn || 'View Full Verdict'}</span>
                           <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
                         </button>
                       </div>

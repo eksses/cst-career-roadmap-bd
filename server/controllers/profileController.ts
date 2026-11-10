@@ -4,6 +4,7 @@ import { studentProfiles, careerTracks, studentProgress, mentorChats } from '../
 import { eq, and } from 'drizzle-orm';
 import { z } from 'zod';
 import type { CareerTrack } from '../../shared/types.js';
+import { getTrackVerdict } from '../../shared/trackVerdictData.js';
 
 function formatTrack(row: any): CareerTrack {
   return {
@@ -165,11 +166,27 @@ export async function switchTrack(req: Request, res: Response) {
     }
 
     const newTrack = tracks[0];
+    const newVerdict = getTrackVerdict(newTrack.slug);
+    const updatedVerdictData = {
+      ...((profiles[0].verdictData as any) || {}),
+      ...newVerdict,
+      heading_en: `Career Strategy: ${newTrack.titleEn}`,
+      heading_bn: `ক্যারিয়ার দিকনির্দেশনা: ${newTrack.titleBn}`,
+      body_en: newTrack.summaryEn,
+      body_bn: newTrack.summaryBn,
+    };
+
     await db.update(studentProfiles).set({
       primaryTrackId: newTrack.id,
+      interestArea: newTrack.slug,
+      verdictData: updatedVerdictData,
     }).where(eq(studentProfiles.id, profiles[0].id));
 
-    return res.json({ success: true, newTrack: formatTrack(newTrack) });
+    return res.json({ 
+      success: true, 
+      newTrack: formatTrack(newTrack),
+      verdict: updatedVerdictData
+    });
   } catch (error: any) {
     console.error('Error switching track:', error);
     return res.status(500).json({ success: false, message: 'Failed to switch track' });

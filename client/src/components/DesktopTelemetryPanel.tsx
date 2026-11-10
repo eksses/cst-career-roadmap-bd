@@ -29,11 +29,11 @@ export const DesktopTelemetryPanel: React.FC<DesktopTelemetryPanelProps> = ({
     }
   };
 
-  const totalModules = primaryTrack.roadmapPhases?.reduce(
-    (acc, phase) => acc + (phase.modules?.length || 0),
+  const totalModules = (Array.isArray(primaryTrack.roadmapPhases) ? primaryTrack.roadmapPhases : []).reduce(
+    (acc, phase) => acc + (phase?.modules?.length || 0),
     0
   ) || 1;
-  const completedModules = completedMilestoneIds.length;
+  const completedModules = (completedMilestoneIds || []).length;
   const progressPercent = Math.min(100, Math.round((completedModules / totalModules) * 100));
 
   return (
@@ -58,11 +58,14 @@ export const DesktopTelemetryPanel: React.FC<DesktopTelemetryPanelProps> = ({
 
         {targetStack && targetStack.length > 0 && (
           <div className="flex flex-wrap gap-1 mt-2 mb-1">
-            {targetStack.slice(0, 4).map((tech, idx) => (
-              <span key={idx} className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#F7F6F2] border border-[#E5E4DF] text-[#141413]">
-                {tech}
-              </span>
-            ))}
+            {targetStack.slice(0, 4).map((tech, idx) => {
+              const techName = typeof tech === 'string' ? tech : ((tech as any)?.name || (tech as any)?.id || String(tech || ''));
+              return (
+                <span key={idx} className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#F7F6F2] border border-[#E5E4DF] text-[#141413]">
+                  {techName}
+                </span>
+              );
+            })}
           </div>
         )}
 
@@ -84,7 +87,7 @@ export const DesktopTelemetryPanel: React.FC<DesktopTelemetryPanelProps> = ({
           </div>
           <div className="flex items-center justify-between text-[11px] text-[#575653] mt-1">
             <span>{completedModules} of {totalModules} modules finished</span>
-            <span>{completedCertIds.length} certs</span>
+            <span>{(completedCertIds || []).length} certs</span>
           </div>
         </div>
 
@@ -106,14 +109,14 @@ export const DesktopTelemetryPanel: React.FC<DesktopTelemetryPanelProps> = ({
           </div>
           <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
             {language === 'bn' 
-              ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack.slug).shortTermSuitability_bn)
-              : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack.slug).shortTermSuitability)}
+              ? (verdict?.shortTermSuitability_bn || getTrackVerdict(primaryTrack?.slug)?.shortTermSuitability_bn || '')
+              : (verdict?.shortTermSuitability || getTrackVerdict(primaryTrack?.slug)?.shortTermSuitability || '')}
           </span>
         </div>
         <p className="text-xs text-[#141413] leading-relaxed line-clamp-3 mb-3 font-medium">
           {language === 'bn'
-            ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack.slug).stayDecision_bn)
-            : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack.slug).stayDecision_en)}
+            ? (verdict?.stayDecision_bn || getTrackVerdict(primaryTrack?.slug)?.stayDecision_bn || '')
+            : (verdict?.stayDecision_en || getTrackVerdict(primaryTrack?.slug)?.stayDecision_en || '')}
         </p>
         {onSelectTab && (
           <button

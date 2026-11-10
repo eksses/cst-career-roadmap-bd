@@ -44,13 +44,23 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
     );
   }
 
-  const phases: RoadmapPhase[] = primaryTrack.roadmapPhases;
-  const allFreeCerts: FreeCertification[] = primaryTrack.freeCerts || [];
+  const rawPhases = primaryTrack.roadmapPhases;
+  const phases: RoadmapPhase[] = Array.isArray(rawPhases)
+    ? rawPhases
+    : typeof rawPhases === 'string'
+    ? (() => { try { return JSON.parse(rawPhases); } catch { return []; } })()
+    : [];
+  const allFreeCerts: FreeCertification[] = Array.isArray(primaryTrack.freeCerts)
+    ? primaryTrack.freeCerts
+    : [];
+
+  const completedIds = completedMilestoneIds || [];
+  const certIds = completedCertIds || [];
 
   // Calculate overall metrics
-  const totalModulesCount = phases.reduce((acc, p) => acc + p.modules.length, 0);
+  const totalModulesCount = phases.reduce((acc, p) => acc + (p?.modules?.length || 0), 0);
   const completedModulesCount = phases.reduce(
-    (acc, p) => acc + p.modules.filter(m => completedMilestoneIds.includes(m.id)).length, 
+    (acc, p) => acc + (p?.modules || []).filter(m => completedIds.includes(m?.id)).length, 
     0
   );
   const progressPercent = totalModulesCount > 0 
@@ -58,7 +68,7 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
     : 0;
 
   const totalDays = phases.reduce(
-    (acc, p) => acc + p.modules.reduce((mAcc, m) => mAcc + (m.estimatedDays || 7), 0),
+    (acc, p) => acc + (p?.modules || []).reduce((mAcc, m) => mAcc + (m?.estimatedDays || 7), 0),
     0
   );
 
@@ -134,8 +144,9 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
 
           {phases.map((phase) => {
             const isSelected = selectedPhaseFilter === phase.phaseNumber;
-            const completedCount = phase.modules.filter(m => completedMilestoneIds.includes(m.id)).length;
-            const isPhaseDone = completedCount === phase.modules.length;
+            const pMods = phase.modules || [];
+            const completedCount = pMods.filter(m => completedIds.includes(m?.id)).length;
+            const isPhaseDone = pMods.length > 0 && completedCount === pMods.length;
 
             return (
               <button
@@ -165,10 +176,12 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
       <div className="relative space-y-10">
         
         {displayedPhases.map((phase, pIdx) => {
-          const totalInPhase = phase.modules.length;
-          const doneInPhase = phase.modules.filter(m => completedMilestoneIds.includes(m.id)).length;
-          const isPhaseDone = doneInPhase === totalInPhase;
-          const isPhaseActive = !isPhaseDone && (pIdx === 0 || phases[pIdx - 1]?.modules.every(m => completedMilestoneIds.includes(m.id)));
+          const pMods = phase.modules || [];
+          const totalInPhase = pMods.length;
+          const doneInPhase = pMods.filter(m => completedIds.includes(m?.id)).length;
+          const isPhaseDone = totalInPhase > 0 && doneInPhase === totalInPhase;
+          const prevMods = phases[pIdx - 1]?.modules || [];
+          const isPhaseActive = !isPhaseDone && (pIdx === 0 || (prevMods.length > 0 && prevMods.every(m => completedIds.includes(m?.id))));
 
           // Pick matching cert for this phase
           const phaseCert = allFreeCerts[pIdx] || null;
@@ -254,10 +267,11 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
                 </div>
 
                 {/* Milestone Nodes */}
-                {phase.modules.map((module, mIdx) => {
-                  const isDone = completedMilestoneIds.includes(module.id);
+                {(phase.modules || []).map((module, mIdx) => {
+                  const isDone = completedIds.includes(module.id);
                   const isExpanded = expandedModuleId === module.id;
-                  const isFirstIncomplete = !isDone && phase.modules.slice(0, mIdx).every(m => completedMilestoneIds.includes(m.id));
+                  const pMods = phase.modules || [];
+                  const isFirstIncomplete = !isDone && pMods.slice(0, mIdx).every(m => completedIds.includes(m.id));
 
                   return (
                     <div key={module.id} className="relative group">
@@ -435,12 +449,12 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
                           type="button"
                           onClick={() => toggleCert(phaseCert.id)}
                           className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                            completedCertIds.includes(phaseCert.id)
+                            certIds.includes(phaseCert.id)
                               ? 'bg-[#1B4332] text-white'
                               : 'bg-white border border-[#1B4332] text-[#1B4332] hover:bg-[#1B4332] hover:text-white'
                           }`}
                         >
-                          {completedCertIds.includes(phaseCert.id)
+                          {certIds.includes(phaseCert.id)
                             ? (language === 'bn' ? 'অর্জিত' : 'Earned')
                             : (language === 'bn' ? 'সংগ্রহ করো' : 'Claim')}
                         </button>
@@ -487,7 +501,7 @@ export const RoadmapGraphMap: React.FC<RoadmapGraphMapProps> = ({ onSelectStepVi
               {completedModulesCount}/{totalModulesCount} {language === 'bn' ? 'মাইলস্টোন সম্পন্ন' : 'Milestones Completed'}
             </span>
             <span className="px-3 py-1 rounded-full text-xs font-mono-numbers font-bold bg-[#1B4332]/10 text-[#1B4332]">
-              {completedCertIds.length} {language === 'bn' ? 'সার্টিফিকেট সংগৃহীত' : 'Certificates Earned'}
+              {certIds.length} {language === 'bn' ? 'সার্টিফিকেট সংগৃহীত' : 'Certificates Earned'}
             </span>
           </div>
         </div>
