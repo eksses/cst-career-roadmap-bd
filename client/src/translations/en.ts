@@ -57,9 +57,9 @@ export const en = {
     copyCode: 'Copy Code',
     tabs: {
       roadmap: 'Roadmap',
-      verdict: 'Verdict & Reality',
-      market: 'Salaries & Market',
-      interview: 'Interview Prep',
+      verdict: 'Verdict',
+      market: 'Market',
+      interview: 'Interview',
       requirements: 'Skills',
     },
     phaseNumber: 'Phase',
@@ -90,7 +90,7 @@ export const en = {
     stayVerdictTitle: 'Should You Stay on this Roadmap If You Need a Fast Job?',
     suitabilityLabel: 'Fast Job Suitability',
     worldRealityTitle: 'The World You Live In: Realistic View without Demotivation',
-    viewVerdictBtn: 'View Full Verdict & Competition',
+    viewVerdictBtn: 'View Verdict',
     stayVerdictQuickLabel: 'Honest Verdict',
   },
   market: {

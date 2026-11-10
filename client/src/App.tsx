@@ -365,8 +365,8 @@ export const App: React.FC = () => {
                       )}
                     </div>
 
-                    {/* Honest Track Verdict Callout Banner */}
-                    {primaryTrack && (
+                    {/* Honest Track Verdict Callout Banner (only shown outside verdict tab to prevent duplicate content) */}
+                    {primaryTrack && activeTab !== 'verdict' && (
                       <div className="bg-[#FFFFFF] border-2 border-[#C84B31]/30 rounded-2xl p-3.5 sm:p-4 mb-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div className="flex items-start gap-2.5 min-w-0">
                           <div className="w-8 h-8 rounded-lg bg-[#C84B31]/10 text-[#C84B31] flex items-center justify-center shrink-0 mt-0.5">
@@ -395,72 +395,91 @@ export const App: React.FC = () => {
                           onClick={() => setActiveTab('verdict')}
                           className="shrink-0 px-3 py-1.5 bg-[#C84B31] hover:bg-[#B33E26] text-white rounded-xl text-xs font-bold inline-flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer self-start sm:self-center"
                         >
-                          <span>{t.dashboard?.viewVerdictBtn || 'View Full Verdict'}</span>
+                          <span>{t.dashboard?.viewVerdictBtn || 'View Verdict'}</span>
                           <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
                         </button>
                       </div>
                     )}
 
-                    {/* Modern Segmented Navigation Bar */}
-                    <div className="bg-[#FAF9F5] border border-[#E5E4DF] p-1 rounded-2xl mb-5 shadow-2xs flex items-center gap-1 overflow-x-auto scrollbar-none">
+                    {/* Modern Segmented Navigation Bar - Balanced Responsive 5-Column Grid */}
+                    <div 
+                      role="tablist" 
+                      aria-label={language === 'bn' ? 'ট্র্যাক ড্যাশবোর্ড ট্যাবসমূহ' : 'Track dashboard tabs'}
+                      className="bg-[#FAF9F5] border border-[#E5E4DF] p-1 sm:p-1.5 rounded-2xl mb-5 shadow-2xs grid grid-cols-5 gap-1"
+                    >
                       <button
+                        type="button"
+                        role="tab"
+                        aria-selected={activeTab === 'roadmap'}
                         onClick={() => setActiveTab('roadmap')}
-                        className={`flex-1 min-w-[76px] sm:min-w-[90px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
+                        className={`py-2 px-1 sm:px-3 rounded-xl text-[10px] sm:text-xs font-bold flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none ${
                           activeTab === 'roadmap'
-                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
-                            : 'text-[#575653] hover:text-[#141413]'
+                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/80'
+                            : 'text-[#575653] hover:text-[#141413] hover:bg-[#FFFFFF]/50'
                         }`}
                       >
-                        <Map className="w-3.5 h-3.5 stroke-[2]" />
-                        <span>{language === 'bn' ? 'রোডম্যাপ' : 'Roadmap'}</span>
+                        <Map className="w-4 h-4 sm:w-3.5 sm:h-3.5 stroke-[2] shrink-0" />
+                        <span className="truncate">{t.dashboard.tabs.roadmap}</span>
                       </button>
 
                       <button
+                        type="button"
+                        role="tab"
+                        aria-selected={activeTab === 'verdict'}
                         onClick={() => setActiveTab('verdict')}
-                        className={`flex-1 min-w-[90px] sm:min-w-[110px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
+                        className={`py-2 px-1 sm:px-3 rounded-xl text-[10px] sm:text-xs font-bold flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none ${
                           activeTab === 'verdict'
-                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
-                            : 'text-[#575653] hover:text-[#141413]'
+                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/80'
+                            : 'text-[#575653] hover:text-[#141413] hover:bg-[#FFFFFF]/50'
                         }`}
                       >
-                        <ShieldAlert className="w-3.5 h-3.5 stroke-[2] text-[#C84B31]" />
-                        <span>{language === 'bn' ? 'বাস্তব রায় ও প্রতিযোগিতা' : 'Verdict & Reality'}</span>
+                        <ShieldAlert className="w-4 h-4 sm:w-3.5 sm:h-3.5 stroke-[2] shrink-0 text-[#C84B31]" />
+                        <span className="truncate">{t.dashboard.tabs.verdict}</span>
                       </button>
 
                       <button
+                        type="button"
+                        role="tab"
+                        aria-selected={activeTab === 'market'}
                         onClick={() => setActiveTab('market')}
-                        className={`flex-1 min-w-[76px] sm:min-w-[90px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
+                        className={`py-2 px-1 sm:px-3 rounded-xl text-[10px] sm:text-xs font-bold flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none ${
                           activeTab === 'market'
-                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
-                            : 'text-[#575653] hover:text-[#141413]'
+                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/80'
+                            : 'text-[#575653] hover:text-[#141413] hover:bg-[#FFFFFF]/50'
                         }`}
                       >
-                        <TrendingUp className="w-3.5 h-3.5 stroke-[2]" />
-                        <span>{language === 'bn' ? 'মার্কেট ও বেতন' : 'Salaries'}</span>
+                        <TrendingUp className="w-4 h-4 sm:w-3.5 sm:h-3.5 stroke-[2] shrink-0" />
+                        <span className="truncate">{t.dashboard.tabs.market}</span>
                       </button>
 
                       <button
+                        type="button"
+                        role="tab"
+                        aria-selected={activeTab === 'interview'}
                         onClick={() => setActiveTab('interview')}
-                        className={`flex-1 min-w-[76px] sm:min-w-[90px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
+                        className={`py-2 px-1 sm:px-3 rounded-xl text-[10px] sm:text-xs font-bold flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none ${
                           activeTab === 'interview'
-                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
-                            : 'text-[#575653] hover:text-[#141413]'
+                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/80'
+                            : 'text-[#575653] hover:text-[#141413] hover:bg-[#FFFFFF]/50'
                         }`}
                       >
-                        <FileQuestion className="w-3.5 h-3.5 stroke-[2]" />
-                        <span>{language === 'bn' ? 'ভাইভা' : 'Interview'}</span>
+                        <FileQuestion className="w-4 h-4 sm:w-3.5 sm:h-3.5 stroke-[2] shrink-0" />
+                        <span className="truncate">{t.dashboard.tabs.interview}</span>
                       </button>
 
                       <button
+                        type="button"
+                        role="tab"
+                        aria-selected={activeTab === 'requirements'}
                         onClick={() => setActiveTab('requirements')}
-                        className={`flex-1 min-w-[76px] sm:min-w-[90px] py-2 px-2.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer whitespace-nowrap ${
+                        className={`py-2 px-1 sm:px-3 rounded-xl text-[10px] sm:text-xs font-bold flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none ${
                           activeTab === 'requirements'
-                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/60'
-                            : 'text-[#575653] hover:text-[#141413]'
+                            ? 'bg-[#FFFFFF] text-[#C84B31] shadow-xs border border-[#E5E4DF]/80'
+                            : 'text-[#575653] hover:text-[#141413] hover:bg-[#FFFFFF]/50'
                         }`}
                       >
-                        <CheckSquare className="w-3.5 h-3.5 stroke-[2]" />
-                        <span>{language === 'bn' ? 'স্কিলস' : 'Skills'}</span>
+                        <CheckSquare className="w-4 h-4 sm:w-3.5 sm:h-3.5 stroke-[2] shrink-0" />
+                        <span className="truncate">{t.dashboard.tabs.requirements}</span>
                       </button>
                     </div>
 

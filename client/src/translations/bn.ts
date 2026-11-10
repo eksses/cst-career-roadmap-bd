@@ -57,10 +57,10 @@ export const bn = {
     copyCode: 'কোড কপি করো',
     tabs: {
       roadmap: 'রোডম্যাপ',
-      verdict: 'বাস্তব রায় ও প্রতিযোগিতা',
-      market: 'মার্কেট ও বেতন',
-      interview: 'ভাইভা প্রস্তুতি',
-      requirements: 'স্কিল চেকলিস্ট',
+      verdict: 'বাস্তব রায়',
+      market: 'মার্কেট',
+      interview: 'ভাইভা',
+      requirements: 'স্কিলস',
     },
     phaseNumber: 'পর্ব',
     estimatedTime: 'সময়',
@@ -90,7 +90,7 @@ export const bn = {
     stayVerdictTitle: 'দ্রুত চাকরি চাইলে কি তোমার এই ট্র্যাকে থাকা উচিত?',
     suitabilityLabel: 'দ্রুত চাকরি পাওয়ার উপযুক্ততা',
     worldRealityTitle: 'যে পৃথিবীতে তুমি বাস করছো: হতাশ না হয়ে বাস্তব সত্য জানা',
-    viewVerdictBtn: 'সম্পূর্ণ বাস্তব রায় ও বিশ্লেষণ দেখো',
+    viewVerdictBtn: 'বাস্তব রায় দেখো',
     stayVerdictQuickLabel: 'বাস্তব রায় (Verdict)',
   },
   market: {
