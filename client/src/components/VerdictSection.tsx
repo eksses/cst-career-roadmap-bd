@@ -1,11 +1,26 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext.js';
 import { useStudent } from '../context/StudentContext.js';
-import { ShieldAlert, CheckCircle2, ArrowRightCircle, Cpu, Clock, Globe2, Sparkles, HelpCircle } from 'lucide-react';
+import { 
+  ShieldAlert, 
+  CheckCircle2, 
+  ArrowRightCircle, 
+  Cpu, 
+  Clock, 
+  Globe2, 
+  Users, 
+  Calendar, 
+  Zap, 
+  GraduationCap, 
+  AlertCircle 
+} from 'lucide-react';
+import { getTrackVerdict } from '../../../shared/trackVerdictData.js';
 
 export const VerdictSection: React.FC = () => {
   const { language, t } = useLanguage();
   const { verdict, primaryTrack, secondaryTrack, requiresFoundationTrack, switchActiveTrack } = useStudent();
+
+  const trackVerdict = getTrackVerdict(primaryTrack?.slug);
 
   const activeVerdict = verdict || {
     heading_en: `Career Strategy: ${primaryTrack?.title_en || 'CST Professional Track'}`,
@@ -34,10 +49,42 @@ export const VerdictSection: React.FC = () => {
     ],
   };
 
+  const competitionLevelBadge = language === 'bn' 
+    ? (activeVerdict.competitionLevel_bn || trackVerdict.competitionLevel_bn)
+    : (activeVerdict.competitionLevel || trackVerdict.competitionLevel);
+
+  const competitorsText = language === 'bn' 
+    ? (activeVerdict.competitors_bn || trackVerdict.competitors_bn)
+    : (activeVerdict.competitors_en || trackVerdict.competitors_en);
+
+  const degreeBarrierText = language === 'bn'
+    ? (activeVerdict.degreeGatekeeping_bn || trackVerdict.degreeGatekeeping_bn)
+    : (activeVerdict.degreeGatekeeping_en || trackVerdict.degreeGatekeeping_en);
+
+  const winningStrategyText = language === 'bn'
+    ? (activeVerdict.diplomaWinningStrategy_bn || trackVerdict.diplomaWinningStrategy_bn)
+    : (activeVerdict.diplomaWinningStrategy_en || trackVerdict.diplomaWinningStrategy_en);
+
+  const timeframeText = language === 'bn'
+    ? (activeVerdict.timeframe_bn || trackVerdict.timeframe_bn)
+    : (activeVerdict.timeframe_en || trackVerdict.timeframe_en);
+
+  const dailyCommitmentText = language === 'bn'
+    ? (activeVerdict.dailyCommitment_bn || trackVerdict.dailyCommitment_bn)
+    : (activeVerdict.dailyCommitment_en || trackVerdict.dailyCommitment_en);
+
+  const timelineVerdictText = language === 'bn'
+    ? (activeVerdict.timelineVerdict_bn || trackVerdict.timelineVerdict_bn)
+    : (activeVerdict.timelineVerdict_en || trackVerdict.timelineVerdict_en);
+
+  const milestonesList = (language === 'bn'
+    ? (activeVerdict.milestones_bn || trackVerdict.milestones_bn)
+    : (activeVerdict.milestones_en || trackVerdict.milestones_en)) || [];
+
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       
-      {/* Primary Verdict Card */}
+      {/* Primary Strategic Verdict Card */}
       <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
         
         {/* Header Badge */}
@@ -128,6 +175,152 @@ export const VerdictSection: React.FC = () => {
                 </div>
               )
             )}
+          </div>
+        </div>
+
+      </div>
+
+      {/* 2026 Competition Reality & Candidate Landscape Card */}
+      <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
+        
+        {/* Header Badge */}
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#1B4332]/10 text-[#1B4332]">
+            <Users className="w-3.5 h-3.5 stroke-[2]" />
+            {t.dashboard.competitionBadge}
+          </span>
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FAF9F5] border border-[#E5E4DF] text-[#141413]">
+            {competitionLevelBadge}
+          </span>
+        </div>
+
+        <h3 className="text-base sm:text-lg font-bold text-[#141413] tracking-tight leading-snug">
+          {t.dashboard.competitionTitle}
+        </h3>
+
+        <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          
+          {/* Competitor Profile & Degree Gatekeeping */}
+          <div className="p-4 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-xs uppercase tracking-wider mb-2">
+                <Users className="w-4 h-4 stroke-[2]" />
+                <span>{t.dashboard.competitorsLabel}</span>
+              </div>
+              <p className="text-xs sm:text-sm text-[#141413] leading-relaxed">
+                {competitorsText}
+              </p>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-[#E5E4DF]">
+              <div className="flex items-center gap-1.5 text-[#575653] font-bold text-[11px] uppercase tracking-wider mb-1">
+                <GraduationCap className="w-3.5 h-3.5 stroke-[2]" />
+                <span>{t.dashboard.degreeBarrierLabel}</span>
+              </div>
+              <p className="text-xs text-[#575653] leading-relaxed">
+                {degreeBarrierText}
+              </p>
+            </div>
+          </div>
+
+          {/* CST Diploma Winning Edge */}
+          <div className="p-4 rounded-xl bg-[#1B4332]/5 border border-[#1B4332]/20 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-1.5 text-[#1B4332] font-bold text-xs uppercase tracking-wider mb-2">
+                <Zap className="w-4 h-4 stroke-[2]" />
+                <span>{t.dashboard.diplomaWinningLabel}</span>
+              </div>
+              <p className="text-xs sm:text-sm text-[#141413] leading-relaxed font-medium">
+                {winningStrategyText}
+              </p>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-[#1B4332]/15 flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-[#1B4332] shrink-0 stroke-[2]" />
+              <p className="text-[11px] text-[#1B4332] font-semibold">
+                {language === 'bn' ? 'বাস্তব প্রজেক্ট কোড ও গিটহাব সরাসরি ডিগ্রির পক্ষপাতিত্ব দূর করে।' : 'Live code repositories and benchmarked projects override academic degree bias.'}
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* 2026 Realistic Timeline to Employment Card */}
+      <div className="bg-[#FFFFFF] border border-[#E5E4DF] rounded-2xl p-5 sm:p-7 shadow-xs">
+        
+        {/* Header Badge */}
+        <div className="flex items-center gap-2 mb-2.5">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#575653]/10 text-[#575653]">
+            <Calendar className="w-3.5 h-3.5 stroke-[2]" />
+            {t.dashboard.timelineBadge}
+          </span>
+        </div>
+
+        <h3 className="text-base sm:text-lg font-bold text-[#141413] tracking-tight leading-snug">
+          {t.dashboard.timelineTitle}
+        </h3>
+
+        {/* Quick Stats: Estimated Months & Daily Hours */}
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+            <div className="flex items-center gap-1.5 text-[#C84B31] font-bold text-[11px] uppercase tracking-wider mb-1">
+              <Clock className="w-3.5 h-3.5 stroke-[2]" />
+              <span>{t.dashboard.estimatedTimeLabel}</span>
+            </div>
+            <div className="text-base sm:text-lg font-bold text-[#141413] font-mono-numbers">
+              {timeframeText}
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF]">
+            <div className="flex items-center gap-1.5 text-[#1B4332] font-bold text-[11px] uppercase tracking-wider mb-1">
+              <Calendar className="w-3.5 h-3.5 stroke-[2]" />
+              <span>{t.dashboard.dailyCommitmentLabel}</span>
+            </div>
+            <div className="text-base sm:text-lg font-bold text-[#141413] font-mono-numbers">
+              {dailyCommitmentText}
+            </div>
+          </div>
+        </div>
+
+        {/* Timeline Verdict Narrative */}
+        <p className="mt-4 text-xs sm:text-sm text-[#575653] leading-relaxed">
+          {timelineVerdictText}
+        </p>
+
+        {/* Milestone Steps to Job Ready */}
+        {milestonesList.length > 0 && (
+          <div className="mt-4 pt-4 border-t border-[#E5E4DF]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#141413] mb-2.5">
+              {t.dashboard.milestonesTitle}
+            </h4>
+            <div className="space-y-2">
+              {milestonesList.map((step: string, idx: number) => (
+                <div key={idx} className="flex items-start gap-2.5">
+                  <div className="w-5 h-5 rounded-full bg-[#C84B31]/10 text-[#C84B31] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[11px] font-mono-numbers">
+                    {idx + 1}
+                  </div>
+                  <p className="text-xs text-[#141413] leading-relaxed pt-0.5">
+                    {step}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Pragmatic Mentor Reality Check Box */}
+        <div className="mt-5 p-3.5 rounded-xl bg-[#FAF9F5] border border-[#E5E4DF] flex items-start gap-2.5">
+          <AlertCircle className="w-4 h-4 text-[#C84B31] shrink-0 mt-0.5 stroke-[2]" />
+          <div>
+            <div className="text-[11px] font-bold uppercase tracking-wider text-[#C84B31] mb-0.5">
+              {t.dashboard.realityCheckLabel}
+            </div>
+            <p className="text-xs text-[#575653] leading-relaxed">
+              {t.dashboard.realityCheckText}
+            </p>
           </div>
         </div>
 

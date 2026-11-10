@@ -2,6 +2,7 @@ import { db } from '../db/index.js';
 import { careerTracks, studentProfiles, surveyResponses } from '../db/schema.js';
 import { eq } from 'drizzle-orm';
 import type { SurveySubmission, DiagnosticResult, CareerTrack, SuggestedTrackItem } from '../../shared/types.js';
+import { getTrackVerdict } from '../../shared/trackVerdictData.js';
 
 export function generateSaveCode(): string {
   const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
@@ -708,6 +709,7 @@ export async function createDirectSelectionProfile(params: {
   }
 
   const saveCode = generateSaveCode();
+  const trackVerdict = getTrackVerdict(primaryTrack.slug);
 
   const verdict = {
     heading_en: `Direct Track Selection: ${personalizedRole_en}`,
@@ -731,7 +733,24 @@ export async function createDirectSelectionProfile(params: {
       'তোমার নির্বাচিত রোডম্যাপের প্রথম পর্ব আজ থেকেই শুরু করে দাও।',
       'ল্যাব ক্লাসের সময়টুকু হাতে-কলমে প্র্যাকটিসের কাজে লাগাও।',
       'সিভিতে যুক্ত করার জন্য ভেরিফায়েড ফ্রি সার্টিফিকেটগুলো একে একে অর্জন করো।'
-    ]
+    ],
+    competitionLevel: trackVerdict.competitionLevel,
+    competitionLevel_bn: trackVerdict.competitionLevel_bn,
+    competitors_en: trackVerdict.competitors_en,
+    competitors_bn: trackVerdict.competitors_bn,
+    degreeGatekeeping_en: trackVerdict.degreeGatekeeping_en,
+    degreeGatekeeping_bn: trackVerdict.degreeGatekeeping_bn,
+    diplomaWinningStrategy_en: trackVerdict.diplomaWinningStrategy_en,
+    diplomaWinningStrategy_bn: trackVerdict.diplomaWinningStrategy_bn,
+    estimatedMonths: trackVerdict.estimatedMonths,
+    timeframe_en: trackVerdict.timeframe_en,
+    timeframe_bn: trackVerdict.timeframe_bn,
+    dailyCommitment_en: trackVerdict.dailyCommitment_en,
+    dailyCommitment_bn: trackVerdict.dailyCommitment_bn,
+    timelineVerdict_en: trackVerdict.timelineVerdict_en,
+    timelineVerdict_bn: trackVerdict.timelineVerdict_bn,
+    milestones_en: trackVerdict.milestones_en,
+    milestones_bn: trackVerdict.milestones_bn,
   };
 
   const [newProfile] = await db.insert(studentProfiles).values({
@@ -783,6 +802,7 @@ function buildHonestVerdict(params: {
   isSkipped?: boolean;
 }) {
   const { submission, primaryTrack, secondaryTrack, requiresFoundation, personalizedRole_en, personalizedRole_bn, timelineAndCerts, isSkipped } = params;
+  const trackVerdict = getTrackVerdict(primaryTrack.slug);
 
   if (isSkipped) {
     return {
@@ -808,6 +828,23 @@ function buildHonestVerdict(params: {
         'ল্যাব ও অবসর সময়ে প্রথম পর্বের মাইলস্টোনগুলো শেষ করো।',
         'সিভি সমৃদ্ধ করতে ভেরিফায়েড ফ্রি সার্টিফিকেটগুলো একে একে সংগ্রহ করো।'
       ],
+      competitionLevel: trackVerdict.competitionLevel,
+      competitionLevel_bn: trackVerdict.competitionLevel_bn,
+      competitors_en: trackVerdict.competitors_en,
+      competitors_bn: trackVerdict.competitors_bn,
+      degreeGatekeeping_en: trackVerdict.degreeGatekeeping_en,
+      degreeGatekeeping_bn: trackVerdict.degreeGatekeeping_bn,
+      diplomaWinningStrategy_en: trackVerdict.diplomaWinningStrategy_en,
+      diplomaWinningStrategy_bn: trackVerdict.diplomaWinningStrategy_bn,
+      estimatedMonths: trackVerdict.estimatedMonths,
+      timeframe_en: trackVerdict.timeframe_en,
+      timeframe_bn: trackVerdict.timeframe_bn,
+      dailyCommitment_en: trackVerdict.dailyCommitment_en,
+      dailyCommitment_bn: trackVerdict.dailyCommitment_bn,
+      timelineVerdict_en: trackVerdict.timelineVerdict_en,
+      timelineVerdict_bn: trackVerdict.timelineVerdict_bn,
+      milestones_en: trackVerdict.milestones_en,
+      milestones_bn: trackVerdict.milestones_bn,
     };
   }
 
@@ -899,5 +936,22 @@ function buildHonestVerdict(params: {
     expenseVerdict_bn,
     actionPlanPoints_en,
     actionPlanPoints_bn,
+    competitionLevel: trackVerdict.competitionLevel,
+    competitionLevel_bn: trackVerdict.competitionLevel_bn,
+    competitors_en: trackVerdict.competitors_en,
+    competitors_bn: trackVerdict.competitors_bn,
+    degreeGatekeeping_en: trackVerdict.degreeGatekeeping_en,
+    degreeGatekeeping_bn: trackVerdict.degreeGatekeeping_bn,
+    diplomaWinningStrategy_en: trackVerdict.diplomaWinningStrategy_en,
+    diplomaWinningStrategy_bn: trackVerdict.diplomaWinningStrategy_bn,
+    estimatedMonths: trackVerdict.estimatedMonths,
+    timeframe_en: trackVerdict.timeframe_en,
+    timeframe_bn: trackVerdict.timeframe_bn,
+    dailyCommitment_en: trackVerdict.dailyCommitment_en,
+    dailyCommitment_bn: trackVerdict.dailyCommitment_bn,
+    timelineVerdict_en: trackVerdict.timelineVerdict_en,
+    timelineVerdict_bn: trackVerdict.timelineVerdict_bn,
+    milestones_en: trackVerdict.milestones_en,
+    milestones_bn: trackVerdict.milestones_bn,
   };
 }
